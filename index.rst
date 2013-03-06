@@ -16,6 +16,9 @@ Ce site (ou plutot ses sources) est disponible sur Github_.
 
 Quelques liens
 ==============
+Notre mailing liste_ pour rester informer de nos activitées
+
+.. _liste: http://lists.matael.org/mailman/listinfo/haum_hackerspace
 
 .. toctree::
    :maxdepth: 2
