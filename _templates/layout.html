@@ -1,0 +1,14 @@
+{% extends "!layout.html" %}
+
+{% block rootrellink %}
+	<li><a href="{{ pathto('index') }}">HAUM</a></li>
+	<li><a href="{{ pathto('contents') }}">Contents</a></li>
+{% endblock %}
+
+{% block relbar1 %}
+	<div style="background-color: #6BA81E; text-align: center; padding: 15px 15px 15px 15px">
+		<a href="{{ pathto('index') }}">
+			<img src="{{ pathto('_static/haum.png', 1) }}" border=0 alt="HAUM"/>
+		</a>
+	</div>
+{% endblock %}
