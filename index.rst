@@ -22,3 +22,5 @@ Notre mailing-list_ pour rester informé de nos activités
 
 .. toctree::
    :maxdepth: 2
+
+   le_projet
