@@ -1,8 +1,7 @@
 {% extends "!layout.html" %}
 
-{% block rootrellink %}
-	<li><a href="{{ pathto('index') }}">HAUM</a></li>
-	<li><a href="{{ pathto('contents') }}">Contents</a></li>
+{% block htmltitle %}
+	<title>{{ title|striptags|e }}</title>
 {% endblock %}
 
 {% block relbar1 %}
@@ -12,3 +11,9 @@
 		</a>
 	</div>
 {% endblock %}
+
+{% block rootrellink %}
+	<li><a href="{{ pathto('index') }}">HAUM</a></li>
+	<li><a href="{{ pathto('contents') }}">Contents</a></li>
+{% endblock %}
+
