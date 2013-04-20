@@ -10,13 +10,13 @@ Bienvenue sur le site du **HAUM** !
 
 Vous y trouverez des infos sur l'asso, le Projet, les projets, les membres et le reste.
 
-Ce site (ou plutot ses sources) est disponible sur Github_.
+Ce site (ou plutôt ses sources) est disponible sur Github_.
 
 .. _Github: https://github.com/haum/website
 
 Quelques liens
 ==============
-Notre mailing-list_ pour rester informé de nos activités
+Notre mailing-list_ pour rester informé de nos activités.
 
 .. _mailing-list: http://lists.matael.org/mailman/listinfo/haum_hackerspace
 
