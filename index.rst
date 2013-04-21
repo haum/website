@@ -24,3 +24,4 @@ Notre mailing-list_ pour rester informé de nos activités.
    :maxdepth: 2
 
    le_projet
+   rencontres
