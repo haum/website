@@ -7,11 +7,12 @@ Au local
 Le HAUM dispose d'un local depuis récement. Nous n'y sommes pas en permanence (même si ce serait sympa :)), mais
 parfois.
 
-Celui ci nous est prêté par l'ISMANS les soirs de la semaine et le samedi après-midi.
+Celui ci nous est prêté par l'ISMANS_ les soirs de la semaine et le samedi après-midi.
 
 Pour connaître les jours où nous y sommes, passez nous voir sur IRC_ et posez nous la question ou carrément sur la
 mailing-list_.
 
+.. _ISMANS: http://www.ismans.fr/
 .. _IRC: http://irc.lc/freenode/haum
 .. _mailing-list: http://lists.matael.org/mailman/listinfo/haum_hackerspace
 
