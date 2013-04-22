@@ -1,4 +1,4 @@
-Le projet
+Notre Projet
 =========
 
 Un *hackerspace*, littéralement, c'est un "*lieu pour bidouilleurs*".
@@ -8,12 +8,12 @@ Un hackerspace, en réalité, c'est un lieu de vie, un endroit où des passionn�
 
 Un hackerspace, c'est un ensemble de choses dont :
 
-- un lieu d'apprentissage, de découvertes et d'expérimentations...
-- un lieu de discussions, d'échanges...
-- des hackers motivés (ou pas)...
-- des projets, des tests, des idées...
-- une ambiance, une manière de vivre et une façon de penser...
-- etc.
+- Un lieu d'apprentissage, de découvertes et d'expérimentations...
+- Un lieu de discussions, d'échanges...
+- Des hackers motivés (ou pas)...
+- Des projets, des tests, des idées...
+- Une ambiance, une manière de vivre et une façon de penser...
+- Etc.
 
 
 Un *hackerspace* se définit avant tout par ce que chacun en fait.
@@ -23,8 +23,7 @@ Pourquoi un hackerspace et pas un fablab ?
 
 La question revient souvent.
 
-Le terme *fablab* impose de respecter la **Charte des Fablab**, ce que nous ne tenions pas à nous imposer, même si celle
-ci est relativement courte.
+Le terme *fablab* impose de respecter la **Charte des Fablab**, ce que nous ne tenions pas à nous imposer, même si celle-ci est relativement courte.
 
 Qui plus est, les *fablabs* sont très orientés sur la production d'objets, les *hackerspaces*, plus génériques, permettent
 à leurs membres/visiteurs de modifier, détourner, démonter, créer ou plus simplement bidouiller des objets, quels qu'ils

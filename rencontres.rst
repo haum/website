@@ -1,31 +1,32 @@
-Rencontres du HAUM
+Rencontrer le HAUM
 ==================
 
 Au local
 --------
 
-Le HAUM dispose d'un local depuis récement. Nous n'y sommes pas en permanence (même si ce serait sympa :)), mais
-parfois.
+Au HAUM nous disposons d'un local depuis avril 2013 situé sur le campus de l'`Université du Maine`_, au Mans.
 
-Celui ci nous est prêté par l'ISMANS_ les soirs de la semaine et le samedi après-midi.
+Mis à disposition par l'ISMANS_, celui-ci est ouvert certains soirs en semaine et le samedi après-midi.
 
-Pour connaître les jours où nous y sommes, passez nous voir sur IRC_ et posez nous la question ou carrément sur la
-mailing-list_.
+En étant à ses débuts, le HAUM offre pour le moment un accueil certes occasionnel, mais régulier !
 
+L'ojectif étant à terme de faire évoluer les horaires d'ouverture afin d'offrir la possibilité de participer au plus grand nombre.
+
+Pour connaître les jours où nos portes vous sont ouvertes, passez nous voir sur IRC_ pour en discuter ou posez nous la question directement sur notre mailing-list_.
+
+.. _Université du Maine: www.univ-lemans.fr/
 .. _ISMANS: http://www.ismans.fr/
 .. _IRC: http://irc.lc/freenode/haum
 .. _mailing-list: http://lists.matael.org/mailman/listinfo/haum_hackerspace
 
-Ailleurs
---------
+Mais pas que...
+---------------
 
-Nous sommes présents à d'autres points du Mans plus exceptionnellement :
+Nous assurons également une présence évènementielle avec localement :
 
-- les *Samedi Bidouille* co-organisés avec LinuXmaine_ dans leurs locaux
-- les *#Jelly* organisés par la `Ruche Numérique`_
-- etc...
+- Les *Samedi Bidouille* co-organisés avec `LinuX Maine`_ (dans leurs locaux)
+- Des rencontres numériques sous forme de *#Jelly* organisées par la `Ruche Numérique`_
+- Etc.
 
-
-.. _LinuXmaine: http://www.linuxmaine.org/
+.. _LinuX Maine: http://www.linuxmaine.org/
 .. _Ruche Numérique: http://ruchenumerique.wordpress.com/
-
