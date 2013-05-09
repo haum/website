@@ -60,7 +60,7 @@ Autres Ressources intéressantes
 ===============================
 
 - **[Article (en)]** Two days online conf for $10 : http://www.hanselman.com/blog/PennyPinchingInTheCloudHowToRunATwoDayVirtualConferenceFor10.aspx
-- **[Etude (fr)]** Télétravail : http://cybergeo.revues.org/3815?lang=en&iframe=true&width=100%&height=100%
+- **[Etude (fr)]** Télétravail : http://cybergeo.revues.org/3815
 
 
 .. _Github: https://github.com/haum/coworking-over-ip
