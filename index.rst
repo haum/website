@@ -25,3 +25,13 @@ Notre mailing-list_ pour rester informé de nos activités.
 
    le_projet
    rencontres
+
+Ressources
+==========
+
+Quelques ressources supplémentaires (liées à des *talks* par exemple).
+
+.. toctree::
+   :maxdepth: 1
+
+   coworking-over-ip
