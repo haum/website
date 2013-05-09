@@ -8,23 +8,35 @@ HAUM - HAckerspace de l'Université du Maine
 
 Bienvenue sur le site du **HAUM** !
 
-Vous y trouverez des infos sur l'asso, le Projet, les projets, les membres et le reste.
-
-Ce site (ou plutôt ses sources) est disponible sur Github_.
-
-.. _Github: https://github.com/haum/website
-
-Quelques liens
-==============
-Notre mailing-list_ pour rester informé de nos activités.
-
-.. _mailing-list: http://lists.matael.org/mailman/listinfo/haum_hackerspace
+Vous trouverez ici des infos sur l'asso et ses membres, nos desseins :
 
 .. toctree::
    :maxdepth: 2
 
    le_projet
+
+Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencontrer, pour échanger ou en vue de nous rejoindre, n'hésitez pas à venir à notre rencontre :
+
+.. toctree::
+   :maxdepth: 2
+
    rencontres
+
+Suivre nos activités
+====================
+
+Via une mailing-list_ ou plus directement sur IRC_ pour faciliter les échanges.
+N'hésitez pas à vous y associer pour rester informé, nous serions ravis de vous y rencontrer.
+
+Les projets des membres sont visibles et librement accessibles via le compte Github_ de l'association.
+Vous y trouverez notamment les sources de ce site.
+
+Vous pouvez également nous suivre sur Twitter_.
+
+.. _mailing-list: http://lists.matael.org/mailman/listinfo/haum_hackerspace
+.. _IRC: http://irc.lc/freenode/haum
+.. _Github: https://github.com/haum/website
+.. _Twitter: https://twitter.com/haum72
 
 Ressources
 ==========
