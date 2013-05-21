@@ -16,7 +16,7 @@ Pour connaître les jours où nos portes vous sont ouvertes, passez nous voir su
 
 Le local est situé à l'`intérieur de l'ISMANS`_ (campus de l'Université du Maine).
 
-.. _Université du Maine: www.univ-lemans.fr/
+.. _Université du Maine: http://www.univ-lemans.fr/
 .. _ISMANS: http://www.ismans.fr/
 .. _IRC: http://irc.lc/freenode/haum
 .. _mailing-list: http://lists.matael.org/mailman/listinfo/haum_hackerspace
