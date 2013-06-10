@@ -21,6 +21,7 @@ Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencon
    :maxdepth: 2
 
    rencontres
+   adhesion
 
 Suivre nos activités
 ====================
@@ -37,6 +38,11 @@ Vous pouvez également nous suivre sur Twitter_.
 .. _IRC: http://irc.lc/freenode/haum
 .. _Github: https://github.com/haum/website
 .. _Twitter: https://twitter.com/haum72
+
+
+Adhérer et nous rejoindre
+=========================
+
 
 Ressources
 ==========
