@@ -21,7 +21,6 @@ Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencon
    :maxdepth: 2
 
    rencontres
-   adhesion
 
 Suivre nos activités
 ====================
@@ -42,7 +41,10 @@ Vous pouvez également nous suivre sur Twitter_.
 
 Adhérer et nous rejoindre
 =========================
-
+.. toctree::
+   :maxdepth: 1
+   
+   adhesion
 
 Ressources
 ==========
