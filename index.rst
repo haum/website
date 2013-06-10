@@ -21,7 +21,6 @@ Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencon
    :maxdepth: 2
 
    rencontres
-   adhesion
 
 Suivre nos activités
 ====================
