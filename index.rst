@@ -42,7 +42,10 @@ Vous pouvez également nous suivre sur Twitter_.
 
 Adhérer et nous rejoindre
 =========================
-
+.. toctree::
+   :maxdepth: 1
+   
+   adhesion
 
 Ressources
 ==========
