@@ -14,10 +14,13 @@ L'ojectif étant à terme de faire évoluer les horaires d'ouverture afin d'offr
 
 Pour connaître les jours où nos portes vous sont ouvertes, passez nous voir sur IRC_ pour en discuter ou posez nous la question directement sur notre mailing-list_.
 
-.. _Université du Maine: www.univ-lemans.fr/
+Le local est situé à l'`intérieur de l'ISMANS`_ (campus de l'Université du Maine).
+
+.. _Université du Maine: http://www.univ-lemans.fr/
 .. _ISMANS: http://www.ismans.fr/
 .. _IRC: http://irc.lc/freenode/haum
 .. _mailing-list: http://lists.matael.org/mailman/listinfo/haum_hackerspace
+.. _intérieur de l'ISMANS: http://www.openstreetmap.org/?lat=48.019401&lon=0.157092&zoom=18&layers=M
 
 Mais pas que...
 ---------------

@@ -43,6 +43,14 @@ Vous pouvez également nous suivre sur Twitter_.
 .. _Github: https://github.com/haum/website
 .. _Twitter: https://twitter.com/haum72
 
+
+Adhérer et nous rejoindre
+=========================
+.. toctree::
+   :maxdepth: 1
+   
+   adhesion
+
 Ressources
 ==========
 
