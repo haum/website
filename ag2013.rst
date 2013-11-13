@@ -1,18 +1,41 @@
 Assemblée Générale 2013
 =======================
 
-L'assemblée générale du HAUM aura lieu le 12 novembre 2013 à 19h !
+L'assemblée générale s'est tenu le 12 novembre 2013 à la Ruche Numérique (merci à eux). Elle a débuté peut après 19h avec la quasi
+totalité des membres (deux s'étant excusés).
 
-S'y rendre
-==========
+Les infos, les rapports
+~~~~~~~~~~~~~~~~~~~~~~~
 
-Pour se rendre à l'AG, sachez qu'elle aura lieu à la Ruche Numérique au 19 Boulevard M & A Oyon (1ère étage).
+Les rapports moral et financier ont été présentés puis validés par l'assemblée. Vous en trouverez une copie dans le
+`dossier d'AG`_.
 
-En transports en commun, prenez le tram jusqu'à Gares puis traversez la gare SNCF par le tunnel et en sortant, gare sud,
-prenez sur votre droite. Le batiment se trouve un peu avant le grand rond point du Boulevard Demorieux.
+.. _dossier d'AG : https://raw.github.com/haum/legal/master/ago_2013/ago_2013.pdf
 
-De quoi on parle
-================
+Amendements
+~~~~~~~~~~~
 
-On parle de nos projets pour le HAUM bien sûr, mais surtout, on dressera un bilan de l'année passée et on élira le
-nouveau bureau du hackerspace.
+L'assemblée a voté la possibilité pour la moitié des membres de provoquer une réunion du bureau, elle a dans le même
+amendement réduit l'obligation de réunion à une seule par an pour le bureau.
+
+Au niveau des status, l'assemblé à ajouté le statut de membre partenaire : ceux ci pourront donc voter en assemblée
+générale ordinaire et provoquer une réunion de bureau (avec au moins la moitié des autres membres).
+
+Cotisation
+~~~~~~~~~~
+
+Le montant de la cotisation pour 2014 reste à 10€.
+
+Bureau
+~~~~~~
+
+Le nouveau bureau de l'association est constitué de :
+
+- M. Gaborit, président
+- T. Lechat, vice-président
+- L. Bourneuf, vice-président
+- B. Ereau, trésorier
+- J. Bréheret, secrétaire
+- A. Dinsenmeyer, membre du bureau
+
+Merci à tous pour cette première année !
