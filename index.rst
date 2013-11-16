@@ -6,10 +6,6 @@
 HAUM - HAckerspace de l'Université du Maine
 ===========================================
 
-    Dans quelques semaine, il sera l'heure de l'AG_
-
-.. _AG: ag2013.html
-
 Bienvenue sur le site du **HAUM** !
 
 Vous trouverez ici des infos sur l'asso et ses membres, nos desseins :
@@ -48,7 +44,7 @@ Adhérer et nous rejoindre
 =========================
 .. toctree::
    :maxdepth: 1
-   
+
    adhesion
 
 Ressources
