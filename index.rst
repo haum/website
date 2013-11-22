@@ -14,6 +14,7 @@ Vous trouverez ici des infos sur l'asso et ses membres, nos desseins :
    :maxdepth: 2
 
    le_projet
+   ag2013
 
 
 Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencontrer, pour échanger ou en vue de nous rejoindre, n'hésitez pas à venir à notre rencontre :
@@ -46,6 +47,14 @@ Vous pouvez également nous suivre sur Twitter_.
 .. _IRC: http://irc.lc/freenode/haum
 .. _Github: https://github.com/haum/website
 .. _Twitter: https://twitter.com/haum72
+
+
+Adhérer et nous rejoindre
+=========================
+.. toctree::
+   :maxdepth: 1
+
+   adhesion
 
 Ressources
 ==========
