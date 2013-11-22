@@ -15,12 +15,21 @@ Vous trouverez ici des infos sur l'asso et ses membres, nos desseins :
 
    le_projet
 
+
 Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencontrer, pour échanger ou en vue de nous rejoindre, n'hésitez pas à venir à notre rencontre :
 
 .. toctree::
    :maxdepth: 2
 
    rencontres
+
+Conférences libres !
+--------------------
+
+Le HAUM cherche des gens intéressés pour présenter un sujet ou un projet au cours de sessions de mini-conférences. Plus
+d'infos ici_.
+
+.. _ici: confs_libres.html
 
 Suivre nos activités
 ====================
