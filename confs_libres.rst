@@ -23,7 +23,7 @@ des gens parlant d'informatique, de robotique, de biologie, de sciences sociales
 
 Du moment que la personne présentant la mini-conférence semble assurée et "à peu près" sérieuse dans ses propos , elle
 sera écoutée avec attention.
-Cette ouverture nous paraît importante car je rapelle que le HS a pour but de **favoriser la transmission des
+Cette ouverture nous paraît importante car nous rappelons que le HS a pour but de **favoriser la transmission des
 connaissances**, quelles qu'elles soient.
 
 Une des conséquence de ce choix est que le niveau et la nature des sujets risquent d'être assez disparates. Dans un
