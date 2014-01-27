@@ -1,7 +1,7 @@
-Assemblée Générale 2013
+﻿Assemblée Générale 2013
 =======================
 
-L'assemblée générale s'est tenu le 12 novembre 2013 à la Ruche Numérique (merci à eux). Elle a débuté peut après 19h avec la quasi
+L'assemblée générale s'est tenue le 12 novembre 2013 à la Ruche Numérique (merci à eux). Elle a débuté peu après 19h avec la quasi
 totalité des membres (deux s'étant excusés).
 
 Les infos, les rapports
@@ -18,7 +18,7 @@ Amendements
 L'assemblée a voté la possibilité pour la moitié des membres de provoquer une réunion du bureau, elle a dans le même
 amendement réduit l'obligation de réunion à une seule par an pour le bureau.
 
-Au niveau des status, l'assemblé à ajouté le statut de membre partenaire : ceux ci pourront donc voter en assemblée
+Au niveau des statuts, l'assemblée à ajouté le statut de membre partenaire : ceux-ci pourront donc voter en assemblée
 générale ordinaire et provoquer une réunion de bureau (avec au moins la moitié des autres membres).
 
 Cotisation
