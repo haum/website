@@ -2,32 +2,27 @@
 Comment modifier le contenu du site web
 =======================================
 
-le site web du haum est un espace collaboratif qui peu etre enrichi par chacun des menbres de l'association. cette page se veut etre un aide mémoire pour que chacun dispose des informations nécéssaire a la réaliation de cette tache.
+le site web du HAUM est un espace collaboratif qui peu etre enrichi par chacun des menbres de l'association. cette page se veut etre un aide mémoire pour que chacun dispose des informations nécéssaire a la réaliation de cette tache.
 
 Préparation de l'environnement de travail
 -----------------------------------------
 
-<<<<<<< HEAD
     - installer Sphinx_ documenttion generator    
-        créer votre repertoire de travail       
-    - ``$ mkdir web_site_rep``
-        se déplacer dans celui ci
-    - ``$ cd web_site_rep``
-        cloner [1]_ le repo git du site web du haum dans un repertoire source
-    - ``$ git clone git@github.com:haum/website.git  source``
-        se rendre dans le repertoire source et
-    - ``$ cd source``
-        copier le fichier Makefile dans votre repertoire de travail
-    - ``$ cp Makefile ..``
-        se placer dans le repertoire de travail
-    - ``$ cd ..``
-        et vérifier la bonne installation des outils et fichiers
-    - ``$ make html`` 
-        le resultat se trouve dans le repertoire build/html. On peu verifier le resultat en chargeant le fichier index.html de ce repertoiredans un navigateur web
+    - créer votre repertoire de travail : ``$ mkdir web_site_rep``
+    - se déplacer dans celui ci : ``$ cd web_site_rep``
+    - cloner [1]_ le repo git du site web du HAUM : ``$ git clone git@github.com:haum/website.git  source``
+    - se rendre dans le repertoire source : ``$ cd source``
+    - copier le fichier Makefile dans votre repertoire de travail : ``$ cp Makefile ..``
+    - se placer dans le repertoire de travail : ``$ cd ..``
+    - et vérifier la bonne installation des outils et fichiers : ``$ make html`` 
 
 Le résultat se trouve dans le répertoire ``build/html``. On peut vérifier le résultat en chargeant le fichier ``index.html`` de ce répertoire dans un navigateur web.
 
-------------
+Si tout s'est déroulé sans erreur vous voila prêt et opérationnel pour modifier le contenu du site web.
+
+
+Au travail ...
+``````````````
 
 Pour la suite il va vous faloir comprendre et aprendre le langage utilisé pour la crétion de ces pages: il s'agit du language *reStructuredText*
   
