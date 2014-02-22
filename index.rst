@@ -65,3 +65,15 @@ Quelques ressources supplémentaires (liées à des *talks* par exemple).
    :maxdepth: 1
 
    coworking-over-ip
+
+Pour les hackers
+================
+
+Voilà quelques pages qui pourront vous aider :
+
+.. toctree::
+    :maxdepth: 1
+
+    howto_siteweb_haum
+
+

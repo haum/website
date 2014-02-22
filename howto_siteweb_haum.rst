@@ -7,6 +7,7 @@ le site web du haum est un espace collaboratif qui peu etre enrichi par chacun d
 Préparation de l'environnement de travail
 -----------------------------------------
 
+<<<<<<< HEAD
     - installer Sphinx_ documenttion generator    
         créer votre repertoire de travail       
     - ``$ mkdir web_site_rep``
@@ -24,8 +25,7 @@ Préparation de l'environnement de travail
     - ``$ make html`` 
         le resultat se trouve dans le repertoire build/html. On peu verifier le resultat en chargeant le fichier index.html de ce repertoiredans un navigateur web
 
-
-Si tout c'est déroulé sans erreur vous voila pret et opérationnel pour modifier le contenu du site web.
+Le résultat se trouve dans le répertoire ``build/html``. On peut vérifier le résultat en chargeant le fichier ``index.html`` de ce répertoire dans un navigateur web.
 
 ------------
 
@@ -42,11 +42,11 @@ Quelques outils pour comprendre et utiliser ce language:
         http://www.webupd8.org/2012/03/retext-30-released-text-editor-for.html
   
 ------------
-  
-  
+
+
 .. _Sphinx: http://sphinx-doc.org/install.html
 
-.. [1] demadez un acces si vous ne l'avez pas.
+.. [1] demadez un accès si vous n'en avez pas.
 
-:Auteur:  jerome @jblb_72
+:Auteur:  jerome @jblb_72, matael
 :Version: 0.2 du 22/02/2014
