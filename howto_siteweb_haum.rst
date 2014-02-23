@@ -66,5 +66,7 @@ La commande magique qui va mettre à jour la version publique du site est à éx
 .. [2] ``$ git push``
 .. [3] http://irc.lc/freenode/haum
 
-:Auteur:  jerome @jblb_72, matael
+---------------
+
+:Auteurs:  jerome @jblb_72, matael
 :Version: 0.3 du 23/02/2014
