@@ -14,7 +14,6 @@ Vous trouverez ici des infos sur l'asso et ses membres, nos desseins :
    :maxdepth: 2
 
    le_projet
-   ag2013
 
 
 Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencontrer, pour échanger ou en vue de nous rejoindre, n'hésitez pas à venir à notre rencontre :
@@ -75,5 +74,6 @@ Voilà quelques pages qui pourront vous aider :
     :maxdepth: 1
 
     howto_siteweb_haum
+    ag2013
 
 
