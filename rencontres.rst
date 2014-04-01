@@ -6,7 +6,7 @@ Au local
 
 Au HAUM nous disposons d'un local depuis avril 2013 situé sur le campus de l'`Université du Maine`_, au Mans.
 
-Mis à disposition par l'ISMANS_, celui-ci est ouvert certains soirs en semaine et le samedi après-midi.
+Mis à disposition par l'ISMANS_, celui-ci est ouvert certains soirs en semaine.
 
 En étant à ses débuts, le HAUM offre pour le moment un accueil certes occasionnel, mais régulier !
 
