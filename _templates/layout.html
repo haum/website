@@ -4,6 +4,19 @@
 	<title>{{ title|striptags|e }}</title>
 {% endblock %}
 
+{% block sidebar2 %}
+<div class="sphinxsidebar">
+	<div class="sphinxsidebarwrapper">
+		<h3><a href="/">Accueil</a></h3>
+		<h3><a href="/le_projet.html">Le HAUM</a></h3>
+		<h3><a href="/rencontres.html">Venir nous voir</a></h3>
+		<h3><a href="/adhesion.html">Nous rejoindre</a></h3>
+	</div>
+</div>
+<div class="clearer"></div>
+</div>
+{% endblock %}
+
 {% block relbar1 %}
 	<div style="background-color: #6BA81E; text-align: center; padding: 15px 15px 15px 15px">
 		<a href="{{ pathto('index') }}">
