@@ -1,36 +1,48 @@
-{% extends "!layout.html" %}
-
-{% block htmltitle %}
-	<title>{{ title|striptags|e }}</title>
-{% endblock %}
-
-{% block sidebar2 %}
-<div class="sphinxsidebar">
-	<div class="sphinxsidebarwrapper">
-		<h3><a href="/">Accueil</a></h3>
-		<h3><a href="/le_projet.html">Le HAUM</a></h3>
-		<h3><a href="/rencontres.html">Venir nous voir</a></h3>
-		<h3><a href="/adhesion.html">Nous rejoindre</a></h3>
-	</div>
-</div>
-<div class="clearer"></div>
-</div>
-{% endblock %}
-
-{% block relbar1 %}
-	<div style="background-color: #6BA81E; text-align: center; padding: 15px 15px 15px 15px">
-		<a href="{{ pathto('index') }}">
-			<img src="{{ pathto('_static/haum.png', 1) }}" border=0 alt="HAUM"/>
-		</a>
-	</div>
-{% endblock %}
-
-{% block rootrellink %}
-	<li><a href="{{ pathto('index') }}">HAUM</a></li>
-{% endblock %}
-
-{% block footer %}
-  <div class="footer">
-    HAUM, 2014 -  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>. (Sources on <a href="http://github.com/haum/website" target="_blank">Github</a>)
-  </div>
-{% endblock %}
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
+		{{ metatags }}
+		<title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+		<link rel="stylesheet" href="{{ pathto('_static/style.css', 1) }}" type="text/css" />
+		<script type="text/javascript">
+		var DOCUMENTATION_OPTIONS = {
+			URL_ROOT:    '{{ url_root }}',
+			VERSION:     '{{ release|e }}',
+			COLLAPSE_INDEX: false,
+			FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
+			HAS_SOURCE:  {{ has_source|lower }}
+		};
+		</script>
+		{%- for scriptfile in script_files %}
+		<script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+		{%- endfor %}
+		{%- block extrahead %} {% endblock %}
+	</head>
+	<body>
+		<header>
+			<h1><a href="http://www.haum.org/"><img src="{{ pathto('_static/haum.png', 1) }}" alt="HAUM"/> - HAckerspace de l’Université du Maine</a></h1>
+		</header>
+		<div id="haum_in">
+			<article>
+{% block body %} {% endblock %}
+			</article>
+			<nav>
+<a href="http://www.haum.org/"><img id="logo" src="{{ pathto('_static/haum.png', 1) }}" alt="HAUM"/></a>
+<h2>HAUMenu...</h2>
+<ul>
+	<li><a href="{{ pathto('index') }}">Accueil</a></li>
+	<li><a href="{{ pathto('le_projet') }}">Le HAUM</a></li>
+	<li><a href="{{ pathto('rencontres') }}">Venir nous voir</a></li>
+	<li><a href="{{ pathto('adhesion') }}">Nous rejoindre</a></li>
+</ul>
+<h2>Actualité</h2>
+<a class="twitter-timeline" href="https://twitter.com/haum72" data-widget-id="454141251034427392" data-chrome="nofooter">Suivre @haum72 sur Twitter</a>
+			</nav>
+		</div>
+		<footer>
+HAUM, 2014 -  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>. (Sources on <a href="http://github.com/haum/website" target="_blank">Github</a>)
+		</footer>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+	</body>
+</html>

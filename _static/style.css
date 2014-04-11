@@ -1,0 +1,129 @@
+@charset "utf-8";
+* {	
+	margin: 0px; padding: 0px;
+}
+a {
+	color:#B32C0E;
+}
+a:hover {
+	color:#000000;
+	text-decoration:none;
+}
+body {
+	background: #fff url(bg.png) no-repeat bottom right fixed;
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+}
+
+header {
+	background: #333 url(ombre.png) repeat-x bottom;
+	color: #e3e3e3;
+	font-size: 1.4ex;
+	font-weight: bold;
+	text-align: center;
+	padding: 2px 2px 18px 2px;
+}
+header h1 {
+	margin-top: 10px; 
+	border: none;
+}
+header a, header a:hover {
+	color: #e3e3e3;
+	text-decoration: none;
+}
+header img {
+	height: 2.3ex;
+	vertical-align: middle;
+}
+#logo {
+	width: 100%;
+}
+#haum_in {
+	width: 75%;
+	margin: 0 auto;
+	font-size: small;
+}
+#haum_in nav {
+	width: 20%;
+	padding: 1%;
+	border-left: 1px dotted #aaa;
+	float: right;
+	font-size: 2.3ex;
+}
+#haum_in nav ul {
+	list-style: none;
+	margin-left: 0;
+}
+#haum_in nav a {
+	font-weight: bold;
+	text-decoration: none;
+}
+#haum_in nav h2, #haum_in nav li {
+	border-bottom: 1px solid #eee;
+}
+#haum_in nav h2 {
+	font-size: 2.8ex;
+	padding: 1ex;
+	color: #666;
+}
+#haum_in article {
+	width: 77%;
+	float: left;
+	padding-bottom: 50px;
+	text-align: justify;
+}
+h1, h2, h3, h4, h5 {
+	color:#B32C0E;
+	font-weight:bold;
+	margin-top: 30px;
+	margin-bottom: 5px;
+	border-bottom: 1px solid #eee;
+}
+h1 { font-size: 3.5ex; }
+h2 { font-size: 2.6ex; }
+h3 { font-size: 2.4ex; }
+h4 { font-size: 2.2ex; }
+h5 { font-size: 2.0ex; }
+p {
+	margin: 10px 0;
+}
+ul {
+	list-style: square outside;
+	margin-left: 2em;
+}
+ul ul {
+	list-style: circle inside;
+}
+pre {
+    padding: 10px;
+    background-color: White;
+    color: #222;
+    line-height: 1.2em;
+    border: 1px solid #C6C9CB;
+    font-size: 1.1em;
+    margin: 1.5em 0 1.5em 0;
+    -webkit-box-shadow: 1px 1px 1px #d8d8d8;
+    -moz-box-shadow: 1px 1px 1px #d8d8d8;
+}
+tt {
+    background-color: #ecf0f3;
+    color: #222;
+    font-size: 1.1em;
+    font-family: monospace;
+}
+.headerlink {
+	display: none;
+}
+footer {
+	background: #eee;
+	color: #999;
+	font-size: 1.4ex;
+	font-weight: bold;
+	text-align: center;
+	padding: 10px;
+	margin-top: 16px;
+	clear: both;
+}
+footer a {
+	color: #666;
+	text-decoration: none;
+}
