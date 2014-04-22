@@ -27,6 +27,7 @@ Mais pas que...
 
 Nous assurons également une présence évènementielle avec localement :
 
+- Les *Jeudis du Libre* à l'Épicerie du Pré où se réunissent les acteurs locaux du libre (1er jeudi de chaque mois)
 - Les *Samedi Bidouille* co-organisés avec `LinuX Maine`_ (dans leurs locaux)
 - Des rencontres numériques sous forme de *#Jelly* organisées par la `Ruche Numérique`_
 - Etc.
