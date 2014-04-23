@@ -8,12 +8,17 @@ HAUM - HAckerspace de l'Université du Maine
 
 Bienvenue sur le site du **HAUM** !
 
-Vous trouverez ici des infos sur l'asso et ses membres, nos desseins :
+Vous trouverez ici des infos sur l'asso et ses membres, nos desseins, des articles qui parlent de nous :
 
 .. toctree::
    :maxdepth: 2
 
    le_projet
+
+.. toctree::
+   :maxdepth: 1
+
+   planet
 
 
 Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencontrer, pour échanger ou en vue de nous rejoindre, n'hésitez pas à venir à notre rencontre :
