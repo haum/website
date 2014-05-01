@@ -26,8 +26,8 @@ sera écoutée avec attention.
 Cette ouverture nous paraît importante car nous rappelons que le HS a pour but de **favoriser la transmission des
 connaissances**, quelles qu'elles soient.
 
-Une des conséquence de ce choix est que le niveau et la nature des sujets risquent d'être assez disparates. Dans un
-premier temps il semble inutile d'envisager un quelconque tri, si cela s'avère necessaire il sera toujours temps de
+Une des conséquences de ce choix est que le niveau et la nature des sujets risquent d'être assez disparates. Dans un
+premier temps il semble inutile d'envisager un quelconque tri, si cela s'avère nécessaire il sera toujours temps de
 revenir sur ce choix plus tard.
 
 But
@@ -48,8 +48,8 @@ Mise en place
 
 Dans un premier temps un lien vers une page d'inscription sera donné ici et sur la mailing-liste afin que toute personne
 voulant présenter un sujet puisse s'inscrire. Des sessions de conférences régulières ne paraît pas être une bonne idée
-pour le moment, d'où cette liste: une fois que suffisamment de sujets seront disponibles il suffira de fixer une date,
-un lieu et si besoin de communiquer autour de l'évènement (peut être pas pour le coup d'essai...).
+pour le moment, d'où cette liste : une fois que suffisamment de sujets seront disponibles il suffira de fixer une date,
+un lieu et si besoin de communiquer autour de l'évènement (peut-être pas pour le coup d'essai...).
 
 Il pourrait aussi être intéressant de mettre en place **un moment d'échange** après l'intervention des différents
 protagonistes autour d'un apéro collectif ou quelque chose du genre.
@@ -60,6 +60,6 @@ Le mot de la fin
 
 En conséquence, nous invitons nos membres à réflechir à d'éventuels sujets d'exposés et à en parler à leur entourage
 pour constituer une liste de sujets disponibles. De plus, toute personne qui souhaite nous aider à l'organisation est
-invité à contacter Thomas (hilid).
+invitée à contacter Thomas (hilid).
 Enfin, des retours sur ce projet seraient bienvenus.
 
