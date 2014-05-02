@@ -32,9 +32,10 @@ Conférences libres !
 --------------------
 
 Le HAUM cherche des gens intéressés pour présenter un sujet ou un projet au cours de sessions de mini-conférences. Plus
-d'infos ici_.
+d'infos ici_. Si vous voulez, vous pouvez directement aller au `site d'inscription`_.
 
 .. _ici: confs_libres.html
+.. _site d'inscription: http://talks.haum.org
 
 Suivre nos activités
 ====================
