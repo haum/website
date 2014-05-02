@@ -4,6 +4,10 @@
 L'assemblée générale s'est tenue le 12 novembre 2013 à la Ruche Numérique (merci à eux). Elle a débuté peu après 19h avec la quasi
 totalité des membres (deux s'étant excusés).
 
+Le PV_ d'assemblée générale fait foi pour toute réclamation.
+
+.. _PV: https://raw.github.com/haum/legal/master/ago_2013/pv.pdf
+
 Les infos, les rapports
 ~~~~~~~~~~~~~~~~~~~~~~~
 
