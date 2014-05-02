@@ -10,7 +10,7 @@ Principe des conférences
 ------------------------
 
 L'idée générale est d'organiser des **sessions de conférences** durant lesquelles des intervenants préalablement
-annoncés exposeraient pendant **15 à 20 minutes** un sujet de leur choix sans aucune restriction. 
+annoncés exposeront pendant **15 à 20 minutes** un sujet de leur choix sans aucune restriction. 
 
 Ce genre de rencontres existe déjà ailleurs et nous ont donné envie d'en créer au Mans aussi (on pourra notament citer
 TEDTalks_ ou HumanTalks_).
@@ -33,33 +33,32 @@ revenir sur ce choix plus tard.
 But
 ---
 
-L'intérêt d'un tel évènement serait de **valoriser le travail des membres** ayant des projets avancés ou aboutis tout en
+L'intérêt d'un tel évènement est de **valoriser le travail des membres** ayant des projets avancés ou aboutis tout en
 permettant aux autres membres de l'association de s'intéresser à ces projets sans pour autant y participer de manière
-active (tout le monde n'a pas le temps pour ça). Cela serait donc **un bon vecteur de motivation** et une occasion pour
+active (tout le monde n'a pas le temps pour ça). Cela représente donc **un bon vecteur de motivation** et une occasion pour
 tous les membres intéressés de **se réunir lors d'un évènement commun d'envergure**.
 
 De plus, cet évènement permettra d'avoir **une certaine visibilité** en plus des évènements auquels nous avons déjà
-participé (forum jeune, jelly, etc...).  Et par conséquent d'approcher un public qui ne s'intéresse pas forcément à
+participé (forum jeunes, jellys, etc...).  Et par conséquent d'approcher un public qui ne s'intéresse pas forcément à
 l'univers de l'informatique et encore moins du libre.
 Nous espérons ainsi **amener un peu de diversité** dans le profil des membres qui jusqu'ici reste globalement le même.
 
 Mise en place
 -------------
 
-Dans un premier temps un lien vers une page d'inscription sera donné ici et sur la mailing-liste afin que toute personne
-voulant présenter un sujet puisse s'inscrire. Des sessions de conférences régulières ne paraît pas être une bonne idée
-pour le moment, d'où cette liste : une fois que suffisamment de sujets seront disponibles il suffira de fixer une date,
-un lieu et si besoin de communiquer autour de l'évènement (peut-être pas pour le coup d'essai...).
+Après quelques heures de code et de déploiement, un `site d'inscription`_ a été créé. Vous pouvez sélectionner la
+conférence qui vous intéresse et vous y inscrire en tant qu'auditeur ou orateur.
 
 Il pourrait aussi être intéressant de mettre en place **un moment d'échange** après l'intervention des différents
-protagonistes autour d'un apéro collectif ou quelque chose du genre.
+protagonistes autour d'un apéro collectif ou quelque chose du genre. Nous envisagerons cela à la fin de la première
+conf.
+
+.. _site d'inscription: http://talks.haum.org
 
 
 Le mot de la fin
 ----------------
 
-En conséquence, nous invitons nos membres à réflechir à d'éventuels sujets d'exposés et à en parler à leur entourage
-pour constituer une liste de sujets disponibles. De plus, toute personne qui souhaite nous aider à l'organisation est
-invitée à contacter Thomas (hilid).
-Enfin, des retours sur ce projet seraient bienvenus.
+Toute personne qui souhaite nous aider à l'organisation est invitée à contacter Thomas (hilid).
+Tout retour sur ce projet est bienvenu.
 
