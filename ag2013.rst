@@ -4,6 +4,10 @@
 L'assemblée générale s'est tenue le 12 novembre 2013 à la Ruche Numérique (merci à eux). Elle a débuté peu après 19h avec la quasi
 totalité des membres (deux s'étant excusés).
 
+Le PV_ d'assemblée générale fait foi pour toute réclamation.
+
+.. _PV: https://raw.github.com/haum/legal/master/ago_2013/pv.pdf
+
 Les infos, les rapports
 ~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -31,11 +35,11 @@ Bureau
 
 Le nouveau bureau de l'association est constitué de :
 
-- M. Gaborit, président
-- T. Lechat, vice-président
-- L. Bourneuf, vice-président
-- B. Ereau, trésorier
-- J. Bréheret, secrétaire
-- A. Dinsenmeyer, membre du bureau
+- Mathieu Gaborit, président
+- Thomas Lechat, vice-président
+- Lucas Bourneuf, vice-président
+- Baptiste Ereau, trésorier
+- Jérôme Bréheret, secrétaire
+- Alice Dinsenmeyer, membre du bureau
 
 Merci à tous pour cette première année !

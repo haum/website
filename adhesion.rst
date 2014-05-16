@@ -11,5 +11,6 @@ Les montants des cotisations sont fixés comme suit :
 
     À noter que le montant de la cotisation est réduit de moitié à partir du premier juillet.
 
-- la cotisation annuelle des membres bienfaiteurs (partenaires) est fixée à un montant de 30 euros minimum, sans limite, au choix de l'adhérent ;
+- la cotisation annuelle des membres bienfaiteurs (partenaires) est laissé à la discrétion de l'adhérent (il n'est
+  toutefois pas possible d'adhérer sans cotisation).
 

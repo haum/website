@@ -28,7 +28,6 @@
 """
 
 from glob import glob
-from collections import namedtuple
 
 OUTPUT_FILE = '../planet.rst'
 
