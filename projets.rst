@@ -7,8 +7,11 @@ Par ailleurs, on s'excuse d'être un peu limités pour les idées de noms : beau
 
 Si vous souhaitez vous renseigner un peu plus sur un projet ou donner un coup de main, contactez ceux qui sont cités dans la description :)
 
-AxiHAUM
+Projets
 -------
+
+AxiHAUM
+~~~~~~~
 
 À l'automne 2014, le HAUM a récupéré du matériel gracieusement offert par le département info de l'`Université du Maine`_. Parmi cet ensemble de matériel il y avait une graveuse à PCB_ (LKPS ProtoMat 91s de 1994) partiellement fonctionnelle. Celle-ci est en cours d'amélioration pour devenir une fraiseuse numérique 3 axes.
 Cette modification est supportée par neomiulium_, d'autres membres du HAUM (jblb_, rebrec_, matael_), ainsi que d'autres personnes ayant les compétences et les outils pour réaliser ce type de modification.
@@ -36,7 +39,7 @@ Note importante : le HAUM ne dispose pour le moment d'aucune broche/fraiseuse (o
 .. _rebrec: https://twitter.com/elfrancesco
 
 HAUMTalks
----------
+~~~~~~~~~
 
 Au cours de son assemblée générale 2013-2014, plusieurs membres ont proposé l'organisation de sessions de type mini-conférences à sujet libre. `Un site`_ dédié a vu le jour pour les recenser et quelques éditions ont déjà eu lieu.
 Si vous voulez participer à l'amélioration du site et/ou ouvrir un compte permettant d'organiser des confs, venez en discuter avec nous sur IRC_ (vous pouvez aussi pinger matael_ ou feedoo_) ! 
@@ -49,7 +52,7 @@ Un retour sur la première conf libre est `disponible ici`_.
 .. _disponible ici: http://blog.matael.org/writing/premiere-conf-libre/
 
 Opendata Crunching
-------------------
+~~~~~~~~~~~~~~~~~~
 
 Depuis sa création, le HAUM s'intéresse à l'Opendata et à la visualisation de jeu de données. Après avoir embêté un peu les politiques manceaux en utilisant les `données de Nantes`_ au cours d'une manifestation publique, puis fourni une API d'accès aux données de la SETRAM (réseau de transport du Mans, `article tech`_, `article explicatif`_ et `doc`_), le HAUM s'intéresse maintenant aux données citoyennes. En 2014, ce sont les résultats des élections municipales (`article 1`_, `article 2`_ et map_) sur le Mans qui ont été exploitées et d'autres idées germent autours des données d'endettement des communes ou encore, dans la répartition des équipements culturels dans la ville... Il reste beaucoup à faire.
 
@@ -64,22 +67,22 @@ Si vous aimez les actions un peu militantes, que vous vous proclamez *"datalover
 .. _map: http://umap.openstreetmap.fr/fr/map/le-mans-elections_6485#12/47.9773/0.2575
 
 Haumelitta
-----------
+~~~~~~~~~~
 
 `HAUMelitta`_ (a.k.a la cafetière qui tweete) est un peu un emblème du HAUM. C'est bêtement une cafetière reliée à twitter via un raspberry pi, mais elle fait son effet :).
 Il n'est plus vraiment possible de contribuer à ce projet parce qu'il est en *standby* et qu'il a un intérêt limité, mais si vraiment vous y tenez, alors parlez-en à jblb_ ou matael_ et on vous trouvera un coin de table pour jouer avec.
 
 .._HAUMelitta: https://twitter.com/HAUMelitta
 
-Haniview:
--------------
+Haniview
+~~~~~~~~
 
 Haniview a pour objectif de hacker l'afficheur à LEDs bi-colores (vert et rouge) de _jblb pour l'utiliser sous GNU/Linux, afficher des images, etc.
 
 Ce projet est supporté par jblb_,  neomilium_ et  matael_.
 
 Les formations/docs
-===================
+-------------------
 
 Le HAUM propose quelques documentations et formations (notament *via* ses contacts avec la `Ruche Numérique`_). Si vous avez des connaissances permettant de contribuer à l'un des sujets ci-dessous, rendez-vous sur le `github du HAUM`_ :
     
@@ -91,7 +94,7 @@ Le HAUM propose quelques documentations et formations (notament *via* ses contac
 .. _Introduction à LaTeX: https://github.com/haum/introduction_LaTeX
 
 Les bots
-========
+--------
 
 Actuellement, 4 bots travaillent pour nous : Twaum (Twitter<->IRC), GHB (Todolist<->IRC), HAUMweb, (update du site) et un `bot GitHub`_ qui notifie sur notre chan IRC les différents évèments git (push, pull-resquest & co) des principaux dépots git de l'association.
 
@@ -105,7 +108,7 @@ Les deux autres ne sont pas publiés soient parce qu'ils sont trop simples pour 
 .. _bot GitHub: http://blog.fredblain.org/2014/05/github-bot-pour-irc
 
 Le github
-=========
+---------
 
 Le `github du HAUM`_ est plein de projets auxquels vous pouvez contribuer si vous le souhaitez ! Forkez les dépôts qui vous intéressent et faites nous une pluie de *pull requests* !
 
@@ -124,7 +127,7 @@ En attendant voilà les projets software (ou de rédaction) auxquels vous pouvez
 .. _github du HAUM: https://github.com/haum/
 
 HAUM Internal
-=============
+-------------
 
 Vu qu'on est des hackers, la *todolist* de l'asso est aussi `sur github`_. Si le coeur vous en dit, commentez les tickets ou mieux, essayez de voir comment les fixer !
 
