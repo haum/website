@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 # -*- coding:utf8 -*-
 #
-# feedoo.py
+# jblb.py
 #
 # Copyright © 2014 Mathieu Gaborit (matael) <mathieu@matael.org>
 #
