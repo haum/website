@@ -14,6 +14,7 @@ Vous trouverez ici des infos sur l'asso et ses membres, nos desseins, des articl
    :maxdepth: 2
 
    le_projet
+   au_haum
 
 .. toctree::
    :maxdepth: 1
