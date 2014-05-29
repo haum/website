@@ -31,7 +31,7 @@ Naturellement, une fois ces étapes achevées, il faudra effectuer une calibrati
 
 Note importante : le HAUM ne dispose pour le moment d'aucune broche/fraiseuse (outil rotatif supportant des outils de fraisage), ni des outils de découpe (fraises, forêts, chanfrin, etc.)
 
-.. _Université du Maine: http://univ-lemans.fr
+.. _Université du Maine: http://www.univ-lemans.fr/fr/index.html 
 .. _PCB: https://en.wikipedia.org/wiki/Printed_circuit_board
 .. _neomilium: http://twitter.com/neomilium
 .. _matael: http://twitter.com/matael
