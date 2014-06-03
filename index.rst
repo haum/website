@@ -29,25 +29,24 @@ Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencon
 
    rencontres
 
-Conférences libres !
---------------------
+Autour du HAUM
+--------------
 
-Le HAUM cherche des gens intéressés pour présenter un sujet ou un projet au cours de sessions de mini-conférences. Plus
-d'infos ici_. Si vous voulez, vous pouvez directement aller au `site d'inscription`_.
+- `Conférences libres`_ : des sessions de conférences à sujet libre
+- Organisation d'un hackathon Opendata (bientôt)
 
-.. _ici: confs_libres.html
-.. _site d'inscription: http://talks.haum.org
+.. _Conférences libres: confs_libres.html
 
 Suivre nos activités
 ====================
 
-Via une mailing-list_ ou plus directement sur IRC_ pour faciliter les échanges.
-N'hésitez pas à vous y associer pour rester informé, nous serions ravis de vous y rencontrer.
+N'hésitez pas à nous contacter via :
 
-Les projets des membres sont visibles et librement accessibles via le compte Github_ de l'association.
-Vous y trouverez notamment les sources de ce site.
+- la mailing-list_
+- le chat IRC_
+- Twitter_
 
-Vous pouvez également nous suivre sur Twitter_.
+Ou bien jetez un oeil à nos projets sur Github_.
 
 .. _mailing-list: http://lists.matael.org/mailman/listinfo/haum_hackerspace
 .. _IRC: http://irc.lc/freenode/haum
@@ -56,14 +55,14 @@ Vous pouvez également nous suivre sur Twitter_.
 
 
 Adhérer et nous rejoindre
-=========================
+-------------------------
 .. toctree::
    :maxdepth: 1
 
    adhesion
 
 Ressources
-==========
+----------
 
 Quelques ressources supplémentaires (liées à des *talks* par exemple).
 
@@ -73,7 +72,7 @@ Quelques ressources supplémentaires (liées à des *talks* par exemple).
    coworking-over-ip
 
 Pour les hackers
-================
+----------------
 
 Voilà quelques pages qui pourront vous aider :
 
