@@ -35,8 +35,6 @@ HEADER = """
 Planet
 ======
 
-Voilà ceux qui parlent de nous sur leurs blogs
-
 """
 
 def output(f_res):
@@ -47,7 +45,7 @@ def output(f_res):
 
         for r in f_res:
             out.write('`'+r[0].encode('utf8')+'`__ par '+r[2]+'\n')
-            out.write('-'*(9+len(r[0]+r[2]))+'\n\n')
+            out.write('~'*(9+len(r[0]+r[2]))+'\n\n')
             out.write('__ '+r[1]+'\n\n')
 
 
