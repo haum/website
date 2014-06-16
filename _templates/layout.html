@@ -1,3 +1,4 @@
+{% set script_files = script_files + ['_static/haumtab.js'] %}
 <!doctype html>
 <html lang="fr">
 	<head>
@@ -5,6 +6,7 @@
 		{{ metatags }}
 		<title>{{ title|striptags|e }}{{ titlesuffix }}</title>
 		<link rel="stylesheet" href="{{ pathto('_static/style.css', 1) }}" type="text/css" />
+		<link rel="stylesheet" href="{{ pathto('_static/haumtab.css', 1) }}" type="text/css" />
 		<script type="text/javascript">
 		var DOCUMENTATION_OPTIONS = {
 			URL_ROOT:    '{{ url_root }}',
@@ -21,14 +23,55 @@
 	</head>
 	<body>
 		<header>
+
+			<!-- HAUMTab -->
+			<div id="haumtab">
+				<!-- 
+				-- Ajoutez les div voulues ici.
+				-- Attention, les premiers seront les derniers : les premières ajoutées apparaissent à gauche !
+				-- oui, l'ordre est inversé
+				-->
+				<div class="tab_col">
+					<h2>/dev/random</h2>
+					<p><a href="{{ pathto('ressources')}}">Ressources</a><p>
+					<p><a href="https://github.com/haum/haum_internal/issues">HAUM Internal</a><p>
+				</div>
+				<div class="tab_col">
+					<h2>Contact</h2>
+					<p><a href="http://lists.matael.org/mailman/listinfo/haum_hackerspace">mailing-list</a><p>
+					<p><a href="http://irc.lc/freenode/haum">IRC</a><p>
+					<p><a href="https://github.com/haum/website">Github</a><p>
+					<p><a href="https://twitter.com/haum72">Twitter</a><p>
+				</div>
+				<div class="tab_col">
+					<h2>Projets</h2>
+					<p><a href="http://talks.haum.org">HAUMTalks</a> ( <a href="{{ pathto('confs_libres')
+						}}">explication</a>)</p>
+					<p><a href="https://github.com/haum/axihaum">AxiHAUM la fraiseuse</a/></p>
+					<p><a href="{{ pathto('opendata')}}">OpenData stuff</a/></p>
+				</div>
+				<div class="tab_col">
+					<h2>HAUM</h2>
+					<p><a href="{{ pathto('le_projet') }}">L'association</a></p>
+					<p><a href="{{ pathto('rencontres') }}">Venez nous voir</a></p>
+					<p><a href="{{ pathto('planet') }}">Planet</a></p>
+					<p><a href="{{ pathto('adhesion') }}">Adhérer !</a></p>
+				</div>
+				<p style="clear: both;">&nbsp;</p>
+			</div>
+
 			<h1><a href="http://www.haum.org/"><img src="{{ pathto('_static/haum.png', 1) }}" alt="HAUM"/> - HAckerspace de l’Université du Maine</a></h1>
 		</header>
+		<div id="haumtab_button">Plus</div>
+
 		<div id="haum_in">
 			<article>
 {% block body %} {% endblock %}
 			</article>
+
 			<nav>
 <a href="http://www.haum.org/"><img id="logo" src="{{ pathto('_static/haum.png', 1) }}" alt="HAUM"/></a>
+<!--
 <h2>HAUMenu...</h2>
 <ul>
 	<li><a href="{{ pathto('index') }}">Accueil</a></li>
@@ -37,6 +80,7 @@
 	<li><a href="{{ pathto('adhesion') }}">Nous rejoindre</a></li>
 	<li><a href="http://talks.haum.org" title="Des sessions de mini-conférences">HAUM Talks</a></li>
 </ul>
+-->
 <h2>Actualité</h2>
 <a class="twitter-timeline" href="https://twitter.com/haum72" data-widget-id="454141251034427392" data-chrome="nofooter">Suivre @haum72 sur Twitter</a>
 			</nav>

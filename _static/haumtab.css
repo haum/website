@@ -1,0 +1,42 @@
+#haumtab {
+	margin: 0 0 0 0;
+	width: 74%;
+	margin: auto;
+	background: #333;
+}
+#haumtab div {
+	float: right;
+	margin-left: 42px;
+	text-align: left;
+}
+
+#haumtab div a , #haumtab div a:hover {
+	text-decoration: none;
+}
+
+#haumtab div h2 {
+	font-weight: bold;
+	color: #fff;
+	border-bottom: none;
+}
+
+#haumtab div p { text-indent: 10px;}
+
+
+#haumtab_button {
+	background: #333;
+	color: #fff;
+	font-size: 1.5em;
+	font-weight: bold;
+	text-align: center;
+	padding: 1px 5px 3px 5px;
+	float: right;
+	margin-right: 13%;
+	margin-top: -16px;
+	-webkit-border-bottom-right-radius: 10px;
+	-webkit-border-bottom-left-radius: 10px;
+	-moz-border-radius-bottomright: 10px;
+	-moz-border-radius-bottomleft: 10px;
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
