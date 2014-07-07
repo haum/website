@@ -33,9 +33,10 @@ Autour du HAUM
 --------------
 
 - `Conférences libres`_ : des sessions de conférences à sujet libre
-- Organisation d'un hackathon Opendata (bientôt)
+- Organisation d'un `hackathon Opendata`_
 
 .. _Conférences libres: confs_libres.html
+.. _hackathon opendata: hackathon_opendata.html
 
 Suivre nos activités
 ====================
