@@ -8,7 +8,7 @@ internet`_).
 
 Les sujets devraient normalement (confirmation en attente) porter sur :
 
-- les données des TIS : exploitation des fiches horaires, ajout des emplacement d'arrêts à OSM (via des coordonnées GPS
+- les données des TIS : exploitation des fiches horaires, ajout des emplacements d'arrêts à OSM (via des coordonnées GPS
   et un *dump* cadastral si tout ce passe bien)
 - les données de GeoPal_ sur les lieux publics à croiser avec les cartes OSM et les bases Etalab_ et CG72
 
