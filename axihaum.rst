@@ -1,6 +1,11 @@
 AxiHAUM
 =======
 
+.. container:: alignright
+
+    .. image:: _images/axihaum/sauvetage.jpg
+        :width: 300px
+
 À l'automne 2014, le HAUM a récupéré du matériel gracieusement offert par le département info de l'`Université du Maine`_. Parmi cet ensemble de matériel il y avait une graveuse à PCB_ (LKPS ProtoMat 91s de 1994) partiellement fonctionnelle. Celle-ci est en cours d'amélioration pour devenir une fraiseuse numérique 3 axes.
 Cette modification est supportée par neomilium_, d'autres membres du HAUM (jblb_, rebrec_, matael_), ainsi que d'autres personnes ayant les compétences et les outils pour réaliser ce type de modification.
 
@@ -19,7 +24,7 @@ Naturellement, une fois ces étapes achevées, il faudra effectuer une calibrati
 
 Note importante : le HAUM ne dispose pour le moment d'aucune broche/fraiseuse (outil rotatif supportant des outils de fraisage), ni des outils de découpe (fraises, forêts, chanfrin, etc.)
 
-.. _Université du Maine: http://www.univ-lemans.fr/fr/index.html 
+.. _Université du Maine: http://www.univ-lemans.fr/fr/index.html
 .. _PCB: https://en.wikipedia.org/wiki/Printed_circuit_board
 .. _neomilium: http://twitter.com/neomilium
 .. _matael: http://twitter.com/matael
