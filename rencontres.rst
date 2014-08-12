@@ -4,7 +4,7 @@ Rencontrer le HAUM
 Au local
 --------
 
-Le HAUM est sté dans les locaux de la `Ruche Numérique`_. Pour être plus précis encore, il est au `19 Bd M&A Oyon`_ au
+Le HAUM est sité dans les locaux de la `Ruche Numérique`_. Pour être plus précis encore, il est au `19 Bd M&A Oyon`_ au
 deuxième étage au fond du couloir.
 
 En étant à ses débuts, le HAUM offre pour le moment un accueil certes occasionnel, mais régulier !
