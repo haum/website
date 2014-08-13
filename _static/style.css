@@ -71,6 +71,20 @@ float: left;
 padding-bottom: 50px;
 text-align: justify;
 }
+
+#contacts {
+	margin-top: 30px;
+	font-size: 1.6ex;
+	color: #666;
+}
+#contacts a {
+	font-weight: normal;
+	color: #666;
+}
+
+#contacts a:hover { color: #333; }
+
+
 h1, h2, h3, h4, h5 {
 color:#B32C0E;
 font-weight:bold;
