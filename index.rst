@@ -1,86 +1,60 @@
-.. HAUM documentation master file, created by
-   sphinx-quickstart on Wed Mar  6 15:50:27 2013.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+.. used for titles inside of columns
+.. role:: faketitle
 
-HAUM - HAckerspace de l'Université du Maine
-===========================================
+.. container:: aligncenter
 
-Bienvenue sur le site du **HAUM** !
+    .. image:: _images/viens-au-haum.png
+        :width: 600px
 
-Vous trouverez ici des infos sur l'asso et ses membres, nos desseins, des articles qui parlent de nous :
+.. raw:: html
 
-.. toctree::
-   :maxdepth: 2
+    <div id=calendar></div><div class=clearer>&nbsp;</div>
 
-   le_projet
-   projets
+.. raw:: html
 
-.. toctree::
-   :maxdepth: 1
+    <script type="text/javascript" src="_static/calendar.js"></script> <script type="text/javascript">
+        events.forEach(function (e){
+            $('#calendar').append(
+                '<div class=event><div class=dateheure><p class=date><span>'+e.date[0]+'</span> '+e.date[1]+' '+e.date[2]+'</p><p class=heure>'+
+                e.date[3]+':'+e.date[4]+'</p></div><p class=lieu>'+e.lieu+'</p><p class=descr>'+e.texte+'</p></div>'
+            );
+        });
+    </script>
 
-   planet
+.. container:: twocolumns
 
+    .. container:: left
 
-Si vous êtes intéressé(e) par nos activités, que vous souhaitiez nous rencontrer, pour échanger ou en vue de nous rejoindre, n'hésitez pas à venir à notre rencontre :
-
-.. toctree::
-   :maxdepth: 2
-
-   rencontres
-
-Autour du HAUM
---------------
-
-- `Conférences libres`_ : des sessions de conférences à sujet libre
-- Organisation d'un `hackathon Opendata`_
-
-.. _Conférences libres: confs_libres.html
-.. _hackathon opendata: hackathon_opendata.html
-
-Suivre nos activités
-====================
-
-N'hésitez pas à nous contacter via :
-
-- la mailing-list_
-- le chat IRC_
-- Twitter_
-
-Ou bien jetez un oeil à nos projets sur Github_.
-
-.. _mailing-list: http://lists.matael.org/mailman/listinfo/haum_hackerspace
-.. _IRC: http://irc.lc/freenode/haum
-.. _Github: https://github.com/haum/website
-.. _Twitter: https://twitter.com/haum72
+        :faketitle:`A propos de nous`
 
 
-Adhérer et nous rejoindre
--------------------------
-.. toctree::
-   :maxdepth: 1
+        .. toctree::
+           :maxdepth: 1
 
-   adhesion
+           le_projet
+           planet
+           rencontres
+           hackerland
 
-Ressources
-----------
+        :faketitle:`En public...`
 
-Quelques ressources supplémentaires (liées à des *talks* par exemple).
+          - `Conférences Libres`_
 
-.. toctree::
-   :maxdepth: 1
+    .. container:: right
 
-   coworking-over-ip
+        :faketitle:`Les projets`
 
-Pour les hackers
-----------------
+        .. toctree::
+            :maxdepth: 2
 
-Voilà quelques pages qui pourront vous aider :
+            projets
 
-.. toctree::
-    :maxdepth: 1
+.. container:: clearer
 
-    howto_siteweb_haum
-    ag2013
+    |clearer|
+
+.. _Conférences Libres: /confs_libres.html
+
+.. |clearer| unicode:: U+0020 .. space
 
 
