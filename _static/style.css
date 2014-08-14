@@ -84,7 +84,7 @@ text-align: justify;
 #contacts a:hover { color: #333; }
 
 
-h1, h2, h3, h4, h5 {
+h1, h2, h3, h4, h5, .faketitle{
 color:#B32C0E;
 font-weight:bold;
 margin-top: 30px;
@@ -92,7 +92,7 @@ margin-bottom: 5px;
 border-bottom: 1px solid #eee;
 }
 h1 { font-size: 3.5ex; }
-h2 { font-size: 2.6ex; }
+h2,.faketitle { font-size: 2.6ex; }
 h3 { font-size: 2.4ex; }
 h4 { font-size: 2.2ex; }
 h5 { font-size: 2.0ex; }
@@ -151,8 +151,71 @@ div.alignleft {
 	margin: 20px 20px 20px 0px;
 }
 
+div.aligncenter {
+	text-align: center;
+	margin: 20px;
+}
+
 div.clearer { clear: both }
 
 div.textcolumn {
 	padding-top: 15%;
 }
+
+div.twocolumns > .left {
+	width:48%;
+	float: left;
+}
+div .twocolumns > .right {
+	width:48%;
+	float:left;
+	margin-left:1.5%;
+	padding-left:1.5%;
+	border-left: 1px solid #bbb;
+}
+div.twocolumns {
+	width:100%;
+}
+
+
+
+/*** Calendar ***/
+#calendar {
+	width: 100%;
+}
+
+.event {
+	width:46%;
+	padding:10px;
+	float:left;
+}
+
+.dateheure {
+	float: left;
+	width: 30%;
+	padding-right: 5px;
+	text-align: center;
+	font-size:1.4em;
+}
+
+.date, .heure {
+	text-transform: uppercase;
+	color: #B32C0E;
+	font-weight: bold;
+}
+
+.date > span {
+	display: block;
+	width: 100%;
+	color: #ccc;
+	font-size: 1.9em;
+}
+
+.lieu {
+	text-align: right;
+	color: #B32C0E;
+	font-weight: bold;
+}
+
+
+
