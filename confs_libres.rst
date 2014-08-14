@@ -1,5 +1,5 @@
-Projet: conférences libres
-==========================
+Conférences libres
+==================
 
 Au cours de l'AG 2013, le projet de mise en place de conférence libre a été de nouveau abordé. Cette idée trottait dans
 la tête de plusieurs membres depuis la création du HAUM et l'assocation semble maintenant suffisamment mature pour
