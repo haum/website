@@ -3,7 +3,8 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
 		{{ metatags }}
-		<title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+		<!-- <title>{{ title|striptags|e }}{{ titlesuffix }}</title> -->
+		<title>{% if title!='&lt;no title&gt;' %}{{ title|striptags|e }}{{ titlesuffix }}{% else %}HAUM{% endif %}</title>
 		<link rel="stylesheet" href="{{ pathto('_static/style.css', 1) }}" type="text/css" />
 		<script type="text/javascript">
 		var DOCUMENTATION_OPTIONS = {
