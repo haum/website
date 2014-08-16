@@ -2,8 +2,8 @@
 <html lang="fr">
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 		{{ metatags }}
-		<!-- <title>{{ title|striptags|e }}{{ titlesuffix }}</title> -->
 		<title>{% if title!='&lt;no title&gt;' %}{{ title|striptags|e }}{{ titlesuffix }}{% else %}HAUM{% endif %}</title>
 		<link rel="stylesheet" href="{{ pathto('_static/style.css', 1) }}" type="text/css" />
 		<script type="text/javascript">
@@ -22,40 +22,56 @@
 	</head>
 	<body>
 		<header>
-			<h1><a href="http://www.haum.org/"><img src="{{ pathto('_static/haum.png', 1) }}" alt="HAUM"/> -
-					Hackerspace/Hacklab du Mans</a></h1>
+			<h1><a href="{{ pathto('', 1) }}"><img src="{{ pathto('_static/haum.png', 1) }}" alt="HAUM"/> - <b>Ha</b>ckerspace <b>u</b>rbain <b>m</b>anceau</a></h1>
+			<p>Convergence de bidouilleurs en centre ville du Mans</p>
 		</header>
-		<div id="haum_in">
-			<article>
+		<div id="header_spacer"><a href="#menu" id="menubtn" title="Menu"><span>Menu</span></a></div>
+		<article>
 {% block body %} {% endblock %}
-			</article>
-			<nav>
-<a href="http://www.haum.org/"><img id="logo" src="{{ pathto('_static/haum.png', 1) }}" alt="HAUM"/></a>
-<h2>HAUMenu...</h2>
-<ul>
-	<li><a href="{{ pathto('index') }}">Accueil</a></li>
-	<li><a href="{{ pathto('le_projet') }}">Le HAUM</a></li>
-	<li><a href="{{ pathto('rencontres') }}">Venir nous voir</a></li>
-	<li><a href="{{ pathto('adhesion') }}">Nous soutenir</a></li>
-	<li><a href="http://talks.haum.org" title="Des sessions de mini-conférences">HAUM Talks</a></li>
-</ul>
-
-<h2>Contact</h2>
-<ul id="contacts">
-	<li><a href="http://twitter.com/haum72">tw://@haum72</a></li>
-	<li><a href="https://github.com/haum">gh://haum</a></li>
-	<li><a href="http://irc.lc/freenode/haum">irc://freenode/haum</a></li>
-	<li><a href="https://www.flickr.com/photos/126718549@N08/">flickr://haumasso</a></li>
-	<li><a href="http://lists.matael.org/mailman/listinfo/haum_hackerspace">ml://haum_hackerspace</a></li>
-</ul>
-
-<h2>Actualité</h2>
-<a class="twitter-timeline" href="https://twitter.com/haum72" data-widget-id="454141251034427392" data-chrome="nofooter">Suivre @haum72 sur Twitter</a>
-			</nav>
-		</div>
+		</article>
 		<footer>
-HAUM, 2014 -  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>. (Sources on <a href="http://github.com/haum/website" target="_blank">Github</a>)
+			<nav id="menu">
+				<img id="logo" src="{{ pathto('_static/haum.png', 1) }}" alt="HAUM"/>
+				<div class="grid">
+					<div class="grid-13">
+						<h2>HAUMenu...</h2>
+						<ul>
+							<li><a href="{{ pathto('index') }}">Accueil</a></li>
+							<li><a href="{{ pathto('le_projet') }}">Notre Projet</a></li>
+							<li><a href="{{ pathto('rencontres') }}">Rencontrer le HAUM</a></li>
+							<li><a href="{{ pathto('hackerland') }}">Le coin des Hackers</a></li>
+							<li><a href="{{ pathto('adhesion') }}">Adhérer/donner</a></li>
+						</ul>
+					</div>
+					<div class="grid-13">
+						<h2>Les projets</h2>
+						<ul>
+							<li><a href="{{ pathto('confs_libres') }}">Conférences libres</a></li>
+							<li><a href="{{ pathto('axihaum') }}">AxiHAUM</a></li>
+							<li><a href="{{ pathto('opendata_crunching') }}">Opendata Crunching</a></li>
+							<li><a href="{{ pathto('haumtalks') }}">HAUMTalks</a></li>
+							<li><a href="{{ pathto('formations') }}">Les formations/docs</a></li>
+							<li><a href="{{ pathto('projets') }}">Tous les projets</a></li>
+						</ul>
+					</div>
+					<div class="grid-13">
+						<h2>Contact</h2>
+						<ul>
+							<li class="grid">
+								<div class="contacticon"><a href="http://twitter.com/haum72"><img src="{{ pathto('_static/ico-tw.png', 1) }}" /><br/>@haum72</a></div>
+								<div class="contacticon"><a href="https://github.com/haum"><img src="{{ pathto('_static/ico-gh.png', 1) }}" /><br/>haum</a></div>
+							</li>
+							<li class="grid">
+								<div class="contacticon"><a href="http://irc.lc/freenode/haum"><img src="{{ pathto('_static/ico-irc.png', 1) }}" /><br/>#haum</a></div>
+								<div class="contacticon"><a href="https://www.flickr.com/photos/126718549@N08/"><img src="{{ pathto('_static/ico-fl.png', 1) }}" /><br/>haumasso</a></div>
+							</li>
+							<li style="clear: both;"><a href="http://lists.matael.org/mailman/listinfo/haum_hackerspace"><img src="{{ pathto('_static/ico-ml.png', 1) }}" /><br/>haum_hackerspace</a></li>
+							<li><a href="{{ pathto('rencontres') }}"><img src="{{ pathto('_static/miniplan.png', 1) }}" /><br/>19 Bd M&amp;A Oyon<br/>72100 Le Mans</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div id="about">HAUM, 2014 -  Created using <a href="http://sphinx.pocoo.org/">Sphinx</a>. (Sources on <a href="http://github.com/haum/website" target="_blank">Github</a>)</div>
 		</footer>
-<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 	</body>
 </html>
