@@ -61,6 +61,7 @@ html {
 	height: 100%;
 }
 body {
+	min-width: 280px;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
 	background: #111;
 }
@@ -240,7 +241,7 @@ footer #about  {
 }
 
 /** Bigger **/
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 765px) {
 	#logo {
 		width: auto;
 	}
@@ -261,7 +262,7 @@ footer #about  {
 		padding-right: 0;
 	}
 }
-@media only screen and (min-width: 1280px) {
+@media only screen and (min-width: 1015px) {
 	#logo {
 		width: 100%;
 	}
