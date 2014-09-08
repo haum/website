@@ -17,11 +17,15 @@
             <div id=calendar></div><div class=clearer>&nbsp;</div>
             <script type="text/javascript" src="_static/calendar.js"></script>
             <script type="text/javascript">
+                var i = 0;
                 events.forEach(function (e){
-                    $('#calendar').append(
-                        '<div class=event><div class=dateheure><p class=date><span>'+e.date[0]+'</span> '+e.date[1]+' '+e.date[2]+'</p><p class=heure>'+
-                        e.date[3]+':'+e.date[4]+'</p></div><p class=lieu>'+e.lieu+'</p><p class=descr>'+e.texte+'</p></div>'
-                    );
+                    if (i < 4) {
+                        $('#calendar').append(
+                            '<div class=event><div class=dateheure><p class=date><span>'+e.date[0]+'</span> '+e.date[1]+' '+e.date[2]+'</p><p class=heure>'+
+                            e.date[3]+':'+e.date[4]+'</p></div><p class=lieu>'+e.lieu+'</p><p class=descr>'+e.texte+'</p></div>'
+                        );
+                        i++;
+                    }
                 });
             </script>
             <h3>Fil twitter</h3>
