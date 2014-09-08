@@ -196,6 +196,8 @@ footer a {
 }
 footer nav {
 	padding: 10px;
+	font-size: 1.25em;
+	color: #757575;
 }
 footer nav ul {
 	list-style: none;
@@ -268,6 +270,11 @@ footer #about  {
 	}
 	#menubtn {
 		display: none;
+	}
+	footer {
+		position: fixed;
+		bottom: 0;
+		width: 100%;
 	}
 	footer nav {
 		width: 250px;
