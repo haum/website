@@ -9,6 +9,7 @@ SITENAME = u'Hacklab au Mans'
 SITEURL = os.environ['PWD']+'/output'
 
 PATH = 'content'
+STATIC_PATHS = ['images', 'calendar']
 
 TIMEZONE = 'Europe/Paris'
 
