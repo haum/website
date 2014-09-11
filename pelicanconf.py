@@ -2,11 +2,11 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 
-from os import environ
+import os
 
 AUTHOR = u'HAUM'
 SITENAME = u'Hacklab au Mans'
-SITEURL = environ['PWD']+'/output'
+SITEURL = os.environ['PWD']+'/output'
 
 PATH = 'content'
 
