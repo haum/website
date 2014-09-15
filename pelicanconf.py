@@ -6,7 +6,7 @@ import os
 
 AUTHOR = u'HAUM'
 SITENAME = u'Hacklab au Mans'
-SITEURL = os.environ['PWD']+'/output'
+SITEURL= '/'
 
 PATH = 'content'
 STATIC_PATHS = ['images', 'calendar']
