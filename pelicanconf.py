@@ -8,6 +8,8 @@ AUTHOR = u'HAUM'
 SITENAME = u'Hacklab au Mans'
 SITEURL= '/'
 
+PROJECTS_DIR = 'projets'
+
 PATH = 'content'
 STATIC_PATHS = ['images', 'calendar']
 
@@ -19,6 +21,8 @@ DEFAULT_LANG = u'fr'
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
+
+PLUGINS =  ['plugin-projets.projets']
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
