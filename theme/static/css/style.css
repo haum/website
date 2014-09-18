@@ -66,12 +66,12 @@ body {
 	background: #111;
 }
 body {
-	background: #fff url(bg.png) no-repeat bottom right fixed;
+	background: #fff url(/theme/images//theme/images/bg.png) no-repeat bottom right fixed;
 	color: #333;
 	min-height: 100%;
 }
 header, footer {
-	background: #333 url(bginv.png) no-repeat bottom right fixed;
+	background: #333 url(/theme/images/bginv.png) no-repeat bottom right fixed;
 	color: #e3e3e3;
 }
 h1, h2, h3, h4, h5, .faketitle {
@@ -145,13 +145,13 @@ header img {
 }
 #header_spacer {
 	height: 16px;
-	background: #fff url(ombre.png) repeat-x top;
+	background: #fff url(/theme/images/ombre.png) repeat-x top;
 }
 #menubtn {
 	display: block;
 	width: 64px;
 	height: 37px;
-	background: url(menu.png);
+	background: url(/theme/images/menu.png);
 	margin: 0 auto;
 }
 #menubtn span {
@@ -181,7 +181,7 @@ article img {
 	width: 100%;
 }
 footer {
-	background: #333 url(bginv.png) no-repeat bottom right fixed;
+	background: #333 url(/theme/images/bginv.png) no-repeat bottom right fixed;
 	color: #eee;
 	margin: 0;
 	font-size: 1.4ex;
@@ -275,7 +275,7 @@ footer #about  {
 		right: 0;
 		top: 0;
 		bottom: 0;
-		background: #333 url(bginv.png) no-repeat bottom right fixed;
+		background: #333 url(/theme/images/bginv.png) no-repeat bottom right fixed;
 		color: #e3e3e3;
 		overflow: auto;
 	}
