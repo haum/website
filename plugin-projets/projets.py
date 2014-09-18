@@ -29,6 +29,8 @@ from docutils.parsers.rst import directives, Directive
 from docutils.core import publish_parts
 from docutils import nodes
 
+from pelican.utils import slugify
+
 import os
 
 def generate_project_list(generator):
@@ -58,8 +60,7 @@ class ProjectList(Directive):
             with open('content/pages/'+settings['PROJECTS_DIR']+'/'+i) as f:
                 parts = publish_parts(f.read(), writer_name="html4css1")
 
-            href = settings['SITEURL']+"pages/"+i.replace('.rst', '.html')
-            print(href)
+            href = settings['SITEURL']+"pages/"+slugify(parts['title'])+'.html'
             final_list +="\n<li><a href='"+href+"'>"+parts['title']+"</a></li>"
 
         return [nodes.raw('', final_list, format='html')]
