@@ -17,30 +17,31 @@
 
 {% block content %}
 <section id="content" class="body">
-  <header>
-    <h2 class="entry-title">
-      <a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark"
-         title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2>
- {% import 'translations.html' as translations with context %}
- {{ translations.translations_for(article) }}
-  </header>
-  <footer class="post-info">
-    <abbr class="published" title="{{ article.date.isoformat() }}">
-      {{ article.locale_date }}
-    </abbr>
-	{% if article.modified %}
-    <abbr class="modified" title="{{ article.modified.isoformat() }}">
-      {{ article.locale_modified }}
-    </abbr>
-	{% endif %}
-    {% if article.authors %}
-    <address class="vcard author">
-      By {% for author in article.authors %}
-          <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-        {% endfor %}
-    </address>
-    {% endif %}
-  </footer><!-- /.post-info -->
+  <div class="article-header">
+	  <div class="alignright">
+		<abbr class="published" title="{{ article.date.isoformat() }}">
+			Le {{ article.locale_date }}
+		</abbr>
+		{% if article.modified %}
+		<abbr class="modified" title="{{ article.modified.isoformat() }}">
+			Modifié le {{ article.locale_modified }}
+		</abbr>
+		{% endif %}
+	 </div>
+	 <div class="aligncenter">
+		<h1><a href="{{ SITEURL }}/{{ article.url }}"
+			   rel="bookmark"
+			   title="Permalien vers {{ article.title|striptags }}">
+			{{ article.title }}
+		</a></h2>
+		<h3 class="article-subtitle">Par
+			{% for author in article.authors %}
+			  {% if loop.first %}{% elif loop.last %} &{% else %}, {% endif %}
+				  {{ author }}
+			{% endfor %}
+		</h3>
+	 </div>
+  </div>
   <div class="entry-content">
     {{ article.content }}
   </div><!-- /.entry-content -->
