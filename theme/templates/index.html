@@ -6,28 +6,29 @@
 <h2>All articles</h2>
 {% endblock %}
 
-<ol id="post-list">
-{% for article in articles_page.object_list %}
-        <li><article class="hentry">
-                <header> <h2 class="entry-title"><a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="Permalink to {{ article.title|striptags }}">{{ article.title }}</a></h2> </header>
-                <footer class="post-info">
-                    <abbr class="published" title="{{ article.date.isoformat() }}"> {{ article.locale_date }} </abbr>
-                    <address class="vcard author">By
-                    {% for author in article.authors %}
-                        <a class="url fn" href="{{ SITEURL }}/{{ author.url }}">{{ author }}</a>
-                    {% endfor %}
-                    </address>
-                </footer><!-- /.post-info -->
-                <div class="entry-content"> {{ article.summary }} </div><!-- /.entry-content -->
-        </article></li>
-{% endfor %}
-</ol><!-- /#posts-list -->
-{% include 'pagination.html' %}
 		#}
 <div class="grid">
     <div class="grid-23">
         <div class="aligncenter">
             <img src="images/viens-au-haum.png"/>
+		</div>
+		<div id="blog">
+			<h2>Articles du blog</h2>
+			<ol id="post-list">
+			{% for article in articles_page.object_list %}
+				<li>
+					<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.summary|striptags }}">
+						{{ article.title }}
+					</a>
+					par {% for author in article.authors %}
+							{% if loop.first %}{% elif loop.last %} &{% else %}, {% endif %}
+								{{ author }}
+						{% endfor %}
+					le {{ article.locale_date }}
+				</li>
+			{% endfor %}
+			</ol><!-- /#posts-list -->
+			{% include 'pagination.html' %}
 		</div>
 	</div>
 
