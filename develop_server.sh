@@ -4,7 +4,7 @@
 ##
 PY=${PY:-python}
 PELICAN=${PELICAN:-pelican}
-PELICANOPTS=-t theme
+PELICANOPTS="-t theme"
 
 BASEDIR=$(pwd)
 INPUTDIR=$BASEDIR/content
