@@ -46,11 +46,11 @@ randomsubtitle = [
 document.write("<p>" + randomsubtitle[Math.floor((Math.random() * randomsubtitle.length))] + "</p>");
 </script>
 		</header>
+		<div id="header_spacer"><a href="#menu" id="menubtn" title="Menu"><span>Menu</span></a></div><!-- MENU button to jump to menu on small screens -->
 		<article>
 		{% block content %} {% endblock %}
 		</article>
 		<footer>
-			<div id="header_spacer"><a href="#menu" id="menubtn" title="Menu"><span>Menu</span></a></div>
 			<nav id="menu">
 				<img id="logo" src="{{ SITEURL }}/theme/images/haum.png" alt="HAUM"/>
 				<div class="grid">
