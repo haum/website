@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+{% block head %}
+  {{ super() }}
+  {% for keyword in article.keywords %}
+    <meta name="keywords" contents="{{keyword}}" />
+  {% endfor %}
+
+  {% for description in article.description %}
+    <meta name="description" contents="{{description}}" />
+  {% endfor %}
+
+  {% for tag in article.tags %}
+    <meta name="tags" contents="{{tag}}" />
+  {% endfor %}
+
+{% endblock %}
+
+{% block content %}
+<section id="content" class="body">
+  <div class="article-header">
+	  <div class="alignright">
+		<abbr class="published" title="{{ article.date.isoformat() }}">
+			Le {{ article.locale_date }}
+		</abbr>
+		{% if article.modified %}
+		<abbr class="modified" title="{{ article.modified.isoformat() }}">
+			Modifié le {{ article.locale_modified }}
+		</abbr>
+		{% endif %}
+	 </div>
+	 <div class="aligncenter">
+		<h1><a href="{{ SITEURL }}/{{ article.url }}"
+			   rel="bookmark"
+			   title="Permalien vers {{ article.title|striptags }}">
+			{{ article.title }}
+		</a></h2>
+		<h3 class="article-subtitle">Par
+			{% for author in article.authors %}
+			  {% if loop.first %}{% elif loop.last %} &{% else %}, {% endif %}
+				  {{ author }}
+			{% endfor %}
+		</h3>
+	 </div>
+  </div>
+  <div class="entry-content">
+    {{ article.content }}
+  </div><!-- /.entry-content -->
+</section>
+{% endblock %}

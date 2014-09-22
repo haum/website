@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="{{ DEFAULT_LANG }}">
+<head>
+        {% block head %}
+        <title>{% block title %}{{ SITENAME }}{% endblock title %}</title>
+        <meta charset="utf-8" />
+        {% if FEED_ALL_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Full Atom Feed" />
+        {% endif %}
+        {% if FEED_ALL_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ALL_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Full RSS Feed" />
+        {% endif %}
+        {% if FEED_ATOM %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_ATOM }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Atom Feed" />
+        {% endif %}
+        {% if FEED_RSS %}
+        <link href="{{ FEED_DOMAIN }}/{{ FEED_RSS }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} RSS Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_ATOM and category %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_ATOM|format(category.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Categories Atom Feed" />
+        {% endif %}
+        {% if CATEGORY_FEED_RSS and category %}
+        <link href="{{ FEED_DOMAIN }}/{{ CATEGORY_FEED_RSS|format(category.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Categories RSS Feed" />
+        {% endif %}
+        {% if TAG_FEED_ATOM and tag %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_ATOM|format(tag.slug) }}" type="application/atom+xml" rel="alternate" title="{{ SITENAME }} Tags Atom Feed" />
+        {% endif %}
+        {% if TAG_FEED_RSS and tag %}
+        <link href="{{ FEED_DOMAIN }}/{{ TAG_FEED_RSS|format(tag.slug) }}" type="application/rss+xml" rel="alternate" title="{{ SITENAME }} Tags RSS Feed" />
+        {% endif %}
+		<link type="text/css" href="{{ SITEURL }}/theme/css/style.css" rel="stylesheet"/>
+		<script type="text/javascript" src="{{ SITEURL }}/theme/js/jquery-2.1.1.min.js"></script>
+        {% endblock head %}
+</head>
+
+	<body id="index" class="home">
+		<header>
+			<h1><a href="{{ SITEURL }}/"><img src="{{ SITEURL }}/theme/images/haum.png" alt="HAUM"/> - <b>H</b>ackerspace <b>au</b> <b>M</b>ans</a></h1>
+<script type="text/javascript">
+randomsubtitle = [
+	"Convergence de bidouilleurs en centre ville",
+	"Rassemblement de bidouilleurs, de bricodeurs et de bricoleurs",
+	"Hackers vaillants, rien d'impossible",
+];
+document.write("<p>" + randomsubtitle[Math.floor((Math.random() * randomsubtitle.length))] + "</p>");
+</script>
+		</header>
+		<div id="header_spacer"><a href="#menu" id="menubtn" title="Menu"><span>Menu</span></a></div><!-- MENU button to jump to menu on small screens -->
+		<article>
+		{% block content %} {% endblock %}
+		</article>
+		<footer>
+			<nav id="menu">
+				<img id="logo" src="{{ SITEURL }}/theme/images/haum.png" alt="HAUM"/>
+				<div class="grid">
+					{#
+					<div class="grid-13">
+						<h2>HAUMenu...</h2>
+						<ul>
+						{% for title, link in MENUITEMS %}
+							<li><a href="{{ link }}">{{ title }}</a></li>
+						{% endfor %}
+						{% if DISPLAY_PAGES_ON_MENU %}
+						  {% for p in PAGES %}
+							<li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
+						  {% endfor %}
+						{% else %}
+						  {% if DISPLAY_CATEGORIES_ON_MENU %}
+							{% for cat, null in categories %}
+							  <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
+							{% endfor %}
+						  {% endif %}
+						{% endif %}
+						</ul>
+					</div>
+					#}
+					<div class="grid-12">
+						<h2>HAUMenu...</h2>
+						<ul>
+							<li><a href="{{ SITEURL }}/pages/cest-quoi-le-haum.html">C'est quoi le HAUM ?</a></li>
+							<li><a href="{{ SITEURL }}/pages/agenda.html">Agenda</a/></li>
+							<li><a href="{{ SITEURL }}/pages/les-projets.html">Les projets</a></li>
+							<li><a href="{{ SITEURL }}/pages/nous-rejoindre.html">Nous rejoindre</a></li>
+							<li><a href="{{ SITEURL }}/pages/hackerland.html">Hackerland</a></li>
+						</ul>
+					</div>
+					<div class="grid-12">
+						<h2>Contact</h2>
+						<ul>
+							<li class="grid">
+								<div class="contacticon"><a href="http://twitter.com/haum72"><img src="{{ SITEURL }}/theme/images/ico-tw.png" /><br/>@haum72</a></div>
+								<div class="contacticon"><a href="https://github.com/haum"><img src="{{ SITEURL }}/theme/images/ico-gh.png" /><br/>haum</a></div>
+							</li>
+							<li class="grid">
+								<div class="contacticon"><a href="http://irc.lc/freenode/haum"><img src="{{ SITEURL }}/theme/images/ico-irc.png" /><br/>#haum</a></div>
+								<div class="contacticon"><a href="https://www.flickr.com/photos/126718549@N08/"><img src="{{ SITEURL }}/theme/images/ico-fl.png" /><br/>haumasso</a></div>
+							</li>
+							<li style="clear: both;"><a href="http://lists.matael.org/mailman/listinfo/haum_hackerspace"><img src="{{ SITEURL }}/theme/images/ico-ml.png" /><br/>haum_hackerspace</a></li>
+							<li><a href="{{ SITEURL }}/pages/nous-rejoindre.html"><img src="{{ SITEURL }}/theme/images/miniplan.png" /><br/>19 Bd M&amp;A Oyon<br/>72100 Le Mans</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			<div id="about">HAUM, 2014 -  Created using <a href="http://getpelican.com/">Pelican</a>. (Sources on <a href="http://github.com/haum/website" target="_blank">Github</a>)</div>
+		</footer>
+	</body>
+</html>

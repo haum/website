@@ -1,2 +1,6 @@
 planet.rst
 *.swp
+*.pyc
+cache/
+*.pid
+output/

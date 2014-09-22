@@ -1,0 +1,45 @@
+﻿Assemblée Générale 2013
+=======================
+
+L'assemblée générale s'est tenue le 12 novembre 2013 à la Ruche Numérique (merci à eux). Elle a débuté peu après 19h avec la quasi
+totalité des membres (deux s'étant excusés).
+
+Le PV_ d'assemblée générale fait foi pour toute réclamation.
+
+.. _PV: https://raw.github.com/haum/legal/master/ago_2013/pv.pdf
+
+Les infos, les rapports
+~~~~~~~~~~~~~~~~~~~~~~~
+
+Les rapports moral et financier ont été présentés puis validés par l'assemblée. Vous en trouverez une copie dans le
+`dossier d'AG`_.
+
+.. _dossier d'AG : https://raw.github.com/haum/legal/master/ago_2013/ago_2013.pdf
+
+Amendements
+~~~~~~~~~~~
+
+L'assemblée a voté la possibilité pour la moitié des membres de provoquer une réunion du bureau, elle a dans le même
+amendement réduit l'obligation de réunion à une seule par an pour le bureau.
+
+Au niveau des statuts, l'assemblée à ajouté le statut de membre partenaire : ceux-ci pourront donc voter en assemblée
+générale ordinaire et provoquer une réunion de bureau (avec au moins la moitié des autres membres).
+
+Cotisation
+~~~~~~~~~~
+
+Le montant de la cotisation pour 2014 reste à 10€.
+
+Bureau
+~~~~~~
+
+Le nouveau bureau de l'association est constitué de :
+
+- Mathieu Gaborit, président
+- Thomas Lechat, vice-président
+- Lucas Bourneuf, vice-président
+- Baptiste Ereau, trésorier
+- Jérôme Bréheret, secrétaire
+- Alice Dinsenmeyer, membre du bureau
+
+Merci à tous pour cette première année !
