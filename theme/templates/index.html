@@ -14,7 +14,7 @@
 		</div>
 		<div id="blog">
 			<h2>Articles du blog</h2>
-			<ol id="post-list">
+			<ol class="post-list">
 			{% for article in articles_page.object_list %}
 				<li>
 					<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.summary|striptags }}">
@@ -29,6 +29,12 @@
 			{% endfor %}
 			</ol><!-- /#posts-list -->
 			{% include 'pagination.html' %}
+			<h2>Planet</h2>
+			<ul class="post-list">
+				{% for article in PLANET %}
+				<li><a href="{{ article[1] }}">{{ article[0] }}</a> par {{ article[2] }}</li>
+				{% endfor %}
+			</ul>
 		</div>
 	</div>
 
