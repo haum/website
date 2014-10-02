@@ -1,8 +1,9 @@
-:slug: Opendata_Crunching
-
 ==================
 Opendata Crunching
 ==================
+
+:slug: opendata-crunching
+
 
 Au HAUM, on aime les trucs ouverts, les codes sources ouverts, les portes ouvertes, les gens ouverts, les bières
 ouvertes et bien sûr : les **données ouvertes** !

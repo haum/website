@@ -1,6 +1,6 @@
-
+==================
 Hackathon OpenData
-##################
+==================
 
 :date: 2014-08-20 09:00
 :tags: opendata, ruchenumerique
@@ -8,10 +8,6 @@ Hackathon OpenData
 :slug: hackathon-opendata
 :authors: HAUM
 :summary: Annonce d'un hackathon pour le mois de septembre.
-
-==================
-Hackathon OpenData
-==================
 
 Le hackathon aura lieu le **19 septembre 2014**. Rendez-vous à la **Ruche Numérique** (19 Bd M&A Oyon, 72000 Le Mans, `site
 internet`_).

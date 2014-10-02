@@ -1,8 +1,8 @@
-:slug: c_est_quoi_le_haum
-
 ==================
 C'est quoi le HAUM
 ==================
+
+:slug: cest-quoi-le-haum
 
 Le HAUM, c'est le hackerspace du Mans
 

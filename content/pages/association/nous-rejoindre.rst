@@ -1,8 +1,8 @@
-:slug: nous_rejoindre
-
 ==============
 Nous Rejoindre
 ==============
+
+:slug: nous-rejoindre
 
 Rencontrer le HAUM
 ==================

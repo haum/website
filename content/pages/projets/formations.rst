@@ -1,8 +1,8 @@
-:slug: formation
-
 ===================
 Les formations/docs
 ===================
+
+:slug: les-formations-docs
 
 Le HAUM propose quelques documentations et formations (notament *via* ses contacts avec la `Ruche Numérique`_). Si vous avez des connaissances permettant de contribuer à l'un des sujets ci-dessous, rendez-vous sur le `github du HAUM`_ :
     

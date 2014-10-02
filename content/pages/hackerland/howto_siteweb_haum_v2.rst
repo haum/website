@@ -1,8 +1,8 @@
-:slug: howto_siteweb_haum_v2
-
 =======================================
 Comment modifier le contenu du site web
 =======================================
+
+:slug: comment-modifier-le-contenu-du-site-web
 
 howto_siteweb_haum version 2 by jblb (jerome@jblb.net)
 

@@ -1,8 +1,8 @@
-:slug: Hackerland
-
 ==========
 Hackerland
 ==========
+
+:slug: hackerland
 
 Hackers, bienvenue !
 
