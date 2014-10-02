@@ -1,6 +1,5 @@
-=======
 AxiHAUM
-=======
+#######
 
 .. container:: alignright
 
