@@ -3,6 +3,8 @@
 from __future__ import unicode_literals
 
 import os
+import sys
+sys.path.append(os.curdir)
 
 AUTHOR = u'HAUM'
 SITENAME = u'Hacklab au Mans'
