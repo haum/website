@@ -42,4 +42,4 @@ Mettre à jour le site web
 
 La mise à jour de ce site est un peu particulière. POur plus d'infos, jetez un oeil à `ce how-to`_ mitonné par Jérôme.
 
-.. _ce how-to: /howto_siteweb_haum.html
+.. _ce how-to: /pages/comment-modifier-le-contenu-du-site-web.html
