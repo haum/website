@@ -1,6 +1,7 @@
-=======
+:slug: axihaum
+
 AxiHAUM
-=======
+#######
 
 .. container:: alignright
 

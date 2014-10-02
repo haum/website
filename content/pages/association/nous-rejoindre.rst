@@ -1,3 +1,5 @@
+:slug: nous_rejoindre
+
 ==============
 Nous Rejoindre
 ==============

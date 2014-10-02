@@ -1,3 +1,6 @@
+:slug: Opendata_Crunching
+
+==================
 Opendata Crunching
 ==================
 

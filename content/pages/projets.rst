@@ -1,6 +1,8 @@
-===========
+:slug: projets
+
+
 Les projets
-===========
+###########
 
 Les gros projets
 ================

@@ -1,3 +1,5 @@
+:slug: c_est_quoi_le_haum
+
 ==================
 C'est quoi le HAUM
 ==================

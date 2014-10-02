@@ -1,3 +1,5 @@
+:slug: coworking_over_ip
+
 =================
 Coworking over IP
 =================

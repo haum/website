@@ -1,3 +1,6 @@
+:slug: haumtalk
+
+=========
 HAUMTalks
 =========
 
