@@ -1,3 +1,5 @@
+:slug: formation
+
 ===================
 Les formations/docs
 ===================

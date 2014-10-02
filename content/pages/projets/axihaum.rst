@@ -1,3 +1,5 @@
+:slug: axihaum
+
 AxiHAUM
 #######
 
