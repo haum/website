@@ -21,7 +21,7 @@ Préparation de l'environnement de travail
 	- activer l'environement virtuel : ``$source .pelican/bin/activate``
 	- installer les requirements : ``$pip install -r requirements.txt``
 	- ecrire vos pages_
-	- générer les pages pour verifier qu'il n'y a pas d'erreurs : ``$make html`` 
+	- générer les pages pour verifier qu'il n'y a pas d'erreurs : ``$make html``
 	-
 	- deactiver l'environement virtuel : ``$deactivate``
 
