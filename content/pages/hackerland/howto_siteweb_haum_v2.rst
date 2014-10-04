@@ -24,7 +24,7 @@ Préparation de l'environnement de travail
 	- installer les requirements : ``$pip install -r requirements.txt``
 	- s'assurrez que l'on est dans la branche master du dépot :``$git checkout master``
 	- ecrire vos pages_
-	- générer les pages pour verifier qu'il n'y a pas d'erreurs : ``$make html`` 
+	- générer les pages pour verifier qu'il n'y a pas d'erreurs : ``$make html``
 	-
 	- deactiver l'environement virtuel : ``$deactivate``
 
