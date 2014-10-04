@@ -46,5 +46,5 @@ Quelques outils pour comprendre et utiliser ce language
 
 
 
-.. [1] demadez un accès si vous n'en avez pas.
+.. _[1] demadez un accès si vous n'en avez pas.
 
