@@ -15,7 +15,7 @@ Préparation de l'environnement de travail
 
 
 	- si se n'est pas fait installer virtualenv : ``$sudo apt-get install python-virtualenv``
-	- cloner [1]_ le dépôt git du site web du HAUM : ``$ git clone git@github.com:haum/website.git``
+	- cloner [#]_ le dépôt git du site web du HAUM : ``$ git clone git@github.com:haum/website.git``
 	- se déplacer vers le repertoire de travail : ``$cd website``
 	- préparer l'environement virtuel : ``$virtualenv .pelican -ppython2`` (cette commande n'est a faire que la premiere fois)
 	- activer l'environement virtuel : ``$source .pelican/bin/activate``
@@ -46,5 +46,5 @@ Quelques outils pour comprendre et utiliser ce language
 
 
 
-.. [1] demadez un accès si vous n'en avez pas.
+.. [#] demadez un accès si vous n'en avez pas.
 
