@@ -20,6 +20,7 @@ Préparation de l'environnement de travail
 	- préparer l'environement virtuel : ``$virtualenv .pelican -ppython2`` (cette commande n'est a faire que la premiere fois)
 	- activer l'environement virtuel : ``$source .pelican/bin/activate``
 	- installer les requirements : ``$pip install -r requirements.txt``
+	- s'assurrez que l'on est dans la branche master du dépot :``$git checkout master``
 	- ecrire vos pages_
 	- générer les pages pour verifier qu'il n'y a pas d'erreurs : ``$make html`` 
 	-
