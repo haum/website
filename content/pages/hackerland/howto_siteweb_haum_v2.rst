@@ -1,6 +1,8 @@
 =======================================
 Comment modifier le contenu du site web
 =======================================
+:status: draft
+
 
 howto_siteweb_haum version 2 by jblb (jerome@jblb.net)
 
