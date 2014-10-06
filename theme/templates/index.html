@@ -13,8 +13,9 @@
             <img src="images/viens-au-haum.png"/>
 		</div>
 		<div id="blog">
-			<h2>Articles du blog</h2>
-			<ol class="post-list">
+			<h2>BLOG &amp; PLANET</h2>
+            <ul class="post-list">
+            <br />
 			{% for article in articles_page.object_list %}
 				<li>
 					<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.summary|striptags }}">
@@ -24,16 +25,15 @@
 							{% if loop.first %}{% elif loop.last %} &{% else %}, {% endif %}
 								{{ author }}
 						{% endfor %}
-					le {{ article.locale_date }}
-				</li>
+                        <!-- le {{ article.locale_date }} -->
+                    </li>
+                <br />
 			{% endfor %}
-			</ol><!-- /#posts-list -->
-			{% include 'pagination.html' %}
-			<h2>Planet</h2>
-			<ul class="post-list">
-				{% for article in PLANET %}
+            {% for article in PLANET %}
 				<li><a href="{{ article[1] }}">{{ article[0] }}</a> par {{ article[2] }}</li>
-				{% endfor %}
+                <br />
+			{% endfor %}
+			{% include 'pagination.html' %}
 			</ul>
 		</div>
 	</div>
