@@ -37,7 +37,7 @@ Au travail ...
 Pour la suite il va vous falloir comprendre et apprendre le langage utilisé pour la création de ces pages: il s'agit du language *reStructuredText*
 
 Quelques outils pour comprendre et utiliser ce language
-```````````````````````````````````````````````````````
+-------------------------------------------------------
 
     - la référence simplifiée du language
         http://docutils.sourceforge.net/docs/user/rst/quickref.html
@@ -46,8 +46,19 @@ Quelques outils pour comprendre et utiliser ce language
     - un éditeur de texte qui permet de visualiser du *reStructuredText* :  **retext**
         http://sourceforge.net/p/retext/home/ReText/
         http://www.webupd8.org/2012/03/retext-30-released-text-editor-for.html
+        
+La publication
+``````````````
 
+*de master a upstream*
 
+    - passer sur la branche upstream : ``$ git checkout upstream``
+    - la faire correspondre a la branche master : ``$ git rebase master``
+    - et là s'il y a conflit : ``$ git mergetool``
+    
+*update du site web*
+
+``!updatesite`` dans le canal IRC du haum
 
 
 .. [#] demadez un accès si vous n'en avez pas.
