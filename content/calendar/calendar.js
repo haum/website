@@ -49,7 +49,7 @@ var events = [
      'lieu': 'Arduino 3.2 à la Ruche Numérique',
      'texte': "Suite de  la nouvelle formation arduino (niveau 1)"},
     {'date': ['10', 'oct', '2014', '18', '30'],
-     'lieu': "Assemblée Générale Ordinaire de l'assocation",
+     'lieu': "Assemblée Générale Ordinaire",
      'texte': "Point sur l'année passée et élection du bureau"},
     {'date': ['14', 'oct', '2014', '18', '30'],
      'lieu': 'Arduino 3.3 à la Ruche Numérique',
