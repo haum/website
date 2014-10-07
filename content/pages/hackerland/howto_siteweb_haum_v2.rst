@@ -6,27 +6,30 @@ Comment modifier le contenu du site web
 
 howto_siteweb_haum version 2 by jblb (jerome@jblb.net)
 
-pour l'instant ce n'est que des notes de travail
-Vous n'avez pas forcement toutes les infos et que certaines qui sont présente içi peuvent etre fausses....
+Pour l'instant ce ne sont que des notes de travail. Vous n'avez pas forcement toutes les infos et certaines qui sont présente içi peuvent etre fausses....
 
+Préenbule
+`````````
 
-Le site web du **HAUM** est un espace collaboratif qui peut être enrichi par chacun des membres de l'association. Cette page se veut un aide mémoire pour que chacun dispose des informations nécéssaires à la réaliation de cette tâche.
+Le site web du **HAUM** est un espace collaboratif qui peut être enrichi par chacun des membres. Cette page se veut un aide mémoire pour que chacun dispose des informations nécéssaires à la réaliation de cette tâche.
 
 Préparation de l'environnement de travail
 `````````````````````````````````````````
 
-
-	- si se n'est pas fait installer virtualenv : ``$ sudo apt-get install python-virtualenv``
-	- cloner [#]_ [#]_ le dépôt git du site web du HAUM : ``$ git clone git@github.com:haum/website.git`` 
-	- se déplacer vers le repertoire de travail : ``$ cd website``
-	- préparer l'environement virtuel : ``$ virtualenv .pelican -ppython2`` (cette commande n'est a faire que la premiere fois)
-	- activer l'environement virtuel : ``$ source .pelican/bin/activate``
-	- installer les requirements : ``$ pip install -r requirements.txt``
-	- s'assurrez que l'on est dans la branche master du dépot :``$ git checkout master``
-	- ecrire vos pages_
-	- générer les pages pour verifier qu'il n'y a pas d'erreurs : ``$ make html``
-	- s'assurrez que l'on est dans la branche master du dépot :``$ git checkout master``
-	- pousser vos nouvelles pages sur le depot git :``$ git push``
+	- Si se n'est pas fait installer virtualenv : ``$ sudo apt-get install python-virtualenv``
+	- Cloner [#]_ [#]_ le dépôt git du site web du HAUM : ``$ git clone git@github.com:haum/website.git`` 
+	- Se déplacer vers le repertoire de travail : ``$ cd website``
+	- Préparer l'environement virtuel : ``$ virtualenv .pelican -ppython2`` (cette commande n'est a faire que la premiere fois)
+	- Activer l'environement virtuel : ``$ source .pelican/bin/activate``
+	- Installer les requirements : ``$ pip install -r requirements.txt`` (cette commande n'est a faire que la premiere fois également)
+	- S'assurrer que l'on est dans la branche master du dépot :``$ git checkout master``
+	- Écrire vos pages_
+	- Générer les pages pour vérifier qu'il n'y a pas d'erreurs : ``$ make html``
+	- S'assurrer que l'on est dans la branche master du dépot :``$ git checkout master``
+	- Pousser vos nouvelles pages sur le depot git :	
+            - Ajouter les pages modifées: ``$ git add pages-modifiees``	   
+            - Commiter votre travail: ``$ git commit -m"votre commantaire de commit"``
+            - Pousser votre travail sur le depos: ``$ git push``           
 	- deactiver l'environement virtuel : ``$ deactivate``
 
 .. _pages:
@@ -55,6 +58,7 @@ Quelques outils pour comprendre et utiliser *reStructuredText*
 .. _Markdown:
 
 Quelques liens sur *Markdown*
+-----------------------------
 
     - la référence simplifiée du language
         http://daringfireball.net/projects/markdown/
@@ -79,5 +83,6 @@ La publication
 
 
 .. [#] demadez un accès si vous n'en avez pas.
-.. [#] ce n'est a faire que la premiere fois, les fois suivantes, placez vous dans le repertoire de travail et faites : ``$ git pull``
+.. [#] ce n'est a faire que la premiere fois, les fois suivantes, se placer dans le repertoire de travail et faire : ``$ git pull``
+
 .. _pelican: http://docs.getpelican.com/en/latest/index.html
