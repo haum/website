@@ -34,18 +34,35 @@ Préparation de l'environnement de travail
 Au travail ...
 ``````````````
 
-Pour la suite il va vous falloir comprendre et apprendre le langage utilisé pour la création de ces pages: il s'agit du language *reStructuredText*
+Pour la suite il va vous falloir comprendre et apprendre le systeme de gestion et de publication des pages: pelican_ et un des langages utilisé pour la création de ces pages: reStructuredText_ ou Markdown_
 
-Quelques outils pour comprendre et utiliser ce language
--------------------------------------------------------
+.. _reStructuredText:
+
+Quelques outils pour comprendre et utiliser *reStructuredText*
+--------------------------------------------------------------
 
     - la référence simplifiée du language
         http://docutils.sourceforge.net/docs/user/rst/quickref.html
     - la référence complète de celui ci
-        http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html
+        http://docutils.sourceforge.net/rst.html
+        
+.. _editeur:
+
     - un éditeur de texte qui permet de visualiser du *reStructuredText* :  **retext**
         http://sourceforge.net/p/retext/home/ReText/
         http://www.webupd8.org/2012/03/retext-30-released-text-editor-for.html
+
+.. _Markdown:
+
+Quelques liens sur *Markdown*
+
+    - la référence simplifiée du language
+        http://daringfireball.net/projects/markdown/
+    - l'editeur_  retext cité plus tot permet également l'édition au format Markdown
+        
+Pelican apliqué au site du Haum
+-------------------------------
+       
         
 La publication
 ``````````````
@@ -62,4 +79,5 @@ La publication
 
 
 .. [#] demadez un accès si vous n'en avez pas.
-.. [#] ce n'est a faire que la premiere fois, les faois suivantes, placez vous dans le repertoire de travail et faites : ``$ git pull``
+.. [#] ce n'est a faire que la premiere fois, les fois suivantes, placez vous dans le repertoire de travail et faites : ``$ git pull``
+.. _pelican: http://docs.getpelican.com/en/latest/index.html
