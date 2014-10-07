@@ -45,9 +45,6 @@ var events = [
 //    {'date': ['02', 'oct', '2014', '19', '00'],
 //     'lieu': "Jeudi du Libre à l'Epicerie du Pré",
 //     'texte': "Encore un coup de git pull au houblon entre libristes !"},
-    {'date': ['07', 'oct', '2014', '18', '30'],
-     'lieu': 'Arduino 3.2 à la Ruche Numérique',
-     'texte': "Suite de  la nouvelle formation arduino (niveau 1)"},
     {'date': ['10', 'oct', '2014', '18', '30'],
      'lieu': "Assemblée Générale Ordinaire",
      'texte': "Point sur l'année passée et élection du bureau"},
@@ -63,6 +60,9 @@ var events = [
     {'date': ['06', 'nov', '2014', '19', '00'],
      'lieu': "Jeudi du Libre à l'Epicerie du Pré",
      'texte': "RAID au houblon pour les libristes manceaux"},
+    {'date': ['04', 'dev', '2014', '19', '00'],
+     'lieu': "Jeudi du Libre à l'Epicerie du Pré",
+     'texte': "Rendez-vous de libristes pour un rsync houblonné !"},
 ];
 
 
