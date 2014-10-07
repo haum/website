@@ -47,4 +47,4 @@ from planet.fetchall import fetch
 PLANET = fetch('planet/sources')
 
 # Custom Page generated with junja2 template for agenda
-TEMPLATE_PAGES = {'pages/agenda.html': 'agenda_template.html'}
+TEMPLATE_PAGES = {'agenda_template.html': 'pages/agenda.html'}
