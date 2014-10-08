@@ -73,8 +73,15 @@ La publication
 
 *update du site web*
 
-``!updatesite`` dans le canal IRC du haum
+``!updatesite`` dans le canal IRC du `haum <http://irc.lc/freenode/haum>`_
 
+Des liens qui peuvent servir
+----------------------------
+
+    - `Markdown Cheatsheet <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>`_
+    - `Ce que j’aurais aimé savoir quand j’ai commencé GIT <http://software-craftsman.fr/2014/05/12/a-la-decouverte-de-git/>`_
+    
+    
 
 .. [#] Demadez un accès si vous n'en avez pas.
 .. [#] Ce n'est à faire que la première fois. Par la suite, se placer dans le répertoire de travail et faire : ``$ git pull``
