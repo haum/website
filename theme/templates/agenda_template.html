@@ -2,20 +2,22 @@
 {% block content %}
 <section id="content">
 <div class="grid">
-    <div class="grid-23">
-    <h2>AGENDA</h2>
+    <div class="grid-13">&nbsp;</div>
+    <div class="grid-13">
+<h2>AGENDA</h2>
         <div id=calendar></div><div class=clearer>&nbsp;</div>
         <script type="text/javascript" src="{{ SITEURL }}/calendar/calendar.js"></script>
         <script type="text/javascript">
             $.each(events, function(i,e){
-                $('#calendar').append('<li class=event><div class=dateheure><p class=date><span>'+e.date[0]+'</span> '+e.date[1]+' '+e.date[2]+'</p><p class=heure>'+
-e.date[3]+':'+e.date[4]+'</p></div><p class=lieu>'+e.lieu+'</p><p class=descr>'+e.texte+'</p></li>');
+                $('#calendar').append('<div class=event><div class=dateheure><p class=date><span>'+e.date[0]+'</span> '+e.date[1]+' '+e.date[2]+'</p><p class=heure>'+
+e.date[3]+':'+e.date[4]+'</p></div><p class=lieu>'+e.lieu+'</p><p class=descr>'+e.texte+'</p></div>');
             });
-            $('li.event:odd').css("background-color", '#eeeeee');
+            $('div.event:odd').css("background-color", '#eeeeee');
         </script>
         </script>
         </div>
     </div>
+    <div class="grid-13"></div>
 </div>
 </section><!-- /#content -->
 {% endblock content %}
