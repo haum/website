@@ -52,12 +52,12 @@ echo "==> Running make..."
 make -j $CORE_2_USE PREFIX=$INIT_PATH/$LOCALPYTHON
 make install
 
-cd ..
+cd $INIT_PATH
 echo "==> Creating bare virtualenv in $VENV_DIR ..."
-virtualenv --python=$INIT_PATH/$LOCALPYTHON/bin/python $VENV_DIR
+virtualenv --python=$LOCALPYTHON/bin/python $VENV_DIR
 
 echo "==> Activating venv..."
-source $INIT_PATH/$VENV_DIR/bin/activate
+source $VENV_DIR/bin/activate
 
 echo "==> Installing requirements..."
 pip install  -r requirements.txt
