@@ -22,7 +22,7 @@
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 #
 
-CORE_2_USE=8
+CORE_2_USE=2
 
 PYTHON278_URL=https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
 LOCALPYTHON=.localpython
@@ -30,8 +30,6 @@ PYTHON_DIRNAME=Python-2.7.8
 
 VENV_DIR=.venv_pelican
 INIT_PATH="$PWD"
-
-REQUIREMENTS_URL=https://raw.githubusercontent.com/haum/website/master/requirements.txt
 
 echo "==> Testing for virtualenv..."
 # test for virtualenv disponibility
@@ -51,7 +49,7 @@ echo "==> Running ./configure..."
 ./configure --prefix $INIT_PATH/$LOCALPYTHON
 
 echo "==> Running make..."
-make -j $CORE_2_USE
+make -j $CORE_2_USE PREFIX=$INIT_PATH/$LOCALPYTHON
 make install
 
 cd ..
@@ -59,10 +57,10 @@ echo "==> Creating bare virtualenv in $VENV_DIR ..."
 virtualenv --python=$INIT_PATH/$LOCALPYTHON/bin/python $VENV_DIR
 
 echo "==> Activating venv..."
-source $VENV_DIR/bin/activate
+source $INIT_PATH/$VENV_DIR/bin/activate
 
 echo "==> Installing requirements..."
-pip install  $(wget $REQUIREMENTS_URL  -O -)
+pip install  -r requirements.txt
 
 echo "==> Deactivating venv..."
 deactivate
