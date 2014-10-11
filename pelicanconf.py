@@ -42,9 +42,12 @@ DEFAULT_PAGINATION = 10
 #RELATIVE_URLS = True
 
 # planet regeneration
-
 from planet.fetchall import fetch
 PLANET = fetch('planet/sources')
+
+# calendar regeneration
+from agenda.agenda import create_json
+AGENDA = create_json('agenda.sqlite', 'content/calendar/calendar.js')
 
 # Custom Page generated with junja2 template for agenda
 TEMPLATE_PAGES = {'agenda_template.html': 'pages/agenda.html'}
