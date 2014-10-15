@@ -60,7 +60,7 @@ class ProjectList(Directive):
             with open('content/pages/'+settings['PROJECTS_DIR']+'/'+i) as f:
                 parts = publish_parts(f.read(), writer_name="html4css1")
 
-            href = settings['SITEURL']+"pages/"+slugify(parts['title'])+'.html'
+            href = settings['SITEURL']+"pages/"+slugify(parts['title'].replace('/',' '))+'.html'
             final_list +="\n<li><a href='"+href+"'>"+parts['title']+"</a></li>"
 
         return [nodes.raw('', final_list, format='html')]
