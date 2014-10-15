@@ -68,7 +68,7 @@ La publication
 *de master a upstream*
 
     - passer sur la branche upstream : ``$ git checkout upstream``
-    - la faire correspondre a la branche master : ``$ git rebase master``
+    - la faire correspondre a la branche master : ``$ git merge --ff master``
     - et là s'il y a conflit : ``$ git mergetool``
 
 *update du site web*
