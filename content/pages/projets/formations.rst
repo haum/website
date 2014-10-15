@@ -7,11 +7,13 @@ Les formations/docs
 Le HAUM propose quelques documentations et formations (notament *via* ses contacts avec la `Ruche Numérique`_). Si vous avez des connaissances permettant de contribuer à l'un des sujets ci-dessous, rendez-vous sur le `github du HAUM`_ :
     
 - `Formation Arduino`_ (par jblb_ et matael_)
-- `Introduction à LaTeX` (par matael_ )
+- `Introduction à LaTeX`_ (par matael_ )
+- `Introduction à Git`_ par matael_
 
 .. _Ruche Numérique: http://www.laruchenumerique.com/
 .. _Formation Arduino: https://github.com/haum/forma_arduino
 .. _Introduction à LaTeX: https://github.com/haum/introduction_LaTeX
+.. _Introduction à git: https://github.com/Matael/intro_git
 
 Proposer une formation
 ----------------------
