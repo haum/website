@@ -120,5 +120,15 @@ var events = past_events + future_events;
 
         f.write(content)
 
-    
+    # ICAL Generation
+    if icalfile:
+
+        cal = icalendar.Calendar()
+        sql_events = events_from_query(db, "select * from agenda where status=1", ical_from_dbcursor)
+        for se in sql_events:
+            cal.add_component(se)
+
+        with open(icalfile, 'w') as f:
+            f.write(cal.to_ical())
+
 
