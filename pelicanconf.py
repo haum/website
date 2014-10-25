@@ -47,7 +47,9 @@ PLANET = fetch('planet/sources')
 
 # calendar regeneration
 from agenda.agenda import create_json
-AGENDA = create_json('/home/haum/agenda.sqlite', 'content/calendar/calendar.js')
+AGENDA = create_json('/home/haum/agenda.sqlite',
+                     'content/calendar/calendar.js',
+                     icalfile='content/calendar/calendar.ics')
 
 # Custom Page generated with junja2 template for agenda
 TEMPLATE_PAGES = {'agenda_template.html': 'pages/agenda.html'}
