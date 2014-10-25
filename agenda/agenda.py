@@ -29,25 +29,29 @@ import json
 from datetime import date
 import pelican
 
-def events_from_query(db, q):
+def events_from_query(db, q, func=None):
 
     db = sqlite3.connect(db)
     c = db.cursor()
 
-    events = []
-    for row in c.execute(q):
-        new_event = {
-                'lieu': row[0] + " - " + row[1],
-                'texte': row[2]
-                }
+    if not func:
+        events = []
+        for row in c.execute(q):
+            new_event = {
+                    'lieu': row[0] + " - " + row[1],
+                    'texte': row[2]
+                    }
 
-        sql_date = row[3].split(' ')
-        new_event['date'] = sql_date[0].split('/') + sql_date[1].split(':')
+            sql_date = row[3].split(' ')
+            new_event['date'] = sql_date[0].split('/') + sql_date[1].split(':')
 
-        events.append(new_event)
+            events.append(new_event)
 
-    db.close()
-    return events
+        db.close()
+        return events
+    else:
+        return func(c.execute(q))
+
 
 
 def get_month_forall(events_list):
