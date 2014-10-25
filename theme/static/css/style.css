@@ -291,7 +291,7 @@ footer #about  {
 	}
 }
 
-/** Alignment **/
+/** Alignment & Size **/
 div.alignright {
 	float:right;
 	margin: 20px 0px 20px 20px;
@@ -305,6 +305,8 @@ div.aligncenter {
 	margin: 20px;
 }
 div.clearer { clear: both }
+
+.small { font-size: 0.7em }
 
 /*** Calendar ***/
 #calendar {
@@ -339,4 +341,9 @@ div.clearer { clear: both }
 	font-weight: bold;
 }
 
+h2 a {
+	text-decoration: none;
+}
+
+/* Blog */
 #blog { padding-left: 20px;}
