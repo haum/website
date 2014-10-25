@@ -26,7 +26,9 @@
 import sqlite3
 import json
 
-from datetime import date
+from datetime import date, datetime
+
+import icalendar
 import pelican
 
 def events_from_query(db, q, func=None):
@@ -64,7 +66,28 @@ def get_month_forall(events_list):
     return events_list
 
 
-def create_json(db, calendar_file):
+def ical_from_dbcursor(q):
+    """
+    Function to pass along with events_from_query
+    """
+
+    events = []
+    for e in q:
+        event = icalendar.Event()
+        event.add('summary', e[0])
+        event.add('description', e[2])
+        event.add('location', e[1])
+
+        sql_date = e[3].split(' ')
+        d = map(int, sql_date[0].split('/') + sql_date[1].split(':'))
+        date = datetime(d[2], d[1], d[0], d[3], d[4])
+        event.add('dtstart', date)
+        events.append(event)
+
+    return events
+
+
+def create_json(db, calendar_file, icalfile=None):
     """
     use the database items to generate 3 variables in the json calendar.js :
         - past_events
