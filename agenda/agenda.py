@@ -101,8 +101,8 @@ def create_json(db, calendar_file, icalfile=None):
     future_events = events_from_query(db, "select * from agenda where status=1")
 
     # order lists
-    sorted(past_events, key=lambda _: int(_['date'][2]+_['date'][1]+_['date'][0]))
-    sorted(future_events, key=lambda _: int(_['date'][2]+_['date'][1]+_['date'][0]))
+    past_events = sorted(past_events, key=lambda _: int(_['date'][2]+_['date'][1]+_['date'][0]))
+    future_events = sorted(future_events, key=lambda _: int(_['date'][2]+_['date'][1]+_['date'][0]))
 
     past_events = get_month_forall(past_events)
     future_events = get_month_forall(future_events)
