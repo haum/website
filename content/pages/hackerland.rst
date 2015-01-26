@@ -8,6 +8,15 @@ Hackers, bienvenue !
 
 Vous trouverez ici des liens rien que pour vous :)
 
+Communication externe
+=====================
+
+Pour toute interview, etc.. vous pouvez commencer par lire la page sur la `communication`_ !
+
+.. _communication:
+
+    communication
+
 Arduino
 =======
 
