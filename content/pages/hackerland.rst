@@ -13,9 +13,7 @@ Communication externe
 
 Pour toute interview, etc.. vous pouvez commencer par lire la page sur la `communication`_ !
 
-.. _communication:
-
-    /pages/communication-externe.html
+.. _communication: /pages/communication-externe.html
 
 Arduino
 =======
