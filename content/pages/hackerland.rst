@@ -15,7 +15,7 @@ Pour toute interview, etc.. vous pouvez commencer par lire la page sur la `commu
 
 .. _communication:
 
-    communication
+    /pages/communication-externe.html
 
 Arduino
 =======
