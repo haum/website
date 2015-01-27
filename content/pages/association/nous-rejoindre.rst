@@ -52,7 +52,7 @@ Parlez en à un des membres et il vous renseignera !
 
 Pour ce qui est cotisation, voilà le concept :
 
-- la cotisation annuelle des membres actifs ou des personnes morales est fixée à un montant de 10 euros ;
+- la cotisation annuelle des membres actifs ou des personnes morales est fixée à un montant de 20 euros ;
     Pour obtenir le statut de membre adhérent, la personne devra prendre connaissance des statuts et du règlement intérieur de l'association.
 
     Pour renouveler son adhésion, l'adhérent aura un délai d'un mois après la fin de son adhésion pour payer le montant de la cotisation de l'année suivante.
