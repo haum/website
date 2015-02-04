@@ -4,11 +4,12 @@ Repair Café
 
 :slug: repaircafe
 
-En 2014, la ville du Mans, par le biai de ses conseils de quartier, met en place l'organisation de Repair Café. Un collectif d'associations est créer autour de ce projet. 
+En 2014, la ville du Mans par le biais de ses conseils de quartier souhaite mettre en place l'organisation de "Repair Cafés".
+Un collectif d'associations est alors créé autour de ce projet et celui-ci adhère à l'`association officielle`_.
 
-Celui ci adhère à l'association des `Repair Cafés`_ et met en ligne un site internet  dédié à ces évènements : repaircafe-lemans_.
+Le site internet dédié à l'organisation et la communication autours de ces évènements est mis en ligne début 2015 : repaircafe-lemans_.
 
-.. _Repair Cafés: http://repaircafe.org/fr/
+.. _association officielle: http://repaircafe.org/fr/
 .. _repaircafe-lemans: http://repaircafe-lemans.org
 
 Qu'est-ce qu'un "Repair Café" ?
