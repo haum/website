@@ -247,6 +247,12 @@ footer #about  {
 	#logo {
 		width: auto;
 	}
+	.grid-10 {
+		width: 20%;
+	}
+	.grid-11 {
+		width: 60%;
+	}
 	.grid-12 {
 		width: 50%;
 	}
@@ -336,7 +342,7 @@ div.clearer { clear: both }
 	font-size: 1.9em;
 }
 .lieu {
-	text-align: right;
+	text-align: center;
 	color: #B32C0E;
 	font-weight: bold;
 }

@@ -2,8 +2,8 @@
 {% block content %}
 <section id="content">
 <div class="grid">
-    <div class="grid-13">&nbsp;</div>
-    <div class="grid-13">
+    <div class="grid-10">&nbsp;</div>
+    <div class="grid-11">
 		<h2>AGENDA</h2>
 		<p>Voici les prochains évènements du HAUM. Pour en savoir plus sur un évènement ou nous inviter quelque part,
 		écrivez à la mailing-list ( <a href="mailto:haum_hackerspace@lists.matael.org">haum_hackerspace [AT]
@@ -15,7 +15,7 @@
         <script type="text/javascript">
             $.each(future_events, function(i,e){
                 $('#calendar').append('<div class=event><div class=dateheure><p class=date><span>'+e.date[0]+'</span> '+e.date[1]+' '+e.date[2]+'</p><p class=heure>'+
-e.date[3]+':'+e.date[4]+'</p></div><p class=lieu>'+e.lieu+'</p><p class=descr>'+e.texte+'</p></div>');
+e.date[3]+':'+e.date[4]+'</p></div><p class=lieu>[ '+e.lieu+' ]</p><p class=descr>'+e.texte+'</p></div>');
             });
             $('div.event:odd').css("background-color", '#eeeeee');
         </script>
