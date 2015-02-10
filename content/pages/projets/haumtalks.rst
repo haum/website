@@ -19,15 +19,18 @@ Un retour sur la première conf libre est `disponible ici`_.
 .. _matael: http://twitter.com/matael
 .. _disponible ici: http://blog.matael.org/writing/premiere-conf-libre/
 
-#Retour sur quelques talks
+Retour sur quelques talks
+=========================
 
-## Talk : Introduction au chiffrement de ses mails
+ Talk : Introduction au chiffrement de ses mails
+ -----------------------------------------------
 
 	Date du talk : 15/10/2014 (session 2).
 	Intervenant : Microjoe.
 
-	### Introduction
-
+	Introduction
+	""""""""""""
+	
 	J’ai décidé de faire ce talk dans un but de sensibilisation en montrant que les
 	mails n’étaient pas sécurisés et qu’il était facile d’usurper une identité ou
 	lire les mails d’autres personnes sans qu’elles le sachent.
@@ -36,7 +39,8 @@ Un retour sur la première conf libre est `disponible ici`_.
 	elles restent encore peu connues du grand public ; nous allons donc également
 	voir comment utiliser tout ça !
 
-	### Contenu
+	Contenu
+	"""""""
 
 	Voici un petit résumé du talk :
 
@@ -59,12 +63,14 @@ Un retour sur la première conf libre est `disponible ici`_.
 
 
 
-## Talk : Décryptez vos albums de Ravi Shankar
+	Talk : Décryptez vos albums de Ravi Shankar
+	-------------------------------------------
 
 	Date du talk : fin mai 2014 (session 1).
 	Intervenants : Lucas et Alice.
 
-	### Contenu
+	Contenu
+	"""""""
 
 	Ce talk est une introduction à la musique indienne traditionnelle et notamment aux notions de ragas et de talas. Une liste non-exhaustive des instruments de musique est dressée, ainsi que qu'une présentation d'un concert type.
 
