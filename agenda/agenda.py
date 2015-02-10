@@ -32,8 +32,10 @@ import icalendar
 import pelican
 
 def events_from_query(db, q, func=None):
-
-    db = sqlite3.connect(db)
+    try:
+        db = sqlite3.connect(db)
+    except:
+        return ()
     c = db.cursor()
 
     if not func:
