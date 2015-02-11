@@ -25,7 +25,7 @@ Talks : `"Introduction au chiffrement de ses mails" et "Décryptez vos albums de
 .. _feedoo: http://twitter.com/fblain
 .. _matael: http://twitter.com/matael
 .. _disponible ici: http://blog.matael.org/writing/premiere-conf-libre/
-.. _retour_talks : http://haum.org/haumtalks_cr.html
+.. _retour_talks : /haumtalks_cr.html
 __ retour_talks_
 
 
