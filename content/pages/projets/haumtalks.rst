@@ -10,8 +10,6 @@ Pour proposer un talk ou connaître la date et le lieu de la prochaine session, 
 
 Si vous voulez participer à l'amélioration du site et/ou ouvrir un compte permettant d'organiser des confs, venez en discuter avec nous sur IRC_ (vous pouvez aussi pinger matael_ ou feedoo_) ! 
 
-Un retour sur la première conf libre est `disponible ici`_.
-
 
 Retour sur quelques talks
 =========================
