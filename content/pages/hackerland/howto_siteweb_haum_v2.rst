@@ -45,7 +45,7 @@ Maintenant que votre environnement est prêt, il va vous falloir comprendre/appr
 
 Quelques outils pour comprendre et utiliser *reStructuredText* :
 
-    - La `référence simplifiée <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_ du langage, ou la version `complète <http://docutils.sourceforge.net/rst.html>`_ ;
+    - La `référence simplifiée <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_ du langage, ou la version `complète <http://docutils.sourceforge.net/rst.html>`_
 
 .. _editeur:
 
@@ -55,7 +55,7 @@ Quelques outils pour comprendre et utiliser *reStructuredText* :
 
 Et pour le *Markdown* alors ?
 
-    - La `documentation <http://daringfireball.net/projects/markdown>`_ du langage ;
+    - La `documentation <http://daringfireball.net/projects/markdown>`_ du langage
     - L'editeur_ ReText est également compatible pour la rédaction du Markdown
 
 Pelican apliqué au site du Haum
@@ -74,6 +74,9 @@ La publication
 *update du site web*
 
 ``!updatesite`` dans le canal IRC du `haum <http://irc.lc/freenode/haum>`_
+
+Pensez ensuite a vous remetre sur la branche master du site : ``$ git checkout master``
+
 
 Des liens qui peuvent servir
 ----------------------------
