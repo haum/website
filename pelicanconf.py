@@ -24,7 +24,7 @@ FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
-PLUGINS =  ['plugin-projets.projets']
+PLUGINS =  ['plugin-projets.projets','pelican_flickrtag']
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -53,3 +53,11 @@ AGENDA = create_json('/home/haum/agenda.sqlite',
 
 # Custom Page generated with junja2 template for agenda
 TEMPLATE_PAGES = {'agenda_template.html': 'pages/agenda.html'}
+
+#Flickr settings
+
+FLICKR_API_KEY = ''
+FLICKR_API_SECRET = '' 
+FLICKR_USER = ''
+FLICKR_TAG_CACHE_LOCATION = './tmp_flickr'
+

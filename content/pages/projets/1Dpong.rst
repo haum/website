@@ -2,7 +2,7 @@
 1Dpong
 ======
 
-:slug: 1Dpong
+:slug: 1dpong
 
 Qu'est ce que c'est?
 ====================
@@ -19,13 +19,13 @@ Fabrication
 
 le materiel c'est ce qui subit la force d'atraction de la terre et que l'on transporte a chaque foi que l'on déplace le pong.
 
-On peu le diviser en deux parties: ce que l'on vois, *la boite* et ce que l'on ne vois pas:  l'electronique qui est dans la boite et le programme qui fait agir² cette partie electronique.
+On peu le diviser en deux parties: ce que l'on vois, *la boite* et ce que l'on ne vois pas:  l'electronique qui est dans la boite et le programme qui fait agir cette partie electronique.
 
-- - mise en boite
+- mise en boite
 
 Comme le haum dispose d'une fraiseuse numerique et qu'elle etait en cours de finalisation a l'époque de la réation de ce projet, c'est l'outil qui a été privilégié pour la création du boitier de l'ensemble. la fraiseuse a aussi ete mise a contribution pour la création de circuits *'imprimés'* pour la connection des différents enseembles electronique 
 
-- - electronique
+- electronique
 
 En plus du bandeau de leds qui assure l'affichage on trouve deux parties principales: l'alimentation et le controle
 
@@ -36,11 +36,12 @@ l'alimentation : une alim ATX de PC
 le controle : une carte arduino de format mini avec son interface USB série 
 
 		
-- - logiciel
+ - logiciel
 	
 Utilisation
 ===========
 
+[flickr:id=16329255616]
 
 et apres ?
 ==========
