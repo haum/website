@@ -1,0 +1,12 @@
+<p class="caption-container">
+    <a class="caption" href="{{url}}" target="_blank">
+        <img src="{{raw_url}}"
+            alt="{{title}}"
+            title="{{title}}"
+            class="img-polaroid"
+            {% if FLICKR_TAG_INCLUDE_DIMENSIONS %}
+                width="{{width}}"
+                height="{{height}}"
+            {% endif %} />
+    </a>
+</p>

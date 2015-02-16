@@ -24,6 +24,7 @@ Préparation de l'environnement de travail
 	- Préparer l'environement virtuel : ``$ virtualenv .pelican -ppython2`` (cette commande n'est à faire que la première fois) ;
 	- Activer l'environement virtuel : ``$ source .pelican/bin/activate`` ;
 	- Installer les requirements : ``$ pip install -r requirements.txt`` (cette commande n'est a faire que la premiere fois également) ;
+	- Si vous voulez intégrer a vos pages des photos qui sont disponibles sur flickr il faut intaller un plugin suplementaire, comme ce plugin ne correspondait pas entierrement a nos besoin nous l'avons modifié. Il ne peut donc pas (encore) etre installé avec la commande précédente. Pour l'installer ``$ pip install git+https://github.com/haum/pelican-flickrtag.git`` ;
 	- S'assurer que l'on est bien dans la branche master du dépot :``$ git checkout master`` (/!\\ ne faire aucune modification ailleurs que dans cette branche !) ;
 	- Écrire vos pages_ ;
 	- Générer les pages pour vérifier qu'il n'y a pas d'erreurs : ``$ make html`` ;
