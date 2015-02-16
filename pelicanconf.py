@@ -4,6 +4,8 @@ from __future__ import unicode_literals
 
 import os
 import sys
+from flickr_api import *
+
 sys.path.append(os.curdir)
 
 AUTHOR = u'HAUM'
@@ -56,9 +58,6 @@ TEMPLATE_PAGES = {'agenda_template.html': 'pages/agenda.html'}
 
 #Flickr settings
 
-FLICKR_API_KEY = ''
-FLICKR_API_SECRET = '' 
-FLICKR_USER = ''
 FLICKR_TAG_CACHE_LOCATION = './tmp_flickr'
 FLICKR_TAG_TEMPLATE_NAME = 'images'
 
