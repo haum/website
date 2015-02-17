@@ -1,4 +1,5 @@
-flickr_api/flickr_api.py
+flickr_api/*
+tmp_flickr/*
 planet.rst
 *.swp
 *.pyc
