@@ -5,7 +5,6 @@ from __future__ import unicode_literals
 import os
 import sys
 
-
 sys.path.append(os.curdir)
 
 from flickr_api.flickr_api import *
