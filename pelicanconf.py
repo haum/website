@@ -4,9 +4,11 @@ from __future__ import unicode_literals
 
 import os
 import sys
-from flickr_api.flickr_api import *
+
 
 sys.path.append(os.curdir)
+
+from flickr_api.flickr_api import *
 
 AUTHOR = u'HAUM'
 SITENAME = u'Hacklab au Mans'
