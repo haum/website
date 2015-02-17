@@ -7,7 +7,15 @@ import sys
 
 sys.path.append(os.curdir)
 
-from flickr_api.flickr_api import *
+FLICKR_API_KEY = ''
+FLICKR_API_SECRET = ''
+FLICKR_USER = ''
+FLICKR_TAG_CACHE_LOCATION = './tmp_flickr'
+FLICKR_TAG_TEMPLATE_NAME = 'images'
+try:
+	from flickr_api.flickr_api import *
+except ImportError:
+	pass
 
 AUTHOR = u'HAUM'
 SITENAME = u'Hacklab au Mans'
