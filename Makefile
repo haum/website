@@ -59,6 +59,8 @@ html:
 
 clean:
 	[ ! -d $(OUTPUTDIR) ] || rm -rf $(OUTPUTDIR)
+	[ ! -d ./cache ] || rm -rf ./cache
+	[ ! -f ./tmp_flickr ] || rm ./tmp_flickr
 
 regenerate:
 	$(PELICAN) -r $(INPUTDIR) -o $(OUTPUTDIR) -s $(CONFFILE) $(PELICANOPTS)
