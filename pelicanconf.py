@@ -4,7 +4,7 @@ from __future__ import unicode_literals
 
 import os
 import sys
-from flickr_api import *
+from flickr_api.flickr_api import *
 
 sys.path.append(os.curdir)
 
@@ -55,9 +55,4 @@ AGENDA = create_json('/home/haum/agenda.sqlite',
 
 # Custom Page generated with junja2 template for agenda
 TEMPLATE_PAGES = {'agenda_template.html': 'pages/agenda.html'}
-
-#Flickr settings
-
-FLICKR_TAG_CACHE_LOCATION = './tmp_flickr'
-FLICKR_TAG_TEMPLATE_NAME = 'images'
 
