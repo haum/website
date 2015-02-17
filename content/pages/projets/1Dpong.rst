@@ -10,34 +10,29 @@ Qu'est ce que c'est?
 C'est un jeu qui se joue a deux et qui consiste a renvoyer a son adversaire une "balle" materialisée par un point lumineux se déplacent sur une rangée de LEDs
 
 C'est un systeme qui nous permet de montrer ce que l'on peu faire au sein de l'association
- 
 
-Fabrication
-===========
 
-- materiel
+Fabrications
+============
 
-le materiel c'est ce qui subit la force d'atraction de la terre et que l'on transporte a chaque foi que l'on déplace le pong.
+    - materiel
+        Le materiel c'est ce qui subit la force d'atraction de la terre et que l'on transporte a chaque foi que l'on déplace le pong.
+        
+        On peu le diviser en deux parties: ce que l'on vois: **la boite** et ce que l'on ne vois pas:  l'electronique qui est dans la boite et le programme qui fait agir cette partie electronique.
+        
+			- 	Mise en boite
+			
+				Comme le haum dispose d'une fraiseuse numerique et qu'elle etait en cours de finalisation a l'époque de la réation de ce projet, c'est l'outil qui a été privilégié pour la création du boitier de l'ensemble. la fraiseuse a aussi ete mise a contribution pour la création de circuits *'imprimés'* pour la connection des différents ensembles electronique
+			-	Electronique
+			
+				En plus du badeau de LEDs adressables WS2812  deux autres ensembles: l'alimentation et le controle
 
-On peu le diviser en deux parties: ce que l'on vois, *la boite* et ce que l'on ne vois pas:  l'electronique qui est dans la boite et le programme qui fait agir cette partie electronique.
+				-	l'alimentation : une alim ATX de PC parce que nous l'avions sous la main et qu'elle est capable de fournir les 9A maxi que peuvent réclamer les LED (150 fois 3*20 mA)
+				-	le controle : une carte arduino de format mini avec son interface USB série
 
-- mise en boite
 
-Comme le haum dispose d'une fraiseuse numerique et qu'elle etait en cours de finalisation a l'époque de la réation de ce projet, c'est l'outil qui a été privilégié pour la création du boitier de l'ensemble. la fraiseuse a aussi ete mise a contribution pour la création de circuits *'imprimés'* pour la connection des différents enseembles electronique 
+    - logiciel
 
-- electronique
-
-En plus du bandeau de leds qui assure l'affichage on trouve deux parties principales: l'alimentation et le controle
-
-bandeau de LED : badeau de LEDs adressables WS2812 acheté sur la bay
-
-l'alimentation : une alim ATX de PC
-
-le controle : une carte arduino de format mini avec son interface USB série 
-
-		
- - logiciel
-	
 Utilisation
 ===========
 
