@@ -12,6 +12,7 @@ FLICKR_API_SECRET = ''
 FLICKR_USER = ''
 FLICKR_TAG_CACHE_LOCATION = './tmp_flickr'
 FLICKR_TAG_TEMPLATE_NAME = 'images'
+FLICKR_TAG_PLACE_HOLDER_PICT = "/theme/images/haum.png"
 try:
 	from flickr_api.flickr_api import *
 except ImportError:
