@@ -7,42 +7,50 @@
 Qu'est ce que c'est?
 ====================
 
-C'est un jeu qui se joue a deux et qui consiste a renvoyer a son adversaire une "balle" materialisée par un point lumineux se déplacent sur une rangée de LEDs
+C'est un jeu qui se joue à deux et qui consiste à renvoyer à son adversaire une "balle" materialisée par un point lumineux se déplaçant sur une rangée de LEDs.
 
-C'est un systeme qui nous permet de montrer ce que l'on peu faire au sein de l'association
- 
+C'est un système qui nous permet de montrer ce que l'on peut faire au sein de l'association.
+
 
 Fabrication
 ===========
 
-- materiel
+Matériel
+--------
 
-le materiel c'est ce qui subit la force d'atraction de la terre et que l'on transporte a chaque foi que l'on déplace le pong.
+Le matériel, c'est ce qui subit la force d'attraction de la Terre et que l'on transporte à chaque fois que l'on déplace le Pong.
 
-On peu le diviser en deux parties: ce que l'on vois, *la boite* et ce que l'on ne vois pas:  l'electronique qui est dans la boite et le programme qui fait agir² cette partie electronique.
+On peut le diviser en deux parties: ce que l'on voit, *la boîte* et ce que l'on ne voit pas : l'électronique qui est dans la boîte et le programme qui pilote l'électronique.
 
-- - mise en boite
+Mise en boite
+~~~~~~~~~~~~~
 
-Comme le haum dispose d'une fraiseuse numerique et qu'elle etait en cours de finalisation a l'époque de la réation de ce projet, c'est l'outil qui a été privilégié pour la création du boitier de l'ensemble. la fraiseuse a aussi ete mise a contribution pour la création de circuits *'imprimés'* pour la connection des différents enseembles electronique 
+Comme le HAUM dispose d'une `fraiseuse numérique`_ (en cours de finalisation à l'époque de la création de ce projet), c'est l'outil utilisé pour la création du boîtier. La fraiseuse a aussi été mise à contribution pour la création de circuits «imprimés» indispensables à la connexion des différents ensembles électroniques.
 
-- - electronique
+.. _fraiseuse numérique: /pages/axihaum.html
 
-En plus du bandeau de leds qui assure l'affichage on trouve deux parties principales: l'alimentation et le controle
+Électronique
+~~~~~~~~~~~~
 
-bandeau de LED : badeau de LEDs adressables WS2812 acheté sur la bay
+En plus du ruban de LEDs qui assure l'affichage, on trouve deux parties principales: l'alimentation et le contrôle.
 
-l'alimentation : une alim ATX de PC
+- Ruban de LEDs : ruban de LEDs adressables WS2812 (acheté sur *la bay*)
+- L'alimentation : une alim ATX (récupérée sur un vieux PC)
+- Le contrôle : une carte Arduino Mini avec son interface USB-série
 
-le controle : une carte arduino de format mini avec son interface USB série 
 
-		
-- - logiciel
-	
+Logiciel
+~~~~~~~~
+
+TODO
+
 Utilisation
 ===========
 
 
-et apres ?
+Et après ?
 ==========
 
-Haumtinsel la guirlande de noël
+La suite, est à écrire (une partie est déjà dans `HaumTinsel`_)
+
+.. _HaumTinsel: /pages/haumtinsel.html
