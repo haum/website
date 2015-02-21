@@ -32,13 +32,14 @@ from docutils import nodes
 from pelican.utils import slugify
 
 import os
+import re
 
 def generate_project_list(generator):
     """ Generate a list of projects """
 
     projects = []
     for p in generator.pages:
-        if p.source_path.find('content/pages/'+generator.settings['PROJECTS_DIR']):
+        if p.source_path.find('content/pages/'+generator.settings['PROJECTS_DIR']) > 0:
             projects.append(p)
 
     for p in generator.pages: p.projets = projects
