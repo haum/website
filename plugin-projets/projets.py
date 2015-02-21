@@ -58,10 +58,25 @@ class ProjectList(Directive):
 
         final_list = "<ul id='auto-project-list'>"
         for i in os.walk('content/pages/'+settings['PROJECTS_DIR']).next()[2]:
+
             with open('content/pages/'+settings['PROJECTS_DIR']+'/'+i) as f:
                 parts = publish_parts(f.read(), writer_name="html4css1")
 
-            href = settings['SITEURL']+"pages/"+slugify(parts['title'].replace('/',' '))+'.html'
+            with open('content/pages/'+settings['PROJECTS_DIR']+'/'+i) as f:
+                l = ''
+                slug = ''
+                while not re.match(r'^:slug:', l):
+                    try:
+                        l = f.readline()
+                    except IOError:
+                        print('End of file, no slug found, using title instead')
+                        slug = slugify(parts['title'])
+                        break
+
+                    if not slug:
+                        slug = re.sub(r':slug:(.*)', '\1', l)
+
+            href = settings['SITEURL']+"pages/"+slug+'.html'
             final_list +="\n<li><a href='"+href+"'>"+parts['title']+"</a></li>"
 
         return [nodes.raw('', final_list, format='html')]
