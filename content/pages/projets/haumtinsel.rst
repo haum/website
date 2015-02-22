@@ -74,6 +74,10 @@ La partie serveur tient en `un fichier`_ (environ 100 lignes, donc pas grand cho
 basée sur Bottle qui d'un côté initialise un serveur minimaliste (1 page statique avec du JS et 1 point d'API pour
 ajouter des LEDs) et d'un autre ouvre un *thread* capable d'ajouter périodiquement des flocons à la guirlande.
 
+.. _un fichier: https://github.com/haum/HaumTinsel/blob/master/Games/RunningSquare/server.py
+.. _game/arduino: https://github.com/haum/HaumTinsel/tree/master/Games/Arduino
+.. _tunnel SSH: https://fr.wikipedia.org/wiki/Tunnel_%28r%C3%A9seau_informatique%29
+
 Installation
 ============
 
