@@ -73,8 +73,10 @@ class ProjectList(Directive):
                         slug = slugify(parts['title'])
                         break
 
-                    if not slug:
-                        slug = re.sub(r':slug:(.*)', '\1', l)
+                if not slug:
+                    slug = re.sub(r':slug:(.*)', r'\1', l)
+                    slug  = slug.strip()
+
 
             href = settings['SITEURL']+"pages/"+slug+'.html'
             final_list +="\n<li><a href='"+href+"'>"+parts['title']+"</a></li>"
