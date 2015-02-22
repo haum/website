@@ -12,7 +12,7 @@ guirlande-jeu à afficher à l'extérieur du local.
     Mathieu
 
 
-.. _Pong: /pages/1Dpong.rst
+.. _Pong: /pages/1Dpong.html
 
 
 Qu'est ce que c'est?
@@ -31,7 +31,7 @@ Tout le code est disponible `sur Github`_.
 La suite ne parle que de la partie serveur et jeu, les pages à propos du Pong_ et de PolychrHAUM_ parlent du reste
 
 .. _sur github: https://github.com/haum/HaumTinsel/tree/master/Games
-.. _PolychrHAUM: /pages/polychrhaum.rst
+.. _PolychrHAUM: /pages/polychrhaum.html
 .. _RaspberryPi: http://www.raspberrypi.org/
 .. _BeagleBone Black: http://beagleboard.org/black
 
