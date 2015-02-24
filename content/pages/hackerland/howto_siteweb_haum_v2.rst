@@ -6,34 +6,52 @@ Comment modifier le contenu du site web
 
 howto_siteweb_haum version 2 by jblb (jerome@jblb.net)
 
-Pour l'instant ce ne sont que des notes de travail.
-Vous n'avez pas forcément toutes les infos et certaines qui sont présente içi peuvent être devenues obsolètes...
-
 Préambule
 `````````
 
 Le site web du **HAUM** est un espace collaboratif qui peut être enrichi par chacun de ses membres.
-Cette page se veut un aide mémoire pour que chacun dispose des informations nécéssaires à la réaliation de cette tâche.
+Cette page se veut un aide mémoire pour que chacun dispose des informations nécéssaires à la création de contenu sur ce site.
 
 Préparation de l'environnement de travail
 `````````````````````````````````````````
 
-	- Si se n'est pas déjà fait, installer "Virtualenv" : ``$ sudo apt-get install python-virtualenv`` (Ubuntu) ou ``$ pip install virtualenv``  (MacOS) ;
-	- Cloner ([#]_ [#]_) le dépôt git du site web : ``$ git clone git@github.com:haum/website.git`` ;
-	- Se déplacer vers le repertoire de travail : ``$ cd website`` ;
-	- Préparer l'environement virtuel : ``$ virtualenv .pelican -ppython2`` (cette commande n'est à faire que la première fois) ;
+Installation des pré-requis
++++++++++++++++++++++++++++
+
+Pour isoler l'environnement Python, il est recommandé d'utiliser "Virtualenv" :
+``$ sudo apt-get install python-virtualenv`` (Ubuntu) ou ``$ pip install virtualenv``  (MacOS)
+
+Récupération des sources et configuration initiale
+++++++++++++++++++++++++++++++++++++++++++++++++++
+
+	- Cloner ([#]_) le dépôt git du site web : ``$ git clone git@github.com:haum/website.git`` ;
+	- Se déplacer vers le répertoire de travail : ``$ cd website`` ;
+	- Préparer l'environement virtuel : ``$ virtualenv .pelican -ppython2`` ;
 	- Activer l'environement virtuel : ``$ source .pelican/bin/activate`` ;
-	- Installer les requirements : ``$ pip install -r requirements.txt`` (cette commande n'est a faire que la premiere fois également) ;
-	- Si vous voulez intégrer a vos pages des photos qui sont disponibles sur flickr il faut intaller un plugin suplementaire, comme ce plugin ne correspondait pas entierrement a nos besoin nous l'avons modifié. Il ne peut donc pas (encore) etre installé avec la commande précédente. Pour l'installer ``$ pip install git+https://github.com/haum/pelican-flickrtag.git`` ;
-	- S'assurer que l'on est bien dans la branche master du dépot :``$ git checkout master`` (/!\\ ne faire aucune modification ailleurs que dans cette branche !) ;
-	- Écrire vos pages_ ;
-	- Générer les pages pour vérifier qu'il n'y a pas d'erreurs : ``$ make html`` ;
-	- S'assurrer que l'on est dans la branche master du dépot :``$ git checkout master``
-	- Pousser vos nouvelles pages sur le dépôt git :
-            - Ajouter les pages modifées: ``$ git add vos-pages-modifiées``
-            - Commiter votre travail: ``$ git commit -m"votre commantaire de commit"``
-            - Pousser votre travail sur le dépôt: ``$ git push``
-	- désactiver l'environnement virtuel : ``$ deactivate``
+	- Installer les requirements : ``$ pip install -r requirements.txt`` ;
+
+Voilà, l'ensemble des pré-requis est installé, tant coté système que dans l'environnement local.
+
+Édition et publication du contenu
+`````````````````````````````````
+
+Dans le répertoire *website* se trouve un répertoire *content* où se trouve l'ensemble des pages et autres articles présents sur le site.
+C'est probablement dans ce répertoire que vous allez pouvoir éditer/ajouter vos pages_ ;
+
+Rappel: il faut avoir activé l'environnement virtuel pour produire localement le contenu (``$ source .pelican/bin/activate``) et de préférence avoir mis à jour ses sources (``$ git pull``)
+Note: pour désactiver l'environnement virtuel : ``$ deactivate``
+
+Pour visualiser et verifier le rendu du contenu écrit, on génére localement les pages html : ``$ make html``
+
+Propager ses modifications
+``````````````````````````
+
+S'assurrer que l'on est dans la branche master du dépot :``$ git checkout master``
+
+Pour propager ses modifications sur le dépôt git :
+  - Ajouter les pages modifées/crées: ``$ git add vos-pages-modifiées``
+  - Commiter votre travail: ``$ git commit -m"votre commantaire de commit"``
+  - Pousser votre travail sur le dépôt: ``$ git push``
 
 .. _pages:
 
@@ -59,24 +77,24 @@ Et pour le *Markdown* alors ?
     - La `documentation <http://daringfireball.net/projects/markdown>`_ du langage
     - L'editeur_ ReText est également compatible pour la rédaction du Markdown
 
-Pelican apliqué au site du Haum
--------------------------------
-
-
 La publication
 ``````````````
 
-*de master a upstream*
+La publication s'opère en deux étapes:
 
-    - passer sur la branche upstream : ``$ git checkout upstream``
-    - la faire correspondre a la branche master : ``$ git merge --ff master``
-    - et là s'il y a conflit : ``$ git mergetool``
+Fusion de *master* dans *upstream*
+++++++++++++++++++++++++++++++++++
 
-*update du site web*
+    - passer sur la branche *upstream* : ``$ git checkout upstream``
+    - fusionner la branche *master* sur la branche *upstream*: ``$ git merge --ff master``
+    - en cas de conflit : ``$ git mergetool``
+
+Note: Pensez ensuite à vous repositionnez sur la branche master du site : ``$ git checkout master``
+
+Mise à jour du rendu sur le site
+++++++++++++++++++++++++++++++++
 
 ``!updatesite`` dans le canal IRC du `haum <http://irc.lc/freenode/haum>`_
-
-Pensez ensuite a vous remetre sur la branche master du site : ``$ git checkout master``
 
 
 Des liens qui peuvent servir
@@ -85,10 +103,8 @@ Des liens qui peuvent servir
     - `Markdown Cheatsheet <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>`_
     - `Ce que j’aurais aimé savoir quand j’ai commencé GIT <http://software-craftsman.fr/2014/05/12/a-la-decouverte-de-git/>`_
     
-    
 
 .. [#] Demadez un accès si vous n'en avez pas.
-.. [#] Ce n'est à faire que la première fois. Par la suite, se placer dans le répertoire de travail et faire : ``$ git pull``
 
 .. _Pelican: http://docs.getpelican.com/en/latest/index.html
 .. _ReText: http://sourceforge.net/p/retext/home/ReText

@@ -32,13 +32,14 @@ from docutils import nodes
 from pelican.utils import slugify
 
 import os
+import re
 
 def generate_project_list(generator):
     """ Generate a list of projects """
 
     projects = []
     for p in generator.pages:
-        if p.source_path.find('content/pages/'+generator.settings['PROJECTS_DIR']):
+        if p.source_path.find('content/pages/'+generator.settings['PROJECTS_DIR']) > 0:
             projects.append(p)
 
     for p in generator.pages: p.projets = projects
@@ -57,10 +58,27 @@ class ProjectList(Directive):
 
         final_list = "<ul id='auto-project-list'>"
         for i in os.walk('content/pages/'+settings['PROJECTS_DIR']).next()[2]:
+
             with open('content/pages/'+settings['PROJECTS_DIR']+'/'+i) as f:
                 parts = publish_parts(f.read(), writer_name="html4css1")
 
-            href = settings['SITEURL']+"pages/"+slugify(parts['title'].replace('/',' '))+'.html'
+            with open('content/pages/'+settings['PROJECTS_DIR']+'/'+i) as f:
+                l = ''
+                slug = ''
+                while not re.match(r'^:slug:', l):
+                    try:
+                        l = f.readline()
+                    except IOError:
+                        print('End of file, no slug found, using title instead')
+                        slug = slugify(parts['title'])
+                        break
+
+                if not slug:
+                    slug = re.sub(r':slug:(.*)', r'\1', l)
+                    slug  = slug.strip()
+
+
+            href = settings['SITEURL']+"pages/"+slug+'.html'
             final_list +="\n<li><a href='"+href+"'>"+parts['title']+"</a></li>"
 
         return [nodes.raw('', final_list, format='html')]
