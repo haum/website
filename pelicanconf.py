@@ -16,7 +16,7 @@ FLICKR_TAG_PLACE_HOLDER_PICT = "/theme/images/haum.png"
 FLICKR_TAG_PLACE_HOLDER_LINK = "https://github.com/haum/pelican-flickrtag"
 
 try:
-	from flickr_api.flickr_api import *
+	from flickr_api import *
 except ImportError:
 	pass
 
