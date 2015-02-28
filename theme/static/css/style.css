@@ -247,6 +247,9 @@ footer #about  {
 	#logo {
 		width: auto;
 	}
+	.grid-9 {
+		width: 16.66%;
+	}
 	.grid-10 {
 		width: 20%;
 	}
