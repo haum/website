@@ -163,9 +163,19 @@ header img {
 /** Body **/
 article {
 	padding: 5px;
-	font-size: small;
+	font-size: 0.9em;
+	line-height:1.3em;
 	padding-bottom: 5px 5px 5px 50px;
 	text-align: justify;
+}
+@media only screen and (max-width:765px) {
+	article {
+		padding: 5px;
+		font-size: small;
+		line-height:1.1em;
+		padding-bottom: 5px 5px 5px 50px;
+		text-align: justify;
+	}
 }
 article a {
 	color:#B32C0E;
