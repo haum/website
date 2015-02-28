@@ -17,33 +17,32 @@
 
 {% block content %}
 <section id="content" class="body">
-  <div class="article-header">
-	  <div class="alignright">
-		<abbr class="published" title="{{ article.date.isoformat() }}">
-			Le {{ article.locale_date }}
-		</abbr>
-		{% if article.modified %}
-		<abbr class="modified" title="{{ article.modified.isoformat() }}">
-			Modifié le {{ article.locale_modified }}
-		</abbr>
-		{% endif %}
-	 </div>
-	 <div class="aligncenter">
-		<h1><a href="{{ SITEURL }}/{{ article.url }}"
-			   rel="bookmark"
-			   title="Permalien vers {{ article.title|striptags }}">
-			{{ article.title }}
-		</a></h2>
-		<h3 class="article-subtitle">Par
-			{% for author in article.authors %}
-			  {% if loop.first %}{% elif loop.last %} &{% else %}, {% endif %}
-				  {{ author }}
-			{% endfor %}
-		</h3>
-	 </div>
-  </div>
-  <div class="entry-content">
-    {{ article.content }}
-  </div><!-- /.entry-content -->
+	<div class="grid-9">&nbsp;</div>
+	<div class="grid-23">
+		<div class="article-header">
+			<div class="aligncenter">
+				<h1>{{ article.title }}</h1>
+				<br />
+
+				<abbr class="published" title="{{ article.date.isoformat() }}">
+					Écrit le {{ article.locale_date }}
+				</abbr>
+				{% if article.modified %}
+				<abbr class="modified" title="{{ article.modified.isoformat() }}">
+					Modifié le {{ article.locale_modified }}
+				</abbr>
+				{% endif %}
+				par 
+				{% for author in article.authors %}
+				{% if loop.first %}{% elif loop.last %} &{% else %}, {% endif %}
+				{{ author }}
+				{% endfor %}
+			</div>
+		</div>
+		<div class="entry-content">
+			{{ article.content }}
+		</div><!-- /.entry-content -->
+	</div>
+	<div class="grid-9">&nbsp;</div>
 </section>
 {% endblock %}
