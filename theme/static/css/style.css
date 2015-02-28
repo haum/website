@@ -353,6 +353,7 @@ div.clearer { clear: both }
 	width: 100%;
 	color: #ccc;
 	font-size: 1.9em;
+	line-height: 1.2em;
 }
 .lieu {
 	text-align: center;
