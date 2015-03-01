@@ -7,7 +7,7 @@ AziPOV
 Qu'est ce que c'est?
 ====================
 
-AziPOV est un afficheur tridimentionnel multicolor. Il s'agit d'un appareil que le HAUM souhaite concevoir pour afficher des animations en trois dimensions.
+AziPOV est un afficheur tridimensionnel multicolore. Il s'agit d'un appareil que le HAUM souhaite concevoir pour afficher des animations en trois dimensions.
 
 Le projet est en cours de réflexion. Cette page contient quelques informations sur notre avancement.
 
@@ -36,4 +36,4 @@ Ce type de LEDs n'est pas très onéreux (de l'ordre de 25€ la centaine fin 20
 Et après ?
 ==========
 
-La suite, c'est continuer la réflexion et le contruire...
+La suite, c'est continuer la réflexion et le construire...
