@@ -12,7 +12,7 @@ guirlande-jeu à afficher à l'extérieur du local.
     Mathieu
 
 
-.. _Pong: /pages/1Dpong.html
+.. _Pong: /pages/1dpong.html
 
 
 Qu'est ce que c'est?
