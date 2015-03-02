@@ -13,7 +13,6 @@ icalendar==3.8.3
 ipython==2.2.0
 oauthlib==0.7.2
 pelican==3.5.0
-pelican-flickrtag==0.5.0
 python-dateutil==2.2
 pytz==2014.4
 requests==2.5.1
@@ -21,3 +20,4 @@ requests-oauthlib==0.4.2
 requests-toolbelt==0.3.1
 six==1.9.0
 wsgiref==0.1.2
+git+git://github.com/haum/pelican-flickrtag.git@master#egg=pelican-flickrtag
