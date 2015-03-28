@@ -7,15 +7,14 @@ Un test d'utilisation de Flickr
 :category: test
 :slug: test_flickr
 :authors: jblb
-:summary: test d'integration des photos de flickr dans le blog
+:summary: Test d'intégration des photos de Flickr dans notre blog
 
-flickr_ est un site web de publication de photos, le haum y a une galerie_ . Nous voulions pouvoir l'utiliser pour afficher des photos sur ce site
+Flickr_ est un site web de publication de photos, et le HAUM y a une galerie_. Cette galerie, nous voulions pouvoir l'utiliser afin d'afficher des photos sur notre site.
 
-L'outil de publication que nous utilisons possède un plugin qui permetait de faire ce que nous voulions dans les articles, comme l'intégration des photos içi.
+L'outil de publication que nous utilisons permettait déjà de le faire mais (i) uniquement dans nos articles ce qui était rédhibitoire pour les autres pages du site, (ii) il nécessitait de connaître une clé d'API.
+Nous l'avons donc modifié (hacké ;-) pour pouvoir l'employer dans un cas, comme dans l'autre et ce, sans avoir à diffuser notre clé d'API. De cette manière, nous respectons notre souhait premier en matière de rédaction de contenu sur ce site : qu'elle soit ouverte et collaborative !
 
-Nous l'avons modifié pour pouvoir l'utiliser aussi dans les autres pages de notre site. Comme l'édition de ce site est colaborative nous voulions aussi mettre en place un systeme qui permette a chacun de publier sans avoir besoin de clef d'API pour utiliser ce plugin.
-
-Vous pouvez retrouver le code sur notre github_
+Vous pouvez retrouver le code du plug-in modifié sur notre github_.
 
 Un exemple de l'utilisation avec ces photos
 -------------------------------------------
@@ -24,17 +23,18 @@ Un exemple de l'utilisation avec ces photos
     
     [flickr:id=16329255616] [flickr:id=16168990829]
 
-Tout celà à été possible grace a:
+Tout cela a été possible grâce à:
 
-  - `Chris Streeter`_ l'auteur du plug-in qui a eu la bonne idée de le diffuser sous une licence libre
-  - Matael_ et JackDesBwa_ les codeurs fous du Haum qui ont toujours la solution a vos problèmes de codeur débutant :)
-  - Tous ceux qui font des photos_ pour le Haum
+  - `Chris Streeter`_ l'auteur du plug-in qui a eu la bonne idée de le diffuser sous une licence libre ;
+  - Matael_ et JackDesBwa_ les codeurs fous du HAUM qui ont toujours la solution à vos problèmes de codeur débutant :) ;
+  - Tous ceux qui font/feront des photos_ pour le HAUM.
 
+Merci à eux !
 
 .. _Chris Streeter : https://github.com/streeter/pelican-flickrtag
 .. _JackDesBwa : https://github.com/JackDesBwa
 .. _matael : http://twitter.com/matael
 .. _galerie : https://www.flickr.com/photos/126718549@N08/
 .. _photos : https://www.flickr.com/photos/126718549@N08/
-.. _flickr : https://www.flickr.com/
+.. _Flickr : https://www.flickr.com/
 .. _github : https://github.com/haum/pelican-flickrtag
