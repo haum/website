@@ -43,8 +43,8 @@ Calendrier
 - `Mars 2015`_ : 2ème édition organisée à la `Maison de quartier Georges Moustaki`_, le samedi 14 (14h-18h);
 - `Avril 2015`_ : 3ème édition organisée à la `Salle Henri Barbin`_, le samedi 25 (14h-18h).
 
-.. _Janvier 2015: http://repaircafe-lemans.org/le-31-janvier-2015-maison-pour-tous-jean-moulin/ 
-.. _Mars 2015: http://repaircafe-lemans.org
+.. _Janvier 2015: http://repaircafe-lemans.org/date/31-janvier-2015/ 
+.. _Mars 2015: http://repaircafe-lemans.org/date/14-mars-2015/ 
 .. _Avril 2015: http://repaircafe-lemans.org
 
 
