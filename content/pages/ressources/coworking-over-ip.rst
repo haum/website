@@ -1,4 +1,4 @@
-:slug: coworking_over_ip
+:slug: coworking-over-ip
 
 =================
 Coworking over IP
