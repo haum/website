@@ -4,6 +4,8 @@ Flexagones
 
 :slug: flexagones
 
+.. image:: /images/bannieres_projets/flexagones.1.jpg
+
 Qu'est ce que c'est?
 ====================
 

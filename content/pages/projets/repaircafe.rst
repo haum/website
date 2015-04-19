@@ -4,6 +4,8 @@ Repair Café
 
 :slug: repaircafe
 
+.. image:: /images/bannieres_projets/repaircafe.1.jpg
+
 En 2014, la ville du Mans par le biais de ses conseils de quartier souhaite mettre en place l'organisation de "Repair Cafés".
 Un collectif d'associations est alors créé autour de ce projet et celui-ci rejoint le `mouvement officiel`_.
 

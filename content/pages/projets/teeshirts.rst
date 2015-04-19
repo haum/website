@@ -4,6 +4,8 @@ Tee-shirts
 
 :slug: teeshirts
 
+.. image:: /images/bannieres_projets/teeshirts.1.jpg
+
 Qu'est ce que c'est?
 ====================
 

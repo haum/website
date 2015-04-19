@@ -4,6 +4,8 @@ HAUMTalks
 
 :slug: haumtalks
 
+.. image:: /images/bannieres_projets/haumtalks.1.jpg
+
 Le HAUM organise ponctuellement des sessions d'environ 4 mini-conférences dont le sujet est libre.
 
 Pour proposer un talk ou connaître la date et le lieu de la prochaine session, rdv sur `le site dédié aux talks`_ !

@@ -4,6 +4,7 @@ HAUMTinsel
 
 :slug: haumtinsel
 
+.. image:: /images/bannieres_projets/haumtinsel.1.jpg
 
 Après avoir réalisé le Pong_ et alors que les fêtes de fin d'année approchait. Le HAUM a décidé de faire une
 guirlande-jeu à afficher à l'extérieur du local.
