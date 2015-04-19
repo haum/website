@@ -109,5 +109,5 @@ def register():
     """ Plugin registration """
     directives.register_directive('list-projects', ProjectList)
     pelican.signals.page_generator_finalized.connect(generate_project_list)
-    pelican.signals.static_generator_init.connect(generate_banners_jsonindex);
+    #pelican.signals.static_generator_init.connect(generate_banners_jsonindex); # Wrong signal, output dir is not there yet
 
