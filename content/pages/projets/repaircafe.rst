@@ -29,7 +29,7 @@ Pourquoi le HAUM y participe-t-il ?
 
 Déjà parce que tout le monde peut y participer ! ;)
 
-Ensuite, parce que la philosophie du HAUM est d'apprendre en faisant soit-même, sur la base du volontariat et dans une ambiance d'échange et de partage. Sauf que vouloir apprendre est une chose, savoir par où commencer en est une autre.
+Ensuite, parce que la philosophie du HAUM est d'apprendre en faisant soi-même, sur la base du volontariat et dans une ambiance d'échange et de partage. Sauf que vouloir apprendre est une chose, savoir par où commencer en est une autre.
 Lorsqu'on est confronté à la panne d'un appareil (électroménager par exemple), on ne sait pas toujours par où commencer et/ou on a pas forcément les outils adéquats pour s'y prendre correctement.
 
 En prenant part aux Repair Cafés manceaux, le HAUM souhaite avant tout accompagner les participants en mettant à leur disposition des outils et différents profils de savoir-faire.
