@@ -52,7 +52,7 @@ projectalea_ind = Math.floor(Math.random() * projectalea_list.length)
 projectalea_chosen = projectalea_list[projectalea_ind];
 projectalea_subchosen = projectalea_sublist[projectalea_ind][Math.floor(Math.random() * projectalea_sublist[projectalea_ind].length)];
 document.write('<p><a href="/pages/' + projectalea_chosen + '.html"><img src="/images/bannieres_projets/' + projectalea_chosen + '.' + projectalea_subchosen + '.jpg"/></a></p>');"""
-    dirname = 'output/images/bannieres_projets/'
+    dirname = 'content/images/bannieres_projets/'
     if not os.path.exists(dirname):
         os.makedirs(dirname)
     with open(dirname + "projectalea.js", "w") as f:
