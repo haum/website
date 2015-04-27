@@ -44,12 +44,15 @@ Calendrier
 - `Janvier 2015`_ : 1ère édition organisée à la `Maison pour tous Jean Moulin`_ ;
 - `Mars 2015`_ : 2ème édition organisée à la `Maison de quartier Georges Moustaki`_, le samedi 14 (14h-18h);
 - `Avril 2015`_ : 3ème édition organisée à la `Salle Henri Barbin`_, le samedi 25 (14h-18h).
+- `Juin 2015`_ : 4ème édition organisée à la `Plaine du Ronceray`_, le samedi 6 (14h-18h).
 
 .. _Janvier 2015: http://repaircafe-lemans.org/date/31-janvier-2015/ 
 .. _Mars 2015: http://repaircafe-lemans.org/date/14-mars-2015/ 
 .. _Avril 2015: http://repaircafe-lemans.org
+.. _Juin 2015: http://repaircafe-lemans.org
 
 
 .. _Maison pour tous Jean Moulin: http://www.openstreetmap.org/way/65117462#map=19/47.97490/0.22007 
 .. _Maison de quartier Georges Moustaki: http://www.openstreetmap.org/?mlat=48.0168&mlon=0.2161#map=15/48.0168/0.2161
 .. _Salle Henri Barbin: http://www.openstreetmap.org/way/65134049#map=18/47.98183/0.20986 
+.. _Plaine du Ronceray: http://www.openstreetmap.org/way/65134049#map=18/47.98183/0.20986
