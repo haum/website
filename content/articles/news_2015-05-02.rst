@@ -1,0 +1,35 @@
+===============================================
+Des betteraves, du charbon et un peu de souffre
+===============================================
+
+:date: 2015-05-02 19:00
+:tags: talks
+:category: news
+:slug: news_2015-05-02
+:authors: neomilium matael
+:summary: Des betteraves, du charbon et un peu de souffre(ance?)
+
+Aujourd'hui, comme Twitter l'a su, mais uniquement après IRC, nous avons ouvert le HAUM.
+
+L'occasion pour nous de mettre à jour notre serveur, qui héberge notamment le wiki_; Et oui, Debian jessie_ est sortie!
+
+Des fois, les mises à jour à jour se passent bien mais souvent.. non :)
+
+Cette fois n'a pas dérogé à la règle : sans raison valable, *a priori*, il nous a fallu redémarrer des services qui n'auraient pas dû l'être pour que l'authentification LDAP_ soit à nouveau fonctionnelle.
+Pour ceux qui cherchent encore, un simple ``service nscd restart`` resout les problèmes de cache, bien cachés...
+
+Donc, après quelques presque-heures de résolution d'un problème d'LDAP inexistant, nous avons fait face à une autre joyeuseté liée à la mise à jour : les services web ne fonctionnaient plus et les logs cryptiques n'ont pas aidé. Au final, c'est une simple convention de nommage des fichiers de configuration d'Apache qui nous mettait dedans : il faut une "extension" .conf aux fichiers situés dans ``/etc/apache2/sites-available``.
+
+Pendant ce temps, nous avons également mis en place un service MPD_ sur un petit nouveau : **sulfur**, un SBC_ dont on taira le type par respect de la vie privée (des ordinateurs), parce que Oui! ça manque en ce moment.
+*Note: la phrase précédente très vite à lire, le RPI en question met beaucoup plus de temps à comprendre.. oups, tant pis pour la vie privée (c'est la DCRI qui l'a dit...)*
+
+Ensuite, pour satifaire MPD, rien de tel qu'une cure de betterave_! Mais ça, nous aurons l'occasion de vous en reparler bientôt...
+
+Pour les prochaines sessions, venez nourrir MPD, il est vorace!
+
+.. _wiki : https://wiki.haum.org
+.. _jessie : https://www.debian.org/releases/index.fr.html
+.. _LDAP : https://fr.wikipedia.org/wiki/LDAP
+.. _MPD : http://musicpd.org
+.. _betterave : http://beets.radbox.org
+.. _SBC: https://fr.wikipedia.org/wiki/Ordinateur_%C3%A0_carte_unique
