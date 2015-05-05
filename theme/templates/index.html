@@ -7,59 +7,84 @@
 {% endblock %}
 
 		#}
-<div class="grid">
+	<div class="grid-9">&nbsp;</div>
     <div class="grid-23">
-        <div class="aligncenter">
-            <img src="images/viens-au-haum.png"/>
+		<h1>Bienvenue</h1>
+		<p>
+		Le &laquo; Hackerspace Au Mans &raquo; (HAUM) est une association sarthoise adepte de la philosophie du "Faites-le vous-même" ("<a href="http://fr.wikipedia.org/wiki/Do_it_yourself" target="_blank">Do-It-Yourself</a>" en anglais). Ouverte à tou(te)s, si l'envie vous démange de comprendre comment fonctionnent les objets du quotidien qui vous entourent, que votre esprit fourmille d'idées et comme vous <strike>aimez</strike> adorez bricoler, alors vous êtes comme nous ! Bienvenue !
+		</p>
+		<div class="calendar">
+			<h2><a href="/pages/agenda.html">PROCHAINS ÉVÈNEMENTS</a></h2>
+			<div class=clearer>&nbsp;</div>
 		</div>
-		<div id="blog">
-			<h2>BLOG &amp; PLANET</h2>
-            <ul class="post-list">
-            <br />
-			{% for article in articles_page.object_list %}
-				<li>
-					<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.summary|striptags }}">
-						{{ article.title }}
-					</a>
-					par {% for author in article.authors %}
-							{% if loop.first %}{% elif loop.last %} &{% else %}, {% endif %}
-								{{ author }}
-						{% endfor %}
-                        <!-- le {{ article.locale_date }} -->
-                    </li>
-                <br />
-			{% endfor %}
-            {% for article in PLANET %}
-				<li><a href="{{ article[1] }}">{{ article[0] }}</a> par {{ article[2] }}</li>
-                <br />
-			{% endfor %}
-			{% include 'pagination.html' %}
-			</ul>
-		</div>
-	</div>
-
-    <div class="grid-13">
-
-		<h2><a href="/pages/agenda.html">AGENDA</a>
-			<span class='small'>(<a href="calendar/calendar.ics"/>.ics</a>)</span></h2>
 		<div id=calendar></div><div class=clearer>&nbsp;</div>
-		<script type="text/javascript" src="{{ SITEURL }}/calendar/calendar.js"></script>
-		<script type="text/javascript">
-			var i=0;
-			while (i < 4){
-				var e = future_events[i];
-				$('#calendar').append(
-					'<div class=event><div class=dateheure><p class=date><span>'+e.date[0]+'</span> '+e.date[1]+' '+e.date[2]+'</p><p class=heure>'+
-					e.date[3]+':'+e.date[4]+'</p></div><p class=lieu>'+e.lieu+'</p><p class=descr>'+e.texte+'</p></div>'
-				);
-
-				i++;
-			}
-		</script>
-		<h3>Fil twitter</h3>
-		<a class="twitter-timeline" href="https://twitter.com/haum72" data-widget-id="454141251034427392" data-chrome="nofooter">Suivre @haum72 sur Twitter</a>
-		<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-
+		<p>Vous pouvez <a href="calendar/calendar.ics"/>importer notre agenda</a> pour être automatquement informé(e) de nos évènements, ou simplement le <a href="pages/agenda.html">consulter en ligne</a>.</p>
+		<h2>ZOOM SUR UN PROJET <small>(aléatoire)</small></h2>
+		<script type="text/javascript" src="/images/bannieres_projets/projectalea.js"></script>
+		<p><a href="/pages/les-projets.html">Voir tous les projets</a></p>
+		<div class="grid">
+			<div class="grid-12">
+				<h2>BLOG &amp; PLANET</h2>
+				<ul class="post-list">
+					<br />
+					{% for article in articles_page.object_list %}
+					<li>
+						<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.summary|striptags }}">
+							{{ article.title }}
+						</a>
+						par {% for author in article.authors %}
+						{% if loop.first %}{% elif loop.last %} &{% else %}, {% endif %}
+						{{ author }}
+						{% endfor %}
+						<!-- le {{ article.locale_date }} -->
+					</li>
+					<br />
+					{% endfor %}
+					{% for article in PLANET %}
+					<li><a href="{{ article[1] }}">{{ article[0] }}</a> par {{ article[2] }}</li>
+					<br />
+					{% endfor %}
+					{% include 'pagination.html' %}
+				</ul>
+			</div>
+			<div class="grid-12">
+				<h3>FIL TWITTER</h3>
+				<a class="twitter-timeline" href="https://twitter.com/haum72" data-widget-id="454141251034427392" data-chrome="nofooter">Suivre @haum72 sur Twitter</a>
+				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+			</div>
+		</div>
 	</div>
+	<div class="grid-9">&nbsp;</div>
 </section><!-- /#content -->
+<script type="text/javascript" src="{{ SITEURL }}/calendar/calendar.js"></script>
+<script type="text/javascript">
+	var i=0;
+	while (i < 4){
+		var e = future_events[i];
+		var d = new Date(e.isodate);
+		var weekday = new Array(7);
+		weekday[0] = "dim.";
+		weekday[1] = "lun.";
+		weekday[2] = "mar.";
+		weekday[3] = "mer.";
+		weekday[4] = "jeu.";
+		weekday[5] = "ven.";
+		weekday[6] = "sam.";
+		$('#calendar').append(
+			'<div class="event">' +
+			'  <time datetime="' + e.isodate + '" class="dateheure">' +
+			'    <em>' + weekday[d.getDay()] + '</em>' +
+			'    <span>' + d.getDate() + '</span>' +
+			'    <strong>' + e.date[1] + ' ' + d.getFullYear() + '</strong>' +
+			'    <time>' + d.getHours() + ':' + e.date[4] + '</time>' +
+			'  </time>' +
+			'  <p class="lieu">' + e.lieu + '</p>' +
+			'  <p class="descr">' + e.texte + '</p>' +
+			'</div>'
+		);
+		$('div.event:odd').css("background-color", '#eeeeee');
+
+		i++;
+	}
+</script>
 {% endblock content %}

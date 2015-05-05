@@ -34,6 +34,30 @@ from pelican.utils import slugify
 import os
 import re
 
+def generate_banners_jsonindex(generator):
+    listing = {}
+    sublistingstr = ''
+    script ="projectalea_list = Array('"
+    for i in os.walk('content/images/bannieres_projets').next()[2]:
+	sp = i.split('.')
+	if len(sp) == 3 and sp[2] == 'jpg':
+		listing[sp[0]] = sp[1]
+    script += "', '".join(listing)
+    script += "');\n"
+    script += "projectalea_sublist = Array(Array('"
+    script += "'), Array('".join((", ".join(listing[n1]) for n1 in listing))
+    script += "'));"
+    script += """
+projectalea_ind = Math.floor(Math.random() * projectalea_list.length)
+projectalea_chosen = projectalea_list[projectalea_ind];
+projectalea_subchosen = projectalea_sublist[projectalea_ind][Math.floor(Math.random() * projectalea_sublist[projectalea_ind].length)];
+document.write('<p><a href="/pages/' + projectalea_chosen + '.html"><img src="/images/bannieres_projets/' + projectalea_chosen + '.' + projectalea_subchosen + '.jpg"/></a></p>');"""
+    dirname = 'content/images/bannieres_projets/'
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
+    with open(dirname + "projectalea.js", "w") as f:
+        f.write(script)
+
 def generate_project_list(generator):
     """ Generate a list of projects """
 
@@ -88,4 +112,5 @@ def register():
     """ Plugin registration """
     directives.register_directive('list-projects', ProjectList)
     pelican.signals.page_generator_finalized.connect(generate_project_list)
+    pelican.signals.static_generator_init.connect(generate_banners_jsonindex);
 

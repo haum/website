@@ -4,6 +4,11 @@ Nous Rejoindre
 
 :slug: nous-rejoindre
 
+.. image:: ../images/viens-au-haum.png
+ :scale: 50 %
+ :align: center
+ :alt: Viens nous rejoindre au HAUM !
+
 Rencontrer le HAUM
 ==================
 

@@ -27,9 +27,6 @@ footer, header, hgroup, menu, nav, section {
 body {
     line-height: 1;
 }
-ol, ul {
-    list-style: none;
-}
 blockquote, q {
     quotes: none;
 }
@@ -44,7 +41,7 @@ ins {
 del {
     text-decoration: line-through;
 }
- 
+
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -127,7 +124,7 @@ header {
 	padding: 2px 2px 8px 2px;
 }
 header h1 {
-	margin-top: 10px; 
+	margin-top: 10px;
 	border: none;
 }
 header p {
@@ -163,9 +160,19 @@ header img {
 /** Body **/
 article {
 	padding: 5px;
-	font-size: small;
+	font-size: 0.9em;
+	line-height:1.3em;
 	padding-bottom: 5px 5px 5px 50px;
 	text-align: justify;
+}
+@media only screen and (max-width:765px) {
+	article {
+		padding: 5px;
+		font-size: small;
+		line-height:1.1em;
+		padding-bottom: 5px 5px 5px 50px;
+		text-align: justify;
+	}
 }
 article a {
 	color:#B32C0E;
@@ -247,6 +254,9 @@ footer #about  {
 	#logo {
 		width: auto;
 	}
+	.grid-9 {
+		width: 16.66%;
+	}
 	.grid-10 {
 		width: 20%;
 	}
@@ -319,6 +329,7 @@ div.clearer { clear: both }
 	width: 100%;
 }
 .event {
+	display: block;
 	width: 100%;
 	padding: 10px;
 	float: left;
@@ -330,18 +341,23 @@ div.clearer { clear: both }
 	text-align: center;
 	font-size:1.4em;
 }
-.date, .heure {
+.dateheure em, .dateheure strong, .dateheure time {
 	text-transform: uppercase;
 	color: #B32C0E;
 	font-weight: bold;
-}
-.date > span {
 	display: block;
-	width: 100%;
+}
+.dateheure em {
+	font-size: 75%;
+}
+.dateheure span {
+	display: block;
+	font-weight: bold;
 	color: #ccc;
 	font-size: 1.9em;
+	line-height: 1.2em;
 }
-.lieu {
+.dateheure .lieu {
 	text-align: center;
 	color: #B32C0E;
 	font-weight: bold;

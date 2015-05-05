@@ -49,6 +49,8 @@ def events_from_query(db, q, func=None):
 
             sql_date = row[3].split(' ')
             new_event['date'] = sql_date[0].split('/') + sql_date[1].split(':')
+            py_date = datetime(int(new_event['date'][2]), int(new_event['date'][1]), int(new_event['date'][0]), int(new_event['date'][3]), int(new_event['date'][4]))
+            new_event['isodate'] = py_date.isoformat()
 
             events.append(new_event)
 

@@ -4,6 +4,8 @@
 
 :slug: 1dpong
 
+.. image:: /images/bannieres_projets/1dpong.1.jpg
+
 Qu'est ce que c'est?
 ====================
 

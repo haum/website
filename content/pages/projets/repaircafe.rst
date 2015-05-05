@@ -4,6 +4,8 @@ Repair Café
 
 :slug: repaircafe
 
+.. image:: /images/bannieres_projets/repaircafe.1.jpg
+
 En 2014, la ville du Mans par le biais de ses conseils de quartier souhaite mettre en place l'organisation de "Repair Cafés".
 Un collectif d'associations est alors créé autour de ce projet et celui-ci rejoint le `mouvement officiel`_.
 
@@ -29,7 +31,7 @@ Pourquoi le HAUM y participe-t-il ?
 
 Déjà parce que tout le monde peut y participer ! ;)
 
-Ensuite, parce que la philosophie du HAUM est d'apprendre en faisant soit-même, sur la base du volontariat et dans une ambiance d'échange et de partage. Sauf que vouloir apprendre est une chose, savoir par où commencer en est une autre.
+Ensuite, parce que la philosophie du HAUM est d'apprendre en faisant soi-même, sur la base du volontariat et dans une ambiance d'échange et de partage. Sauf que vouloir apprendre est une chose, savoir par où commencer en est une autre.
 Lorsqu'on est confronté à la panne d'un appareil (électroménager par exemple), on ne sait pas toujours par où commencer et/ou on a pas forcément les outils adéquats pour s'y prendre correctement.
 
 En prenant part aux Repair Cafés manceaux, le HAUM souhaite avant tout accompagner les participants en mettant à leur disposition des outils et différents profils de savoir-faire.
@@ -40,11 +42,17 @@ Calendrier
 ----------
 
 - `Janvier 2015`_ : 1ère édition organisée à la `Maison pour tous Jean Moulin`_ ;
-- `Mars 2015`_ : 2nd édition organisée à la `Maison de quartier Georges Moustaki`_, le samedi 14 de 14h-18h.
+- `Mars 2015`_ : 2ème édition organisée à la `Maison de quartier Georges Moustaki`_, le samedi 14 (14h-18h);
+- `Avril 2015`_ : 3ème édition organisée à la `Salle Henri Barbin`_, le samedi 25 (14h-18h).
+- `Juin 2015`_ : 4ème édition organisée à la `Plaine du Ronceray`_, le samedi 6 (14h-18h).
 
-.. _Janvier 2015: http://repaircafe-lemans.org/le-31-janvier-2015-maison-pour-tous-jean-moulin/ 
-.. _Mars 2015: http://repaircafe-lemans.org
+.. _Janvier 2015: http://repaircafe-lemans.org/date/31-janvier-2015/ 
+.. _Mars 2015: http://repaircafe-lemans.org/date/14-mars-2015/ 
+.. _Avril 2015: http://repaircafe-lemans.org
+.. _Juin 2015: http://repaircafe-lemans.org
 
 
 .. _Maison pour tous Jean Moulin: http://www.openstreetmap.org/way/65117462#map=19/47.97490/0.22007 
 .. _Maison de quartier Georges Moustaki: http://www.openstreetmap.org/?mlat=48.0168&mlon=0.2161#map=15/48.0168/0.2161
+.. _Salle Henri Barbin: http://www.openstreetmap.org/way/65134049#map=18/47.98183/0.20986 
+.. _Plaine du Ronceray: http://www.openstreetmap.org/way/65134049#map=18/47.98183/0.20986
