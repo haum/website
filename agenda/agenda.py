@@ -27,6 +27,7 @@ import sqlite3
 import json
 
 from datetime import date, datetime
+import pytz
 
 import icalendar
 import pelican
@@ -73,6 +74,8 @@ def ical_from_dbcursor(q):
     Function to pass along with events_from_query
     """
 
+    # initialize timezone
+    tz = pytz.timezone('Europe/Paris')
     events = []
     for e in q:
         event = icalendar.Event()
@@ -82,7 +85,7 @@ def ical_from_dbcursor(q):
 
         sql_date = e[3].split(' ')
         d = map(int, sql_date[0].split('/') + sql_date[1].split(':'))
-        date = datetime(d[2], d[1], d[0], d[3], d[4])
+        date = tz.localize(datetime(d[2], d[1], d[0], d[3], d[4]))
         event.add('dtstart', date)
         events.append(event)
 
