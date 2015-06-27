@@ -77,9 +77,15 @@ document.write("<p>" + randomsubtitle[Math.floor((Math.random() * randomsubtitle
 					</div>
 					#}
                     <div class="grid-12">
-                        <p>Rendez-vous...</p>
-			<p>Tous les mardis à 18h</p>
-			<p>Tous les vendredis à 18h30</p>
+                        <p id="spaceapi_open"></p>
+			<script type="text/javascript">
+$(document).ready(function() {
+	$.getJSON("http://spaceapi.net/new/space/haum/status/json", function(data) {
+		if (data.state.open)
+			$("#spaceapi_open").html('<img src="/theme/images/open.png">');
+	});
+});
+</script>
 						<h2>HAUMenu...</h2>
 						<ul>
 							<li><a href="{{ SITEURL }}/pages/cest-quoi-le-haum.html">C'est quoi le HAUM ?</a></li>
