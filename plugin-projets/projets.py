@@ -34,14 +34,14 @@ from pelican.utils import slugify
 import os
 import re
 
+
 def generate_banners_jsonindex(generator):
     listing = {}
-    sublistingstr = ''
-    script ="projectalea_list = Array('"
+    script = "projectalea_list = Array('"
     for i in os.walk('content/images/bannieres_projets').next()[2]:
-	sp = i.split('.')
-	if len(sp) == 3 and sp[2] == 'jpg':
-		listing[sp[0]] = sp[1]
+        sp = i.split('.')
+        if len(sp) == 3 and sp[2] == 'jpg':
+            listing[sp[0]] = sp[1]
     script += "', '".join(listing)
     script += "');\n"
     script += "projectalea_sublist = Array(Array('"
@@ -58,24 +58,31 @@ document.write('<p><a href="/pages/' + projectalea_chosen + '.html"><img src="/i
     with open(dirname + "projectalea.js", "w") as f:
         f.write(script)
 
+
 def generate_project_list(generator):
     """ Generate a list of projects """
 
     projects = []
+
     for p in generator.pages:
-        if p.source_path.find('content/pages/'+generator.settings['PROJECTS_DIR']) > 0:
+        path = 'content/pages/'+generator.settings['PROJECTS_DIR']
+        if p.source_path.find(path) > 0:
             projects.append(p)
 
-    for p in generator.pages: p.projets = projects
+    for p in generator.pages:
+        p.projets = projects
+
     return generator
+
 
 class ProjectList(Directive):
     required_arguments = 0
     optional_arguments = 0
+
     ioption_spec = {
-            'lexer': directives.unchanged,
-            'encoding': directives.encoding,
-            }
+        'lexer': directives.unchanged,
+        'encoding': directives.encoding,
+    }
 
     def run(self):
         settings = pelican.settings.get_settings_from_file('pelicanconf.py')
@@ -93,17 +100,18 @@ class ProjectList(Directive):
                     try:
                         l = f.readline()
                     except IOError:
-                        print('End of file, no slug found, using title instead')
+                        print('End of file, no slug found, '
+                              'using title instead')
                         slug = slugify(parts['title'])
                         break
 
                 if not slug:
                     slug = re.sub(r':slug:(.*)', r'\1', l)
-                    slug  = slug.strip()
+                    slug = slug.strip()
 
-
-            href = settings['SITEURL']+"pages/"+slug+'.html'
-            final_list +="\n<li><a href='"+href+"'>"+parts['title']+"</a></li>"
+            href = settings['SITEURL'] + "pages/" + slug + '.html'
+            final_list += "\n<li><a href='" + href + "'>" + parts['title'] \
+                + "</a></li>"
 
         return [nodes.raw('', final_list, format='html')]
 
@@ -112,5 +120,4 @@ def register():
     """ Plugin registration """
     directives.register_directive('list-projects', ProjectList)
     pelican.signals.page_generator_finalized.connect(generate_project_list)
-    pelican.signals.static_generator_init.connect(generate_banners_jsonindex);
-
+    pelican.signals.static_generator_init.connect(generate_banners_jsonindex)

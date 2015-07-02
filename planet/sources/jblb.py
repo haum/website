@@ -27,10 +27,11 @@
 
 """
 
-from  bs4 import BeautifulSoup
+from bs4 import BeautifulSoup
 import requests
 
 SOURCE_URL = "http://jblb.net/blog/tag/haum"
+
 
 def fetch():
     soup = BeautifulSoup(requests.get(SOURCE_URL).text)
@@ -40,5 +41,3 @@ def fetch():
         _.find('a').get('href'),
         'Jérôme (jblb)'
     ) for _ in soup.findAll('h2', {'class': 'title-index'})]
-
-

@@ -30,7 +30,7 @@ from datetime import date, datetime
 import pytz
 
 import icalendar
-import pelican
+
 
 def events_from_query(db, q, func=None):
     try:
@@ -43,13 +43,18 @@ def events_from_query(db, q, func=None):
         events = []
         for row in c.execute(q):
             new_event = {
-                    'lieu': row[0] + " - " + row[1],
-                    'texte': row[2]
-                    }
+                'lieu': row[0] + " - " + row[1],
+                'texte': row[2]
+            }
 
             sql_date = row[3].split(' ')
             new_event['date'] = sql_date[0].split('/') + sql_date[1].split(':')
-            py_date = datetime(int(new_event['date'][2]), int(new_event['date'][1]), int(new_event['date'][0]), int(new_event['date'][3]), int(new_event['date'][4]))
+            py_date = datetime(
+                int(new_event['date'][2]),
+                int(new_event['date'][1]),
+                int(new_event['date'][0]),
+                int(new_event['date'][3]),
+                int(new_event['date'][4]))
             new_event['isodate'] = py_date.isoformat()
 
             events.append(new_event)
@@ -60,12 +65,14 @@ def events_from_query(db, q, func=None):
         return func(c.execute(q))
 
 
-
 def get_month_forall(events_list):
 
     for i in range(len(events_list)):
         event = events_list[i]
-        py_date = date(int(event['date'][2]), int(event['date'][1]), int(event['date'][0]))
+        py_date = date(
+            int(event['date'][2]),
+            int(event['date'][1]),
+            int(event['date'][0]))
         events_list[i]['date'][1] = py_date.strftime('%b')
 
     return events_list
@@ -104,12 +111,23 @@ def create_json(db, calendar_file, icalfile=None):
     """
 
     # fetch events
-    past_events = events_from_query(db, "select * from agenda where status=0")
-    future_events = events_from_query(db, "select * from agenda where status=1")
+    past_events = events_from_query(
+        db, "select * from agenda where status=0")
+
+    future_events = events_from_query(
+        db, "select * from agenda where status=1")
 
     # order lists
-    past_events = sorted(past_events, key=lambda _: int(_['date'][2]+_['date'][1]+_['date'][0]))
-    future_events = sorted(future_events, key=lambda _: int(_['date'][2]+_['date'][1]+_['date'][0]))
+    def keyfun(_):
+        return int(_['date'][2]+_['date'][1]+_['date'][0])
+
+    past_events = sorted(
+        past_events,
+        key=keyfun)
+
+    future_events = sorted(
+        future_events,
+        key=keyfun)
 
     past_events = get_month_forall(past_events)
     future_events = get_month_forall(future_events)
@@ -121,7 +139,7 @@ def create_json(db, calendar_file, icalfile=None):
 var past_events = {0};
 var future_events = {1};
 var events = past_events + future_events;
-""".format(json.dumps(past_events),json.dumps(future_events))
+""".format(json.dumps(past_events), json.dumps(future_events))
 
     with open(calendar_file, 'w') as f:
 
@@ -131,11 +149,11 @@ var events = past_events + future_events;
     if icalfile:
 
         cal = icalendar.Calendar()
-        sql_events = events_from_query(db, "select * from agenda where status=1", ical_from_dbcursor)
+        sql_events = events_from_query(
+            db, "select * from agenda where status=1", ical_from_dbcursor)
+
         for se in sql_events:
             cal.add_component(se)
 
         with open(icalfile, 'w') as f:
             f.write(cal.to_ical())
-
-
