@@ -50,7 +50,7 @@ S'assurrer que l'on est dans la branche master du dépot :``$ git checkout maste
 
 Pour propager ses modifications sur le dépôt git :
   - Ajouter les pages modifées/crées: ``$ git add vos-pages-modifiées``
-  - Commiter votre travail: ``$ git commit -m"votre commantaire de commit"``
+  - Commiter votre travail: ``$ git commit -m"votre commentaire de commit"``
   - Pousser votre travail sur le dépôt: ``$ git push``
 
 .. _pages:
@@ -102,7 +102,7 @@ Des liens qui peuvent servir
 
     - `Markdown Cheatsheet <https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet>`_
     - `Ce que j’aurais aimé savoir quand j’ai commencé GIT <http://software-craftsman.fr/2014/05/12/a-la-decouverte-de-git/>`_
-    
+
 
 .. [#] Demadez un accès si vous n'en avez pas.
 
