@@ -25,7 +25,7 @@ Regardez soit le `github de la formation`_ soit le `site dédié`_ !
 .. _github de la formation: https://github.com/haum/forma_arduino
 .. _site dédié: http://haum.org/arduino
 
-Legal
+Légal
 =====
 
 Tout ce qui concerne l'existence légale du HAUM est disponible `sur github`_.
@@ -51,6 +51,6 @@ Voilà quelques pages qui pourraient vous être utile :
 Mettre à jour le site web
 =========================
 
-La mise à jour de ce site est un peu particulière. POur plus d'infos, jetez un oeil à `ce how-to`_ mitonné par Jérôme.
+La mise à jour de ce site est un peu particulière. Pour plus d'infos, jetez un oeil à `ce how-to`_ mitonné par Jérôme.
 
 .. _ce how-to: /pages/comment-modifier-le-contenu-du-site-web.html
