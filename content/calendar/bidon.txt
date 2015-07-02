@@ -1,0 +1,2 @@
+Ce fichier est un fichier bidon qui sert uniquement à faire indexer ce dossier
+par git. Merci de ne pas le supprimer.
