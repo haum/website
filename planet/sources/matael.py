@@ -31,10 +31,7 @@ import feedparser as fp
 
 SOURCE_URL = 'http://blog.matael.org/writing/tagged/haum/feed'
 
+
 def fetch():
-    return [(_['title'], _['link'], 'Mathieu (matael)') for _ in fp.parse(SOURCE_URL)['entries']]
-
-
-
-
-
+    return [(_['title'], _['link'], 'Mathieu (matael)')
+            for _ in fp.parse(SOURCE_URL)['entries']]

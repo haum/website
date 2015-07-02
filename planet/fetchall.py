@@ -37,6 +37,7 @@ Planet
 
 """
 
+
 def output(f_res):
     # f_res : fetch results
 
@@ -44,9 +45,10 @@ def output(f_res):
         out.write(HEADER)
 
         for r in f_res:
-            out.write('`'+r[0].encode('utf8')+'`__ par '+r[2]+'\n')
-            out.write('~'*(9+len(r[0]+r[2]))+'\n\n')
-            out.write('__ '+r[1]+'\n\n')
+            out.write('`' + r[0].encode('utf8') + '`__ par ' + r[2] + '\n')
+            out.write('~' * (9 + len(r[0] + r[2])) + '\n\n')
+            out.write('__ ' + r[1] + '\n\n')
+
 
 def fetch(dirname):
     # récupère la liste des scripts source
@@ -56,16 +58,17 @@ def fetch(dirname):
     fetch_results = []
 
     for i in glob(dirname+'/*.py'):
-        if i!=dirname+'/__init__.py':
-            a = __import__(i.replace('/','.').replace('.py', ''))
-            fetch_results += a.sources.__getattribute__(i.replace(dirname+'/','').replace('.py','')).fetch()
+        if i != dirname + '/__init__.py':
+            a = __import__(i.replace('/', '.').replace('.py', ''))
+            attr = i.replace(dirname + '/', '').replace('.py', '')
+            fetch_results += a.sources.__getattribute__(attr).fetch()
+
     return fetch_results
 
-def main():
 
+def main():
     output(fetch('sources'))
 
 
-
-
-if __name__=='__main__':main()
+if __name__ == '__main__':
+    main()
