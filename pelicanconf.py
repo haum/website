@@ -12,8 +12,8 @@ FLICKR_API_SECRET = ''
 FLICKR_USER = ''
 FLICKR_TAG_CACHE_LOCATION = './tmp_flickr'
 FLICKR_TAG_TEMPLATE_NAME = 'images'
-FLICKR_TAG_PLACE_HOLDER_PICT = "/theme/images/haum.png"
-FLICKR_TAG_PLACE_HOLDER_LINK = "https://github.com/haum/pelican-flickrtag"
+FLICKR_TAG_PLACE_HOLDER_PICT = '/theme/images/haum.png'
+FLICKR_TAG_PLACE_HOLDER_LINK = 'https://github.com/haum/pelican-flickrtag'
 
 try:
 	from flickr_api import *
@@ -22,7 +22,7 @@ except ImportError:
 
 AUTHOR = u'HAUM'
 SITENAME = u'Hacklab au Mans'
-SITEURL= '/'
+SITEURL = '/'
 
 PROJECTS_DIR = 'projets'
 
@@ -38,7 +38,7 @@ FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
-PLUGINS =  ['plugin-projets.projets','pelican_flickrtag']
+PLUGINS = ['plugin-projets.projets', 'pelican_flickrtag']
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -53,13 +53,13 @@ SOCIAL = (('You can add links in your config file', '#'),
 DEFAULT_PAGINATION = 10
 
 # Uncomment following line if you want document-relative URLs when developing
-#RELATIVE_URLS = True
+# RELATIVE_URLS = True
 
-# planet regeneration
+# Planet regeneration
 from planet.fetchall import fetch
 PLANET = fetch('planet/sources')
 
-# calendar regeneration
+# Calendar regeneration
 from agenda.agenda import create_json
 AGENDA = create_json('/home/haum/agenda.sqlite',
                      'content/calendar/calendar.js',
