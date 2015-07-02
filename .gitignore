@@ -1,5 +1,5 @@
 flickr_api/*
-tmp_flickr/*
+tmp_flickr
 planet.rst
 *.swp
 *.pyc
