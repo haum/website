@@ -156,7 +156,7 @@ haut du boitier pour ressortir de l’autre côté de la machine.
 
 .. container:: aligncenter
 
-    [flickr:id=19166337829]
+    [flickr:id=19166337929]
 
 Puis on fixe ces fils sur le haut du boitier pour les faire ressortir de
 l’autre côté. Afin de les protéger de la chaleur dégagée par les éléments
