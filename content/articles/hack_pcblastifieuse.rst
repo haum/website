@@ -77,7 +77,7 @@ Un capteur de température basé sur une sonde de platine sera utilisé pour
 détecter la température des résistances chauffantes afin de pouvoir commuter
 leur alimentation.
 
-Controlleur
+Contrôleur
 """""""""""
 
 Afin de lire la température du capteur et activer ou non le relai, une Arduino
