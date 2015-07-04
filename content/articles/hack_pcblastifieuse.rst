@@ -96,6 +96,12 @@ Fixation de la sonde de température
 La sonde de température est fixée dans un rail d’une des deux résistances
 chauffantes.
 
+Afin d’adapter la tension de la sonde de température à la tension avec laquelle
+la carte Arduino fonctionne, on utilisera entre les deux `une carte
+d’interfaçage`_ à base de générateur de courant et d’ampli-op.
+
+.. _une carte d’interfaçage: https://github.com/neomilium/grove-rtd
+
 Fixation du relai
 """""""""""""""""
 
