@@ -235,6 +235,8 @@ provenant de flyers et en la collant sur une plaque époxy.
 Après quelques passages (sans doute pas assez) dans un four à 200°C (sans doute
 pas assez non plus) sur une plaque d’époxy pas assez propre, on obtient un résultat plutôt encourageant !
 
+.. container:: aligncenter
+
     [flickr:id=19346399242]
 
 Il reste du papier sur le motif noir et le toner ne colle pas bien sur la
