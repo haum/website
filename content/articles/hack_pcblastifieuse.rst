@@ -122,7 +122,7 @@ au secteur et pourraient passer à travers la plaque de carton et être une
 source d’électrisation.
 
 On peut ensuite faire rentrer le support dans le boitier en plastique après
-avoir découper certains éléments du boitier qui nous empêchaient de bien
+avoir découpé certains éléments du boitier qui nous empêchaient de bien
 positionner la plaque :
 
 .. container:: aligncenter
