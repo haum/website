@@ -4,8 +4,8 @@ PCBlastifieuse
 
 :slug: pcblastifieuse
 
-Qu'est ce que c'est?
-====================
+Qu'est ce que c'est ?
+=====================
 
 La PCBlastifieuse du HAUM est une plastifieuse A3 modifiée pour permettre de
 transférer le toner déposé par une imprimante laser sur un autre support que du
