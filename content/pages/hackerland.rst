@@ -29,7 +29,7 @@ Légal
 =====
 
 Tout ce qui concerne l'existence légale du HAUM est disponible `sur github`_.
-Vous y trouverez les status de l'`association`_ ainsi que son réglement `interieur`.
+Vous y trouverez les status de l'`association`_ ainsi que son réglement `interieur`_.
 
 En plus de ça, certaines infos sont répliquées du des pages du site :
 
