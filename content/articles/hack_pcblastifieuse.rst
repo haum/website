@@ -93,8 +93,16 @@ plus qu’à hacker la machine pour pouvoir mettre tout cela en place.
 Fixation de la sonde de température
 """""""""""""""""""""""""""""""""""
 
+.. container:: aligncenter
+
+    [flickr:id=18902418213]
+
 La sonde de température est fixée dans un rail d’une des deux résistances
 chauffantes.
+
+.. container:: aligncenter
+
+    [flickr:id=19497173626]
 
 Afin d’adapter la tension de la sonde de température à la tension avec laquelle
 la carte Arduino fonctionne, on utilisera entre les deux `une carte
