@@ -4,6 +4,8 @@ PCBlastifieuse
 
 :slug: pcblastifieuse
 
+.. image:: /images/bannieres_projets/pcblastifieuse.1.jpg
+
 Qu'est ce que c'est ?
 =====================
 
@@ -50,3 +52,8 @@ mesurée.
 Ce montage est placé en parallèle du montage d’origine de la machine, ce qui
 veut dire que si on ne branche pas l'Arduino alors la PCBlastifieuse
 fonctionnera en mode… plastifieuse !
+
+Si vous souhaitez en apprendre plus sur la réalisation du hack, tout est
+détaillé dans `un article dédié`_.
+
+.. _un article dédié: /hack_pcblastifieuse.html
