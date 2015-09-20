@@ -90,6 +90,14 @@ class ProjectList(Directive):
         final_list = "<ul id='auto-project-list'>"
         for i in os.walk('content/pages/'+settings['PROJECTS_DIR']).next()[2]:
 
+            ignored = False
+            for j in (r'^\.', r'\.swp$', r'~$'):
+                if re.match(j, i):
+                    ignored = True
+                    break
+            if ignored:
+                continue
+
             with open('content/pages/'+settings['PROJECTS_DIR']+'/'+i) as f:
                 parts = publish_parts(f.read(), writer_name="html4css1")
 
