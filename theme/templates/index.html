@@ -58,8 +58,9 @@
 </section><!-- /#content -->
 <script type="text/javascript" src="{{ SITEURL }}/calendar/calendar.js"></script>
 <script type="text/javascript">
-	var i=0;
-	while (i < 4){
+	var i = 0; // Current future_events considered
+	var printed = 0; // Nb of events printed
+	while (i < future_events.length && printed < 4) {
 		var e = future_events[i];
 		var d = new Date(e.isodate);
 		var weekday = new Array(7);
@@ -70,21 +71,27 @@
 		weekday[4] = "jeu.";
 		weekday[5] = "ven.";
 		weekday[6] = "sam.";
-		$('#calendar').append(
-			'<div class="event">' +
-			'  <time datetime="' + e.isodate + '" class="dateheure">' +
-			'    <em>' + weekday[d.getDay()] + '</em>' +
-			'    <span>' + d.getDate() + '</span>' +
-			'    <strong>' + e.date[1] + ' ' + d.getFullYear() + '</strong>' +
-			'    <time>' + d.getHours() + ':' + e.date[4] + '</time>' +
-			'  </time>' +
-			'  <p class="lieu">' + e.lieu + '</p>' +
-			'  <p class="descr">' + e.texte + '</p>' +
-			'</div>'
-		);
-		$('div.event:odd').css("background-color", '#eeeeee');
 
+		today = new Date();
+		today.setHours(4);
+		today.setMinutes(0);
+		if (d > today) {
+			$('#calendar').append(
+				'<div class="event">' +
+				'  <time datetime="' + e.isodate + '" class="dateheure">' +
+				'    <em>' + weekday[d.getDay()] + '</em>' +
+				'    <span>' + d.getDate() + '</span>' +
+				'    <strong>' + e.date[1] + ' ' + d.getFullYear() + '</strong>' +
+				'    <time>' + d.getHours() + ':' + e.date[4] + '</time>' +
+				'  </time>' +
+				'  <p class="lieu">' + e.lieu + '</p>' +
+				'  <p class="descr">' + e.texte + '</p>' +
+				'</div>'
+			);
+			printed++;
+		}
 		i++;
 	}
+	$('div.event:odd').css("background-color", '#eeeeee');
 </script>
 {% endblock content %}
