@@ -369,3 +369,14 @@ h2 a {
 
 /* Blog */
 #blog { padding-left: 20px;}
+
+/* Alignement classes (for ReST-generated HTML) */
+
+.align-right {
+	float:right;
+	margin: 20px 0px 20px 20px;
+}
+.align-left {
+	float:left;
+	margin: 20px 20px 20px 0px;
+}
