@@ -35,6 +35,12 @@ q:before, q:after {
     content: '';
     content: none;
 }
+cite {
+    font-family:Consolas,Monaco,Lucida Console,Liberation Mono,DejaVu Sans Mono,Bitstream Vera Sans Mono,Courier New, monospace;
+    background: #eee;
+    padding-left: 1ex;
+    padding-right: 1ex;
+}
 ins {
     text-decoration: none;
 }
