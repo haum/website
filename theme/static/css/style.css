@@ -86,9 +86,9 @@ h1, h2, h3, h4, h5, .faketitle {
 }
 h1 { font-size: 3.5ex; }
 h2,.faketitle { font-size: 2.6ex; }
-h3 { font-size: 2.4ex; }
-h4 { font-size: 2.2ex; }
-h5 { font-size: 2.0ex; }
+h3 { font-size: 2.4ex; margin-left: 1em; }
+h4 { font-size: 2.2ex; margin-left: 2em; }
+h5 { font-size: 2.0ex; margin-left: 3em; }
 .headerlink {
 	display: none;
 }
