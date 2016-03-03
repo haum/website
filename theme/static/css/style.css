@@ -386,3 +386,11 @@ h2 a {
 	float:left;
 	margin: 20px 20px 20px 0px;
 }
+
+#content em {
+	font-style: italic;
+}
+
+#content strong {
+	font-weight: bold;
+}
