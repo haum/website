@@ -81,9 +81,9 @@
 				'<div class="event">' +
 				'  <time datetime="' + e.isodate + '" class="dateheure">' +
 				'    <em>' + weekday[d.getDay()] + '</em>' +
-				'    <span>' + d.getDate() + '</span>' +
-				'    <strong>' + e.date[1] + ' ' + d.getFullYear() + '</strong>' +
-				'    <time>' + d.getHours() + ':' + e.date[4] + '</time>' +
+				'    <span>' + e.date[0] + '</span>' +
+				'    <strong>' + e.date[1] + ' ' + e.date[2] + '</strong>' +
+				'    <time>' + e.date[3] + ':' + e.date[4] + '</time>' +
 				'  </time>' +
 				'  <p class="lieu">' + e.lieu + '</p>' +
 				'  <p class="descr">' + e.texte + '</p>' +
