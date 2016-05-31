@@ -1,51 +1,46 @@
 {% extends "base.html" %}
 {% block content %}
 <section id="content">
-<div class="grid">
-    <div class="grid-10">&nbsp;</div>
-    <div class="grid-11">
-		<h1>AGENDA</h1>
-		<p>Bienvenue sur cette page où vous trouverez l'ensemble des
-		évènements que le HAUM organise ou auxquels il participe.</p>
-		<p>Pour en savoir davantage sur l'un de ces
-		évènements, ou nous convier à l'un des vôtres, n'hésitez pas à
-		nous en faire part sur notre <a
-			href="mailto:haum_hackerspace@lists.matael.org">mailing-list</a>.<p>
-		<p>Enfin, pour ne manquer aucune date, vous pouvez <a href="{{ SITEURL }}/calendar/calendar.ics">télécharger le fichier Ical</a> et
-		l'importer dans votre agenda personnel ou associatif. De cette manière, vous serez
-		informé(e) automatiquement des nouveaux évènements.</p>
-		<h3>Évènements à venir :</h3>
-        <div id=calendar></div><div class=clearer>&nbsp;</div>
-        <script type="text/javascript" src="{{ SITEURL }}/calendar/calendar.js"></script>
-        <script type="text/javascript">
-            var weekday = new Array(7);
-            weekday[0] = "dim.";
-            weekday[1] = "lun.";
-            weekday[2] = "mar.";
-            weekday[3] = "mer.";
-            weekday[4] = "jeu.";
-            weekday[5] = "ven.";
-            weekday[6] = "sam.";
-            $.each(future_events, function(i,e){
-		var d = new Date(e.isodate);
-		$('#calendar').append(
-			'<div class="event">' +
-			'  <time datetime="' + e.isodate + '" class="dateheure">' +
-			'    <em>' + weekday[d.getDay()] + '</em>' +
-			'    <span>' + d.getDate() + '</span>' +
-			'    <strong>' + e.date[1] + ' ' + d.getFullYear() + '</strong>' +
-			'    <time>' + d.getHours() + ':' + e.date[4] + '</time>' +
-			'  </time>' +
-			'  <p class="lieu">' + e.lieu + '</p>' +
-			'  <p class="descr">' + e.texte + '</p>' +
-			'</div>'
-		);
-            });
-            $('div.event:odd').css("background-color", '#eeeeee');
-        </script>
-        </div>
-    </div>
-    <div class="grid-13"></div>
-</div>
+<article>
+	<h2>AGENDA</h2>
+	<p>Bienvenue sur cette page où vous trouverez l'ensemble des
+	évènements que le HAUM organise ou auxquels il participe.</p>
+	<p>Pour en savoir davantage sur l'un de ces
+	évènements, ou nous convier à l'un des vôtres, n'hésitez pas à
+	nous en faire part sur notre <a
+		href="mailto:haum_hackerspace@lists.matael.org">mailing-list</a>.<p>
+	<p>Enfin, pour ne manquer aucune date, vous pouvez <a href="{{ SITEURL }}/calendar/calendar.ics">télécharger le fichier Ical</a> et
+	l'importer dans votre agenda personnel ou associatif. De cette manière, vous serez
+	informé(e) automatiquement des nouveaux évènements.</p>
+	<h3>Évènements à venir :</h3>
+	<div id=calendar></div><div class=clearer>&nbsp;</div>
+	<script type="text/javascript" src="{{ SITEURL }}/calendar/calendar.js"></script>
+	<script type="text/javascript">
+		var weekday = new Array(7);
+		weekday[0] = "dim.";
+		weekday[1] = "lun.";
+		weekday[2] = "mar.";
+		weekday[3] = "mer.";
+		weekday[4] = "jeu.";
+		weekday[5] = "ven.";
+		weekday[6] = "sam.";
+		$.each(future_events, function(i,e){
+			var d = new Date(e.isodate);
+			$('#calendar').append(
+				'<div class="event">' +
+				'  <time datetime="' + e.isodate + '" class="dateheure">' +
+				'    <em>' + weekday[d.getDay()] + '</em>' +
+				'    <span>' + d.getDate() + '</span>' +
+				'    <strong>' + e.date[1] + ' ' + d.getFullYear() + '</strong>' +
+				'    <time>' + d.getHours() + ':' + e.date[4] + '</time>' +
+				'  </time>' +
+				'  <p class="lieu">' + e.lieu + '</p>' +
+				'  <p class="descr">' + e.texte + '</p>' +
+				'</div>'
+			);
+		});
+		$('div.event:odd').css("background-color", '#eeeeee');
+	</script>
+</article>
 </section><!-- /#content -->
 {% endblock content %}

@@ -1,64 +1,57 @@
 {% extends "base.html" %}
 {% block content %}
-<section id="content">
-{#
-{% block content_title %}
-<h2>All articles</h2>
-{% endblock %}
-
-		#}
-	<div class="grid-9">&nbsp;</div>
-    <div class="grid-23">
-		<h1>Bienvenue</h1>
-		<p>
-		Le &laquo; Hackerspace Au Mans &raquo; (HAUM) est une association sarthoise adepte de la philosophie du "Faites-le vous-même" ("<a href="http://fr.wikipedia.org/wiki/Do_it_yourself" target="_blank">Do-It-Yourself</a>" en anglais). Ouverte à tou(te)s, si l'envie vous démange de comprendre comment fonctionnent les objets du quotidien qui vous entourent, que votre esprit fourmille d'idées et comme vous <strike>aimez</strike> adorez bricoler, alors vous êtes comme nous ! Bienvenue !
-		</p>
-		<div class="calendar">
-			<h2><a href="/pages/agenda.html">PROCHAINS ÉVÈNEMENTS</a></h2>
-			<!--
-			<div class=clearer>&nbsp;</div>
-            <a href="/pages/talks.html"><img alt="" src="/images/talks/nextevent.png" /></a>
-			-->
-		</div>
-		<div id=calendar></div><div class=clearer>&nbsp;</div>
-		<p>Vous pouvez <a href="calendar/calendar.ics"/>importer notre agenda</a> pour être automatiquement informé(e) de nos évènements, ou simplement le <a href="pages/agenda.html">consulter en ligne</a>.</p>
-		<h2>ZOOM SUR UN PROJET <small>(aléatoire)</small></h2>
-		<script type="text/javascript" src="/images/bannieres_projets/projectalea.js"></script>
-		<p><a href="/pages/les-projets.html">Voir tous les projets</a></p>
-		<div class="grid">
-			<div class="grid-12">
-				<h2>BLOG &amp; PLANET</h2>
-				<ul class="post-list">
-					<br />
-					{% for article in articles_page.object_list %}
-					<li>
-						<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.summary|striptags }}">
-							{{ article.title }}
-						</a>
-						par {% for author in article.authors %}
-						{% if loop.first %}{% elif loop.last %} &{% else %}, {% endif %}
-						{{ author }}
-						{% endfor %}
-						<!-- le {{ article.locale_date }} -->
-					</li>
-					<br />
-					{% endfor %}
-					{% for article in PLANET %}
-					<li><a href="{{ article[1] }}">{{ article[0] }}</a> par {{ article[2] }}</li>
-					<br />
-					{% endfor %}
-					{% include 'pagination.html' %}
-				</ul>
+<div class="grid" style="clear: both">
+	<div class="grid-12">
+		<article>
+			<h2>Bienvenue</h2>
+			<p>
+			Le &laquo; Hackerspace Au Mans &raquo; (HAUM) est une association sarthoise adepte de la philosophie du "Faites-le vous-même" ("<a href="http://fr.wikipedia.org/wiki/Do_it_yourself" target="_blank">Do-It-Yourself</a>" en anglais). Ouverte à tou(te)s, si l'envie vous démange de comprendre comment fonctionnent les objets du quotidien qui vous entourent, que votre esprit fourmille d'idées et comme vous <strike>aimez</strike> adorez bricoler, alors vous êtes comme nous ! Bienvenue !
+			</p>
+		</article>
+		<article>
+			<div class="calendar">
+				<h2><a href="/pages/agenda.html">Prochains évènements</a></h2>
 			</div>
-			<div class="grid-12">
-				<h2>FIL TWITTER</h2>
-				<a class="twitter-timeline" href="https://twitter.com/haum72" data-widget-id="454141251034427392" data-chrome="nofooter">Suivre @haum72 sur Twitter</a>
-				<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			</div>
-		</div>
+			<div id=calendar></div><div class=clearer>&nbsp;</div>
+			<p>Vous pouvez <a href="calendar/calendar.ics">importer notre agenda</a> pour être automatiquement informé(e) de nos évènements, ou simplement le <a href="pages/agenda.html">consulter en ligne</a>.</p>
+		</article>
+		<article>
+		<h2>Articles</h2>
+		<ul class="post-list">
+			{% for article in articles_page.object_list %}
+			<li>
+				<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.summary|striptags }}">
+					{{ article.title }}
+				</a>
+				par {% for author in article.authors %}{% if loop.first %}{% elif loop.last %} & {% else %}, {% endif %}{{ author }}{% endfor %}
+				<!-- {{ article.locale_date }} -->
+			</li>
+			{% endfor %}
+		</ul>
+		{% include 'pagination.html' %}
+		</article>
 	</div>
-	<div class="grid-9">&nbsp;</div>
-</section><!-- /#content -->
+	<div class="grid-12">
+		<article>
+			<h2>Fil Twitter</h2>
+			<a class="twitter-timeline" href="https://twitter.com/haum72" data-widget-id="454141251034427392" data-chrome="nofooter">Suivre @haum72 sur Twitter</a>
+			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+		</article>
+		<article>
+			<h2>Zoom sur un projet <small>(aléatoire)</small></h2>
+			<script type="text/javascript" src="/images/bannieres_projets/projectalea.js"></script>
+			<p><a href="/pages/les-projets.html">Voir tous les projets</a></p>
+		</article>
+		<article>
+		<h2>Planet</h2>
+		<ul class="post-list">
+			{% for article in PLANET %}
+			<li><a href="{{ article[1] }}">{{ article[0] }}</a> par {{ article[2] }}</li>
+			{% endfor %}
+		</ul>
+		</article>
+	</div>
+</div>
 <script type="text/javascript" src="{{ SITEURL }}/calendar/calendar.js"></script>
 <script type="text/javascript">
 	var i = 0; // Current future_events considered
@@ -97,4 +90,16 @@
 	}
 	$('div.event:odd').css("background-color", '#eeeeee');
 </script>
+<article>
+	<h2>Autre part sur le Net</h2>
+	<p>Le HAUM dispose de plusieurs outil connectés, dont voici quelques exemples (dans l'ordre des liens dans le pied de page)</p>
+	<ul>
+		<li>Courriel : Pour être facilement joignable, nous disposons d'une adresse de contact</li>
+		<li>IRC : Le salon de discussion IRC permet de discuter par texte entre les personnes connectées (pas d'inscription nécessaire)</li>
+		<li>Twitter : L'actualité du HAUM est relayée sur le réseau Twitter. Visitez la page publique ou abonnez-vous pour suivre notre actualité</li>
+		<li>Github : C'est sur le service Github que nous rendons public nos sources en tout genre</li>
+		<li>Flickr : Envie de revoir les activités du HAUM en images ? Le service Flickr héberge nos photos</li>
+		<li>Liste de diffusion : Point central de nos échanges (hors rencontres), la liste de diffusion permet aux membres de rester en contact</li>
+	</ul>
+</article>
 {% endblock content %}

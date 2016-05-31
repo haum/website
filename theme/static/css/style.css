@@ -47,7 +47,7 @@ ins {
 del {
     text-decoration: line-through;
 }
-
+hr { clear:both; border: 0; height: 1px; background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0)); }
 table {
     border-collapse: collapse;
     border-spacing: 0;
@@ -66,16 +66,9 @@ html {
 body {
 	min-width: 280px;
 	font-family:Verdana, Arial, Helvetica, sans-serif;
-	background: #111;
-}
-body {
-	background: #fff url(/theme/images/bg.png) no-repeat bottom right fixed;
+	background: #fff url(/theme/images/bg.png) repeat top center fixed;
 	color: #333;
 	min-height: 100%;
-}
-header, footer {
-	background: #333 url(/theme/images/bginv.png) no-repeat bottom right fixed;
-	color: #e3e3e3;
 }
 h1, h2, h3, h4, h5, .faketitle {
 	color:#B32C0E;
@@ -94,6 +87,10 @@ h5 { font-size: 2.0ex; margin-left: 3em; }
 }
 p {
 	margin: 10px 0;
+}
+ol {
+	list-style-position: outside;
+	margin-left: 2em;
 }
 ul {
 	list-style: square outside;
@@ -123,11 +120,17 @@ tt {
 }
 
 /** Header **/
+header, #page_content, #about, #menu {
+	width: 66.66%;
+	min-width: 800px;
+	margin: 0 auto;
+}
 header {
 	font-size: 1.5ex;
 	font-weight: bold;
-	text-align: center;
+	text-align: left;
 	padding: 2px 2px 8px 2px;
+	color: #4d4d4d;
 }
 header h1 {
 	margin-top: 10px;
@@ -136,50 +139,29 @@ header h1 {
 header p {
 	margin: 0;
 }
-header a, header a:hover {
-	color: #e3e3e3;
-	text-decoration: none;
-}
 header b {
 	font-variant: small-caps;
 	color: #B32C0E;
 }
-header img {
-	height: 2.3ex;
-	vertical-align: middle;
-}
-#header_spacer {
-	height: 16px;
-	background: #fff url(/theme/images/ombre.png) repeat-x top;
-}
-#menubtn {
-	display: block;
-	width: 64px;
-	height: 37px;
-	background: url(/theme/images/menu.png);
-	margin: 0 auto;
-}
-#menubtn span {
-	visibility: hidden;
-}
 
 /** Body **/
 article {
-	padding: 5px;
+	margin-top: 10px;
+	padding: 10px;
 	font-size: 0.9em;
 	line-height:1.3em;
 	padding-bottom: 5px 5px 5px 50px;
 	text-align: justify;
+	background: #fff;
+	border: 1px solid #ccc;
+	clear: both;
 }
-@media only screen and (max-width:765px) {
-	article {
-		padding: 5px;
-		font-size: small;
-		line-height:1.1em;
-		padding-bottom: 5px 5px 5px 50px;
-		text-align: justify;
-	}
+article:after {
+	content: "";
+	display: table;
+	clear: both;
 }
+
 article a {
 	color:#B32C0E;
 }
@@ -190,13 +172,19 @@ article a:hover {
 article img {
 	max-width: 100%;
 }
+#about {
+	text-align: center;
+	padding: 5px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	color: #aaa;
+}
+#about a {
+	color: #aaa;
+}
 
 /** Footer **/
-#logo {
-	width: 100%;
-}
 footer {
-	background: #333 url(/theme/images/bginv.png) no-repeat bottom right fixed;
 	color: #eee;
 	margin: 0;
 	font-size: 1.4ex;
@@ -209,30 +197,32 @@ footer a {
 	color: #666;
 	text-decoration: none;
 }
-footer nav {
-	padding: 10px;
+#menu {
+	margin-top: 10px;
 }
-footer nav ul {
+nav ul {
 	list-style: none;
-	margin: 0 auto;
-	width: 90%;
+	margin: 0;
+	padding:0;
 }
-footer nav a {
+nav li {
+	float: left;
+	width: 16.66%;
+	vertical-align: middle;
+}
+nav a {
 	display: block;
+	min-height: 40px;
 	font-weight: bold;
 	text-decoration: none;
-	width: 100%;
-	background: #444;
 	margin: 1px;
 	padding: 4px;
+	color: #40689a;
+	text-align: center;
 }
-footer nav a:hover {
+nav a:hover {
 	background: #555;
 	color: #fff;
-}
-footer nav h2 {
-	font-size: 2.8ex;
-	text-align: left;
 }
 footer #about  {
 	background: #eee;
@@ -241,7 +231,7 @@ footer #about  {
 }
 .contacticon {
 	float: left;
-	width: 50%;
+	width: 16.66%;
 	height: 48px;
 }
 
@@ -256,7 +246,7 @@ footer #about  {
 }
 
 /** Bigger **/
-@media only screen and (min-width: 765px) {
+@media only screen and (min-width: 840px) {
 	#logo {
 		width: auto;
 	}
@@ -284,32 +274,6 @@ footer #about  {
 	}
 	[class*='grid-']:last-of-type {
 		padding-right: 0;
-	}
-}
-@media only screen and (min-width: 1015px) {
-	#logo {
-		width: 100%;
-	}
-	#menubtn {
-		display: none;
-	}
-	footer nav {
-		width: 250px;
-		position: fixed;
-		right: 0;
-		top: 0;
-		bottom: 0;
-		background: #333 url(/theme/images/bginv.png) no-repeat bottom right fixed;
-		color: #e3e3e3;
-		overflow: auto;
-	}
-	footer nav [class*='grid-'] {
-		float: none;
-		padding-right: 0;
-		width: 100%;
-	}
-	body {
-		padding-right: 250px;
 	}
 }
 
