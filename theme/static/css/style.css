@@ -193,6 +193,9 @@ footer {
 	margin-top: 16px;
 	clear: both;
 }
+footer b {
+	font-weight: normal;
+}
 footer a {
 	color: #666;
 	text-decoration: none;
@@ -232,7 +235,7 @@ footer #about  {
 .contacticon {
 	float: left;
 	width: 16.66%;
-	height: 48px;
+	height: 60px;
 }
 
 /** Grid **/
