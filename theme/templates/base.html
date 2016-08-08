@@ -80,8 +80,8 @@ document.write("<p>" + randomsubtitle[Math.floor((Math.random() * randomsubtitle
 						<p id="spaceapi_open"></p>
 			<script type="text/javascript">
 $(document).ready(function() {
-	$.getJSON("//haum.org/json", function(data) {
-		if (data.state.open)
+	$.get("/spacestatus", function(data) {
+		if (data)
 			$("#spaceapi_open").html('<img src="/theme/images/open.png">');
 	});
 });
