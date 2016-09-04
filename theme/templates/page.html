@@ -1,11 +1,20 @@
 {% extends "base.html" %}
-{% block title %}{{ page.title }}{%endblock%}
+{% block title %}{{ page.title }}{% endblock %}
 {% block content %}
 	<div class="grid-9">&nbsp;</div>
 	<div class="grid-23">
 		<h1>{{ page.title }}</h1>
 		{% import 'translations.html' as translations with context %}
 		{{ translations.translations_for(page) }}
+
+		<div style="margin-top: 1em; margin-bottom: 1em;">
+		{% if page.projet_realisation %}
+			<img src="https://img.shields.io/badge/r%C3%A9alisation-{{ page.projet_realisation }}.svg" alt="réalisation: {{ page.projet_realisation }}" />
+		{% endif %}
+		{% if page.projet_etat %}
+			<img src="https://img.shields.io/badge/%C3%A9tat-{{ page.projet_etat }}.svg" alt="état: {{ page.projet_etat }}" />
+		{% endif %}
+		</div>
 
 		{{ page.content }}
 
