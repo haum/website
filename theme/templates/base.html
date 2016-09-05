@@ -37,7 +37,16 @@
 
 	<body id="index" class="home">
 		<header>
-			<h1><a href="{{ SITEURL }}/"><img src="{{ SITEURL }}/theme/images/haum.png" alt="HAUM"/> - <b>H</b>ackerspace <b>au</b> <b>M</b>ans</a></h1>
+			<p id="spaceapi_open" style="float: right; margin-top: 10px"><img src="/theme/images/badge_close.png" /></p>
+<script type="text/javascript">
+$(document).ready(function() {
+	$.getJSON("http://spaceapi.net/new/space/haum/status/json", function(data) {
+		if (data.state.open)
+			$("#spaceapi_open").html('<img src="/theme/images/badge_open.png">');
+	});
+});
+</script>
+			<h1><a href="{{ SITEURL }}/"><img src="{{ SITEURL }}/theme/images/head.png" alt="Hackerspace AU Mans" /></a></h1>
 <script type="text/javascript">
 randomsubtitle = [
 	"Convergence de bidouilleurs en centre ville",
@@ -47,77 +56,52 @@ randomsubtitle = [
 document.write("<p>" + randomsubtitle[Math.floor((Math.random() * randomsubtitle.length))] + "</p>");
 </script>
 		</header>
-		<div id="header_spacer"><a href="#menu" id="menubtn" title="Menu"><span>Menu</span></a></div><!-- MENU button to jump to menu on small screens -->
-		<article>
-		{% block content %} {% endblock %}
-		</article>
-		<footer>
-			<nav id="menu">
-				<img id="logo" src="{{ SITEURL }}/theme/images/haum.png" alt="HAUM"/>
-				<div class="grid">
-					{#
-					<div class="grid-13">
-						<h2>HAUMenu...</h2>
-						<ul>
-						{% for title, link in MENUITEMS %}
-							<li><a href="{{ link }}">{{ title }}</a></li>
-						{% endfor %}
-						{% if DISPLAY_PAGES_ON_MENU %}
-						  {% for p in PAGES %}
-							<li{% if p == page %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ p.url }}">{{ p.title }}</a></li>
-						  {% endfor %}
-						{% else %}
-						  {% if DISPLAY_CATEGORIES_ON_MENU %}
-							{% for cat, null in categories %}
-							  <li{% if cat == category %} class="active"{% endif %}><a href="{{ SITEURL }}/{{ cat.url }}">{{ cat }}</a></li>
-							{% endfor %}
-						  {% endif %}
-						{% endif %}
-						</ul>
-					</div>
-					#}
-					<div class="grid-12">
-						<p id="spaceapi_open"></p>
-			<script type="text/javascript">
-$(document).ready(function() {
-	$.get("/spacestatus", function(data) {
-		if (data==1)
-			$("#spaceapi_open").html('<img src="/theme/images/open.png">');
-	});
-});
-</script>
-						<h2>HAUMenu...</h2>
-						<ul>
-							<li><a href="{{ SITEURL }}/pages/cest-quoi-le-haum.html">C'est quoi le HAUM ?</a></li>
-							<li><a href="{{ SITEURL }}/pages/agenda.html">Agenda</a/></li>
-							<li><a href="{{ SITEURL }}/pages/talks.html">HAUMTalks</a></li>
-							<li><a href="{{ SITEURL }}/pages/les-projets.html">Les projets</a></li>
-							<li><a href="{{ SITEURL }}/pages/nous-rejoindre.html">Nous rejoindre</a></li>
-							<li><a href="{{ SITEURL }}/pages/hackerland.html">Hackerland</a></li>
-							<li><a href="{{ SITEURL }}/pages/statut.html">Statut</a></li>
-						</ul>
-					</div>
-					<div class="grid-12">
-						<h2>Contact</h2>
+		<nav id="menu">
+			<ul>
+				<li><a href="{{ SITEURL }}/pages/cest-quoi-le-haum.html">C'est quoi le HAUM ?</a></li>
+				<li><a href="{{ SITEURL }}/pages/agenda.html">Agenda</a></li>
+				<li><a href="{{ SITEURL }}/pages/talks.html">HAUMTalks</a></li>
+				<li><a href="{{ SITEURL }}/pages/les-projets.html">Les projets</a></li>
+				<li><a href="{{ SITEURL }}/pages/nous-rejoindre.html">Nous rejoindre</a></li>
+				<li><a href="{{ SITEURL }}/pages/hackerland.html">Hackerland</a></li>
+			</ul>
+		</nav>
+		<div id="page_content">
+			{% block content %} {% endblock %}
 
-						<ul>
-							<li style="clear: both;"><a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#104;&#097;&#117;&#109;&#046;&#111;&#114;&#103;"><img src="{{ SITEURL }}/theme/images/ico-mail.png" /><br/>&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#104;&#097;&#117;&#109;&#046;&#111;&#114;&#103;</a></li>
-							<li class="grid">
-								<div class="contacticon"><a href="http://twitter.com/haum72"><img src="{{ SITEURL }}/theme/images/ico-tw.png" /><br/>@haum72</a></div>
-								<div class="contacticon"><a href="https://github.com/haum"><img src="{{ SITEURL }}/theme/images/ico-gh.png" /><br/>haum</a></div>
-							</li>
-							<li class="grid">
-								<div class="contacticon"><a href="http://irc.lc/freenode/haum"><img src="{{ SITEURL }}/theme/images/ico-irc.png" /><br/>#haum</a></div>
-								<div class="contacticon"><a href="https://www.flickr.com/photos/126718549@N08/albums/"><img src="{{ SITEURL }}/theme/images/ico-fl.png" /><br/>haumasso</a></div>
-							</li>
-							<li style="clear: both;"><a href="http://lists.haum.org/mailman/listinfo/haum_hackerspace"><img src="{{ SITEURL }}/theme/images/ico-ml.png" /><br/>haum_hackerspace</a></li>
-							<li><a href="{{ SITEURL }}/pages/nous-rejoindre.html"><img src="{{ SITEURL }}/theme/images/miniplan.png" /><br/>19 Bd M&amp;A Oyon<br/>3ème étage<br/>72100 Le Mans</a></li>
-						</ul>
-					</div>
-				</div>
-			</nav>
-			<div id="about">HAUM, 2014-2016 -  Created using <a href="http://getpelican.com/">Pelican</a>. (Sources on <a href="http://github.com/haum/website" 
-target="_blank">Github</a>)</div>
+			<script type="text/javascript">
+				$(document).ready(function() {
+				$.get("/spacestatus", function(data) {
+					if (data==1)
+						$("#spaceapi_open").html('<img src="/theme/images/open.png">');
+				});
+				});
+			</script>
+
+			<p id="spaceapi_open"></p>
+		</div>
+		<footer id="about">
+			<div class="contacticon"><a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#104;&#097;&#117;&#109;&#046;&#111;&#114;&#103;"><img src="{{ SITEURL }}/theme/images/ico-mail.png" alt="Contact mail" title="Contact mail" /><br/>&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#104;&#097;&#117;&#109;&#046;&#111;&#114;&#103;<br/><b>Courriel</b></a></div>
+			<div class="contacticon"><a href="http://irc.lc/freenode/haum"><img src="{{ SITEURL }}/theme/images/ico-irc.png" alt="Salon IRC" title="Salon IRC" /><br/>#haum<br/><b>Salon de discussion</b></a></div>
+			<div class="contacticon"><a href="http://twitter.com/haum72"><img src="{{ SITEURL }}/theme/images/ico-tw.png" alt="Compte twitter" title="Compte twitter" /><br/>@haum72<br/><b>Microblog sur Twitter</b></a></div>
+			<div class="contacticon"><a href="https://github.com/haum"><img src="{{ SITEURL }}/theme/images/ico-gh.png" alt="Projets github" title="Projets github" /><br/>haum<br/><b>Code sur Github</b></a></div>
+			<div class="contacticon"><a href="https://www.flickr.com/photos/126718549@N08/albums/"><img src="{{ SITEURL }}/theme/images/ico-fl.png" alt="Albums flickr" title="Albums flickr" /><br/>haumasso<br/><b>Photos sur Flickr</b></a></div>
+			<div class="contacticon"><a href="http://lists.haum.org/mailman/listinfo/haum_hackerspace"><img src="{{ SITEURL }}/theme/images/ico-ml.png" alt="Liste de diffusion" title="Liste de diffusion" /><br/>haum_hackerspace<br/><b>Liste de diffusion</b></a></div>
+			<table style="border: none; margin: 10px auto; text-align: left; clear:both">
+				<tr>
+					<td><p><a href="{{ SITEURL }}/pages/nous-rejoindre.html"><img src="{{ SITEURL }}/theme/images/miniplan.png" alt="plan" title="" /></a></p></td>
+					<td style="padding-left: 10px; vertical-align: middle;">
+						<p><a href="{{ SITEURL }}/pages/nous-rejoindre.html">
+							Association HAUM<br/>
+							3ème étage<br/>
+							19 boulevard Marie et Alexandre Oyon<br/>
+							72100 Le Mans
+						</a></p>
+						<p>HAUM, 2014-2016 -  Created using <a href="http://getpelican.com/">Pelican</a>. (Sources on <a href="http://github.com/haum/website" target="_blank">Github</a>)</p>
+					</td>
+				</tr>
+			</table>
 		</footer>
+
 	</body>
 </html>

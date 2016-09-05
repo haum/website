@@ -1,11 +1,10 @@
 {% extends "base.html" %}
 {% block title %}{{ page.title }}{% endblock %}
 {% block content %}
-	<div class="grid-9">&nbsp;</div>
-	<div class="grid-23">
-		<h1>{{ page.title }}</h1>
-		{% import 'translations.html' as translations with context %}
-		{{ translations.translations_for(page) }}
+	<article>
+	<h1>{{ page.title }}</h1>
+	{% import 'translations.html' as translations with context %}
+	{{ translations.translations_for(page) }}
 
 		<div style="margin-top: 1em; margin-bottom: 1em;">
 		{% if page.projet_realisation %}
@@ -18,9 +17,8 @@
 
 		{{ page.content }}
 
-		{% if page.modified %}
-			<p>Last updated: {{ page.locale_modified }}</p>
-		{% endif %}
-	</div>
-	<div class="grid-9">&nbsp;</div>
+	{% if page.modified %}
+		<p>Last updated: {{ page.locale_modified }}</p>
+	{% endif %}
+	</article>
 {% endblock %}
