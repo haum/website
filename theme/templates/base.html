@@ -38,14 +38,14 @@
 	<body id="index" class="home">
 		<header>
 			<p id="spaceapi_open" style="float: right; margin-top: 10px"><img src="/theme/images/badge_close.png" /></p>
-<script type="text/javascript">
-$(document).ready(function() {
-	$.getJSON("http://spaceapi.net/new/space/haum/status/json", function(data) {
-		if (data.state.open)
-			$("#spaceapi_open").html('<img src="/theme/images/badge_open.png">');
-	});
-});
-</script>
+			<script type="text/javascript">
+				$(document).ready(function() {
+				$.get("/spacestatus", function(data) {
+					if (data==1)
+						$("#spaceapi_open").html('<img src="/theme/images/badge_open.png" >');
+				});
+				});
+			</script>
 			<h1><a href="{{ SITEURL }}/"><img src="{{ SITEURL }}/theme/images/head.png" alt="Hackerspace AU Mans" /></a></h1>
 <script type="text/javascript">
 randomsubtitle = [
@@ -68,17 +68,6 @@ document.write("<p>" + randomsubtitle[Math.floor((Math.random() * randomsubtitle
 		</nav>
 		<div id="page_content">
 			{% block content %} {% endblock %}
-
-			<script type="text/javascript">
-				$(document).ready(function() {
-				$.get("/spacestatus", function(data) {
-					if (data==1)
-						$("#spaceapi_open").html('<img src="/theme/images/open.png">');
-				});
-				});
-			</script>
-
-			<p id="spaceapi_open"></p>
 		</div>
 		<footer id="about">
 			<div class="contacticon"><a href="mailto:&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#104;&#097;&#117;&#109;&#046;&#111;&#114;&#103;"><img src="{{ SITEURL }}/theme/images/ico-mail.png" alt="Contact mail" title="Contact mail" /><br/>&#099;&#111;&#110;&#116;&#097;&#099;&#116;&#064;&#104;&#097;&#117;&#109;&#046;&#111;&#114;&#103;<br/><b>Courriel</b></a></div>
