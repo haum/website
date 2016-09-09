@@ -208,8 +208,6 @@ nav ul {
 	padding:0;
 }
 nav li {
-	float: left;
-	width: 16.66%;
 	vertical-align: middle;
 }
 nav a {
@@ -232,8 +230,6 @@ footer #about  {
 	padding: 10px;
 }
 .contacticon {
-	float: left;
-	width: 16.66%;
 	height: 60px;
 }
 
@@ -249,6 +245,14 @@ footer #about  {
 
 /** Bigger **/
 @media only screen and (min-width: 840px) {
+    .contacticon {
+        float: left;
+        width: 16.66%;
+    }
+    nav li {
+        float: left;
+        width: 16.66%;
+    }
     header, #page_content, #about, #menu {
         width: 66.6%;
         margin: 0 auto;
