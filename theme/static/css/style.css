@@ -169,7 +169,7 @@ article a:hover {
 	color:#000000;
 	text-decoration:none;
 }
-article img {
+article img, article video {
 	max-width: 100%;
 }
 #about {
