@@ -111,6 +111,7 @@ pre {
 	-moz-box-shadow: 1px 1px 1px #d8d8d8;
 	background-color: #073642;
 	color: #93a1a1;
+	overflow: auto;
 }
 tt {
 	background-color: #ecf0f3;
