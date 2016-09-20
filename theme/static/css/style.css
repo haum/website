@@ -172,6 +172,11 @@ article a:hover {
 article img, article video {
 	max-width: 100%;
 }
+
+article h1 {
+        padding-bottom: 20px;
+        line-height: 100%;
+}
 #about {
 	text-align: center;
 	padding: 5px;
