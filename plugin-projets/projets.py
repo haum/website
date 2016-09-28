@@ -76,7 +76,7 @@ def generate_project_list(generator):
 
 
 def ordered_walk(path):
-    return sorted(os.walk(path).next(), key=lambda x: x[2])
+    return sorted(os.walk(path).next()[2])
 
 class ProjectList(Directive):
     required_arguments = 0
@@ -93,15 +93,17 @@ class ProjectList(Directive):
         proj_dir = 'content/pages/' + settings['PROJECTS_DIR']
 
         final_list = "<ul id='auto-project-list'>"
-        for tup in ordered_walk(proj_dir):
-            i = tup[2]
+
+        for i in ordered_walk(proj_dir):
 
             ignored = False
+
+            # Ignore folders, temporary files
             for j in (r'^\.', r'\.swp$', r'~$'):
                 if re.match(j, i):
                     ignored = True
                     break
-            if ignored:
+            if ignored
                 continue
 
             with open('content/pages/'+settings['PROJECTS_DIR']+'/'+i) as f:
