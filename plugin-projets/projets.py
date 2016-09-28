@@ -76,7 +76,7 @@ def generate_project_list(generator):
 
 
 def ordered_walk(path):
-    return sorted(os.walk(path), key=lambda x: x[2])
+    return sorted(os.walk(path).next(), key=lambda x: x[2])
 
 class ProjectList(Directive):
     required_arguments = 0
