@@ -75,6 +75,9 @@ def generate_project_list(generator):
     return generator
 
 
+def ordered_walk(path):
+    return sorted(os.walk(path), key=lambda x: x[2])
+
 class ProjectList(Directive):
     required_arguments = 0
     optional_arguments = 0
@@ -87,8 +90,11 @@ class ProjectList(Directive):
     def run(self):
         settings = pelican.settings.get_settings_from_file('pelicanconf.py')
 
+        proj_dir = 'content/pages/' + settings['PROJECTS_DIR']
+
         final_list = "<ul id='auto-project-list'>"
-        for i in os.walk('content/pages/'+settings['PROJECTS_DIR']).next()[2]:
+        for tup in ordered_walk(proj_dir):
+            i = tup[2]
 
             ignored = False
             for j in (r'^\.', r'\.swp$', r'~$'):
