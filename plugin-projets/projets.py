@@ -103,7 +103,7 @@ class ProjectList(Directive):
                 if re.match(j, i):
                     ignored = True
                     break
-            if ignored
+            if ignored:
                 continue
 
             with open('content/pages/'+settings['PROJECTS_DIR']+'/'+i) as f:
