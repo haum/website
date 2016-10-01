@@ -188,6 +188,10 @@ article h1 {
 	color: #aaa;
 }
 
+strong {
+	font-weight: bold;
+}
+
 /** Footer **/
 footer {
 	color: #eee;
