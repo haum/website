@@ -336,7 +336,7 @@ div.clearer { clear: both }
 	width: 30%;
 	padding-right: 5px;
 	text-align: center;
-	font-size:1.4em;
+	font-size:1.15em;
 }
 .dateheure em, .dateheure strong, .dateheure time {
 	text-transform: uppercase;
@@ -351,8 +351,8 @@ div.clearer { clear: both }
 	display: block;
 	font-weight: bold;
 	color: #ccc;
-	font-size: 1.9em;
-	line-height: 1.2em;
+	font-size: 1.7em;
+	line-height: 1.1em;
 }
 .dateheure .lieu {
 	text-align: center;
@@ -364,9 +364,59 @@ h2 a {
 	text-decoration: none;
 }
 
+#agenda-options, .paginator {	
+	border-top: 1px solid #ccc;
+}
+
+#agenda-options p, .paginator p {
+	width:50%;
+	margin-left: 50%;
+	text-align: center;
+	padding:0;
+	margin-bottom: -5px;
+}
+
+#agenda-options p:first-of-type, .paginator p:first-of-type {	
+	float: left;
+	margin-left: 0%;
+	border-right: solid 1px #ccc;
+}
+
+#agenda-options p a, .paginator p a {
+	text-decoration: none;
+	font-weight: bold;
+}
+
 /* Blog */
 #blog { padding-left: 20px;}
 
+.post-list {
+	list-style-type: none;
+	margin-left: 1em;
+	margin-right: 1em;
+}
+
+.post-list li {
+	border-bottom: 1px solid #ccc;
+	min-height: 2.5em;
+}
+
+.post-list li:last-of-type {
+	border: none
+}
+
+.post-list li a {
+}
+
+.post-list li span.author {
+	float: right;
+	display: block;
+	text-align: right;
+	font-size: 0.8em;
+	max-width: 40%;
+}
+
+.post-list .sep { clear: both; height: 0px;}
 /* Alignement classes (for ReST-generated HTML) */
 
 .align-right {

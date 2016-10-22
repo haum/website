@@ -13,7 +13,10 @@
 				<h2><a href="/pages/agenda.html">Prochains évènements</a></h2>
 			</div>
 			<div id=calendar></div><div class=clearer>&nbsp;</div>
-			<p>Vous pouvez <a href="calendar/calendar.ics">importer notre agenda</a> pour être automatiquement informé(e) de nos évènements, ou simplement le <a href="pages/agenda.html">consulter en ligne</a>.</p>
+			<div id="agenda-options">
+				<p><a href="pages/agenda.html">Tous les évènements</a></li>
+				<p><a href="calendar/calendar.ics">Importer l'agenda</a></li>
+			</div>
 		</article>
 		<article>
 		<h2>Articles</h2>
@@ -22,8 +25,9 @@
 			<li>
 				<a href="{{ SITEURL }}/{{ article.url }}" rel="bookmark" title="{{ article.summary|striptags }}">
 					{{ article.title }}</a>
-				par {% for author in article.authors %}{% if loop.first %}{% elif loop.last %} &amp; {% else %}, {% endif %}{{ author }}{% endfor %}
+				  <span class=author>{% for author in article.authors %}{% if loop.first %}{% elif loop.last %} &amp; {% else %}, {% endif %}{{ author }}{% endfor %}</span>
 				<!-- {{ article.locale_date }} -->
+				<p class=sep>&nbsp;<p>
 			</li>
 			{% endfor %}
 		</ul>
@@ -33,7 +37,7 @@
 		<h2>Planet</h2>
 		<ul class="post-list">
 			{% for article in PLANET %}
-			<li><a href="{{ article[1] }}">{{ article[0] }}</a> par {{ article[2] }}</li>
+			<li><a href="{{ article[1] }}">{{ article[0] }}</a> <span class=author>{{ article[2] }}</span></li>
 			{% endfor %}
 		</ul>
 		</article>
