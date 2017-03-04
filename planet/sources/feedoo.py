@@ -30,7 +30,7 @@
 from bs4 import BeautifulSoup
 import requests
 
-SOURCE_URL = "http://blog.fredblain.org/tag/haum"
+SOURCE_URL = "https://fredblain.org/tag/haum"
 
 
 def fetch():
