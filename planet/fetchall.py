@@ -61,7 +61,10 @@ def fetch(dirname):
         if i != dirname + '/__init__.py':
             a = __import__(i.replace('/', '.').replace('.py', ''))
             attr = i.replace(dirname + '/', '').replace('.py', '')
-            fetch_results += a.sources.__getattribute__(attr).fetch()
+            try:
+                fetch_results += a.sources.__getattribute__(attr).fetch()
+            except:
+                print('[planet] ' + attr + ' not found (are u offline ?)')
 
     return fetch_results
 
