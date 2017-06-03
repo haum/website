@@ -21,7 +21,7 @@ except ImportError:
 	pass
 
 AUTHOR = u'HAUM'
-SITENAME = u'Hacklab au Mans'
+SITENAME = u'Hackerspace au Mans'
 SITEURL = '/'
 
 PROJECTS_DIR = 'projets'
