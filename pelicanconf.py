@@ -61,7 +61,7 @@ PLANET = fetch('planet/sources')
 
 # Calendar regeneration
 from agenda.agenda import create_json
-AGENDA = create_json('/home/haum/agenda.sqlite',
+AGENDA = create_json('/home/oneshot/agenda.sqlite',
                      'content/calendar/calendar.js',
                      icalfile='content/calendar/calendar.ics')
 
