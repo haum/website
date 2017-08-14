@@ -19,6 +19,11 @@
 			</div>
 		</article>
 		<article>
+		<div id="rss-link">
+			<a href="{{ FEED_DOMAIN }}/{{ FEED_ALL_ATOM }}" title="{{ SITENAME }} Full Atom Feed">
+				<img src="{{ SITEURL }}/theme/images/ico-rss_orange.png"/>
+			</a>
+		</div>
 		<h2>Articles</h2>
 		<ul class="post-list">
 			{% for article in articles_page.object_list %}
