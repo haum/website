@@ -1,0 +1,14 @@
+{% if article and article.related %}{% set related = article.related %}{% endif %}
+{% if page and page.related %}{% set related = page.related %}{% endif %}
+{% if related %}
+<nav class="related"><h2>Voir aussi</h2><ul>
+	{% for tag in related.split(',') %}
+	{% for aTag, tagged_articles in tags if aTag == tag %}
+	{% for related_article in tagged_articles %}
+	<li><a href="{{ SITEURL }}/{{ related_article.url }}">
+		{{ related_article.title|striptags }}</a></li>
+	{% endfor %}
+	{% endfor %}
+	{% endfor %}
+</ul></nav>
+{% endif %}

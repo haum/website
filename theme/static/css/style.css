@@ -216,18 +216,18 @@ footer a {
 #menu {
 	margin-top: 10px;
 }
-nav ul {
+nav#menu ul {
 	list-style: none;
 	margin: 0;
 	padding:0;
 }
-nav li {
+nav#menu li {
 	vertical-align: middle;
         display: flex;
         flex-direction: column;
         justify-content: center;
 }
-nav a {
+nav#menu a {
 	display: block;
 	min-height: 40px;
 	font-weight: bold;
@@ -237,9 +237,41 @@ nav a {
 	color: #40689a;
 	text-align: center;
 }
-nav a:hover {
+nav#menu a:hover {
 	background: #555;
 	color: #fff;
+}
+nav.related ul {
+	list-style: none;
+	margin: 0;
+	padding:0;
+	margin-bottom: 10px;
+}
+nav.related li {
+        display: block;
+	width: 100%;
+	margin-top: 2px;
+	font-size: 0.9em;
+	line-height:1.3em;
+	background: #f6f6f6;
+	border: 1px solid #ccc;
+}
+nav.related a {
+	display: block;
+	min-height: 40px;
+	font-weight: bold;
+	text-decoration: none;
+	margin: 1px;
+	padding: 10px;
+	color:#B32C0E;
+	text-align: center;
+}
+nav.related a:hover {
+	background: #40689a;
+	color: #fff;
+}
+nav.related h2 {
+	color: #40689a;
 }
 footer #about  {
 	background: #eee;
@@ -266,7 +298,7 @@ footer #about  {
         float: left;
         width: 16.66%;
     }
-    nav li {
+    nav#menu li {
         float: left;
         width: 16.66%;
     }
