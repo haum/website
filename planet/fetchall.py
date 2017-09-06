@@ -27,6 +27,7 @@
 
 """
 
+import sys
 from glob import glob
 
 OUTPUT_FILE = '../planet.rst'
@@ -64,7 +65,8 @@ def fetch(dirname):
             try:
                 fetch_results += a.sources.__getattribute__(attr).fetch()
             except:
-                print('[planet] ' + attr + ' not found (are u offline ?)')
+                e = sys.exc_info()[0]
+                print('[planet] ' + attr + ' not found (are u offline ?) ' + repr(e))
 
     return fetch_results
 
