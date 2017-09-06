@@ -40,4 +40,4 @@ def fetch():
         _.find('a').text,
         _.find('a').get('href'),
         'Fred (feedoo)'
-    ) for _ in soup.findAll('h2', {'class': 'title-index'})]
+    ) for _ in soup.findAll('article')]
