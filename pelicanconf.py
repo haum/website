@@ -55,10 +55,6 @@ DEFAULT_PAGINATION = 10
 # Uncomment following line if you want document-relative URLs when developing
 # RELATIVE_URLS = True
 
-# Planet regeneration
-from planet.fetchall import fetch
-PLANET = fetch('planet/sources')
-
 # Calendar regeneration
 from agenda.agenda import create_json
 AGENDA = create_json('/home/oneshot/agenda.sqlite',
