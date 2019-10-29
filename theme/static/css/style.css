@@ -123,7 +123,7 @@ tt {
 /** Header **/
 header, #page_content, #about, #menu {
 	width: 90%;
-    margin: 0 auto;
+	margin: 0 auto;
 }
 header {
 	font-size: 1.5ex;
@@ -303,7 +303,7 @@ footer #about  {
         width: 16.66%;
     }
     header, #page_content, #about, #menu {
-        width: 66.6%;
+        max-width: 1800px;
         margin: 0 auto;
     }
 	#logo {
