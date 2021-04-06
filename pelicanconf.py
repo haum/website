@@ -1,25 +1,11 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
-from __future__ import unicode_literals
+
 
 import os
 import sys
 
-sys.path.append(os.curdir)
-
-FLICKR_API_KEY = ''
-FLICKR_API_SECRET = ''
-FLICKR_USER = ''
-FLICKR_TAG_CACHE_LOCATION = './tmp_flickr'
-FLICKR_TAG_TEMPLATE_NAME = 'images'
-FLICKR_TAG_PLACE_HOLDER_PICT = '/theme/images/haum.png'
-FLICKR_TAG_PLACE_HOLDER_LINK = 'https://github.com/haum/pelican-flickrtag'
-
-try:
-	from flickr_api import *
-except ImportError:
-	pass
-
+sys.path.appe
 AUTHOR = u'HAUM'
 SITENAME = u'Hackerspace au Mans'
 SITEURL = '/'

@@ -93,7 +93,7 @@ def ical_from_dbcursor(q):
         event.add('location', e[1])
 
         sql_date = e[3].split(' ')
-        d = map(int, sql_date[0].split('/') + sql_date[1].split(':'))
+        d = tuple(map(int, sql_date[0].split('/') + sql_date[1].split(':')))
         date = tz.localize(datetime(d[2], d[1], d[0], d[3], d[4]))
         event.add('dtstart', date)
         events.append(event)
