@@ -54,7 +54,7 @@ make install
 
 cd $INIT_PATH
 echo "==> Creating bare virtualenv in $VENV_DIR ..."
-virtualenv --python=$LOCALPYTHON/bin/python $VENV_DIR
+virtualenv --python=$LOCALPYTHON/bin/python3 $VENV_DIR
 
 echo "==> Activating venv..."
 source $VENV_DIR/bin/activate
