@@ -38,10 +38,11 @@ import re
 def generate_banners_jsonindex(generator):
     listing = {}
     script = "projectalea_list = Array('"
-    for i in os.walk('content/images/bannieres_projets').next()[2]:
-        sp = i.split('.')
-        if len(sp) == 3 and sp[2] == 'jpg':
-            listing[sp[0]] = sp[1]
+    for _, _, i in os.walk('/content/images/bannieres_projets'):
+        for _file in i:
+            sp = _file.split('.')
+            if len(sp) == 3 and sp[2] == 'jpg':
+                listing[sp[0]] = sp[1]
     script += "', '".join(listing)
     script += "');\n"
     script += "projectalea_sublist = Array(Array('"
