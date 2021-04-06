@@ -1,11 +1,13 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
-
+from __future__ import unicode_literals
 
 import os
 import sys
 
-sys.path.appe
+sys.path.append(os.curdir)
+
+
 AUTHOR = u'HAUM'
 SITENAME = u'Hackerspace au Mans'
 SITEURL = '/'
