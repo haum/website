@@ -155,5 +155,5 @@ var events = past_events + future_events;
         for se in sql_events:
             cal.add_component(se)
 
-        with open(icalfile, 'w') as f:
+        with open(icalfile, 'wb') as f:
             f.write(cal.to_ical())
