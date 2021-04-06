@@ -26,7 +26,7 @@ FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 
-PLUGINS = ['plugin-projets.projets', 'pelican_flickrtag']
+PLUGINS = ['plugin-projets.projets']
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
