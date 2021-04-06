@@ -39,9 +39,9 @@ rm -rf /tmp/test_venv_$PPID
 echo "==> Creating dir $LOCALPYTHON to setup a new python install..."
 mkdir $LOCALPYTHON
 
-echo "==> Downloading and unpacking python_3.7.5..."
+echo "==> Downloading and unpacking python_3.7.3..."
 mkdir /tmp/python_$PPID && cd /tmp/python_$PPID
-wget $PYTHON375_URL --quiet -O - | tar zx
+wget $PYTHON373_URL --quiet -O - | tar zx
 cd $PYTHON_DIRNAME
 echo "... Done."
 
