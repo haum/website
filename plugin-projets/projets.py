@@ -77,7 +77,8 @@ def generate_project_list(generator):
 
 
 def ordered_walk(path):
-    return sorted(os.walk(path).next()[2])
+    for _, _, i in os.walk(path):
+        return sorted(i)
 
 class ProjectList(Directive):
     required_arguments = 0
