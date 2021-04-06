@@ -3,7 +3,7 @@
 # install_venv.sh
 #
 # Copyright © 2014 Mathieu Gaborit (matael) <mathieu@matael.org>
-#
+# Updated to python3 by jblb <jerome@haum.org>
 #
 # Distributed under WTFPL terms
 #
@@ -24,9 +24,9 @@
 
 CORE_2_USE=2
 
-PYTHON278_URL=https://www.python.org/ftp/python/2.7.8/Python-2.7.8.tgz
+PYTHON373_URL=https://www.python.org/ftp/python/3.7.3/Python-3.7.3.tgz
 LOCALPYTHON=.localpython
-PYTHON_DIRNAME=Python-2.7.8
+PYTHON_DIRNAME=Python-3.7.3
 
 VENV_DIR=.venv_pelican
 INIT_PATH="$PWD"
