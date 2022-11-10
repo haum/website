@@ -45,7 +45,7 @@ DEFAULT_PAGINATION = 10
 
 # Calendar regeneration
 from agenda.agenda import create_json
-AGENDA = create_json('/home/oneshot/agenda.sqlite',
+AGENDA = create_json('agenda.sqlite',
                      'content/calendar/calendar.js',
                      icalfile='content/calendar/calendar.ics')
 
