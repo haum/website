@@ -23,6 +23,7 @@
 #  0. You just DO WHAT THE FUCK YOU WANT TO.
 #
 
+import logging
 import sqlite3
 import json
 
@@ -36,6 +37,7 @@ def events_from_query(db, q, func=None):
     try:
         db = sqlite3.connect(db)
     except:
+        logging.getLogger(__name__).warn(db + ' not found, do not generate agenda.')
         return ()
     c = db.cursor()
 
