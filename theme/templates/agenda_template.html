@@ -24,8 +24,10 @@
 		weekday[4] = "jeu.";
 		weekday[5] = "ven.";
 		weekday[6] = "sam.";
+		var now = new Date();
 		$.each(future_events, function(i,e){
 			var d = new Date(e.isodate);
+			if (d < now) return;
 			$('#calendar').append(
 				'<div class="event">' +
 				'  <time datetime="' + e.isodate + '" class="dateheure">' +
