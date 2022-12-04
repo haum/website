@@ -30,8 +30,11 @@ import json
 from datetime import date, datetime
 import pytz
 
-import icalendar
-
+try:
+    import icalendar
+except:
+    logging.getLogger(__name__).warn('icalendar module not found, do not generate this part of agenda.')
+    icalendar = False
 
 def events_from_query(db, q, func=None):
     try:
@@ -84,6 +87,8 @@ def ical_from_dbcursor(q):
     """
     Function to pass along with events_from_query
     """
+
+    if not icalendar: return
 
     # initialize timezone
     tz = pytz.timezone('Europe/Paris')
@@ -148,7 +153,7 @@ var events = past_events + future_events;
         f.write(content)
 
     # ICAL Generation
-    if icalfile:
+    if icalfile and icalendar:
 
         cal = icalendar.Calendar()
         sql_events = events_from_query(
