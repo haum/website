@@ -1,4 +1,9 @@
 {% extends "base.html" %}
+{% block head_add %}
+		<link type="text/css" href="{{ SITEURL }}/theme/css/mastodon-timeline.min.css" rel="stylesheet"/>
+		<script type="text/javascript" src="{{ SITEURL }}/theme/js/mastodon-timeline.min.js"></script>
+{% endblock head_add %}
+		
 {% block content %}
 <div class="grid" style="clear: both">
 	<div class="grid-12">
@@ -55,6 +60,16 @@
 			<h2>Zoom sur un projet <small>(aléatoire)</small></h2>
 			<script type="text/javascript" src="/images/bannieres_projets/projectalea.js"></script>
 			<p><a href="/pages/les-projets.html">Voir tous les projets</a></p>
+		</article>
+		<article>
+			<h2>Microblogging</h2>
+			<div style="overflow: auto; max-height: 80vh;">
+				<div class="mt-timeline">
+					<div id="mt-body" class="mt-body" role="feed">
+						<div class="loading-spinner"></div>
+					</div>
+				</div>
+			</div>
 		</article>
 		<article>
 			<h2>À découvrir</h2>
