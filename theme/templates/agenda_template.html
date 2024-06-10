@@ -16,6 +16,7 @@
 	<div id=calendar></div><div class=clearer>&nbsp;</div>
 	<script type="text/javascript" src="{{ SITEURL }}/calendar/calendar.js"></script>
 	<script type="text/javascript">
+		var i = 0;
 		var weekday = new Array(7);
 		weekday[0] = "dim.";
 		weekday[1] = "lun.";
@@ -24,23 +25,42 @@
 		weekday[4] = "jeu.";
 		weekday[5] = "ven.";
 		weekday[6] = "sam.";
-		var now = new Date();
-		$.each(future_events, function(i,e){
+		var month = new Array(12);
+		month[0] = "Janvier";
+		month[1] = "Février";
+		month[2] = "Mars";
+		month[3] = "Avril";
+		month[4] = "Mai";
+		month[5] = "Juin";
+		month[6] = "Juillet";
+		month[7] = "Août";
+		month[8] = "Septembre";
+		month[9] = "Octobre";
+		month[10] = "Novembre";
+		month[11] = "Décembre";
+		function pad(a) { return (a < 10) ? '0'+a : a }
+		while (i < events.length) {
+			var e = events[i];
 			var d = new Date(e.isodate);
-			if (d < now) return;
-			$('#calendar').append(
-				'<div class="event">' +
-				'  <time datetime="' + e.isodate + '" class="dateheure">' +
-				'    <em>' + weekday[d.getDay()] + '</em>' +
-				'    <span>' + d.getDate() + '</span>' +
-				'    <strong>' + e.date[1] + ' ' + d.getFullYear() + '</strong>' +
-				'    <time>' + d.getHours() + ':' + e.date[4] + '</time>' +
-				'  </time>' +
-				'  <p class="lieu">' + e.lieu + '</p>' +
-				'  <p class="descr">' + e.texte + '</p>' +
-				'</div>'
-			);
-		});
+			today = new Date();
+			today.setHours(4);
+			today.setMinutes(0);
+			if (d > today) {
+				$('#calendar').append(
+					'<div class="event">' +
+					'  <time datetime="' + e.isodate + '" class="dateheure">' +
+					'    <em>' + weekday[d.getDay()] + '</em>' +
+					'    <span>' + pad(d.getDate()) + '</span>' +
+					'    <strong>' + month[d.getMonth()] + ' ' + d.getFullYear() + '</strong>' +
+					'    <time>' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + '</time>' +
+					'  </time>' +
+					'  <p class="lieu">' + e.lieu + '</p>' +
+					'  <p class="descr">' + e.texte + '</p>' +
+					'</div>'
+				);
+			}
+			i++;
+		}
 		$('div.event:odd').css("background-color", '#eeeeee');
 	</script>
 </article>

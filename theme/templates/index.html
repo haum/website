@@ -94,20 +94,33 @@
 </article>
 <script type="text/javascript" src="{{ SITEURL }}/calendar/calendar.js"></script>
 <script type="text/javascript">
-	var i = 0; // Current future_events considered
-	var printed = 0; // Nb of events printed
-	while (i < future_events.length && printed < 4) {
-		var e = future_events[i];
+	var i = 0;
+	var printed = 0;
+	var weekday = new Array(7);
+	weekday[0] = "dim.";
+	weekday[1] = "lun.";
+	weekday[2] = "mar.";
+	weekday[3] = "mer.";
+	weekday[4] = "jeu.";
+	weekday[5] = "ven.";
+	weekday[6] = "sam.";
+	var month = new Array(12);
+	month[0] = "Janvier";
+	month[1] = "Février";
+	month[2] = "Mars";
+	month[3] = "Avril";
+	month[4] = "Mai";
+	month[5] = "Juin";
+	month[6] = "Juillet";
+	month[7] = "Août";
+	month[8] = "Septembre";
+	month[9] = "Octobre";
+	month[10] = "Novembre";
+	month[11] = "Décembre";
+	function pad(a) { return (a < 10) ? '0'+a : a }
+	while (i < events.length && printed < 4) {
+		var e = events[i];
 		var d = new Date(e.isodate);
-		var weekday = new Array(7);
-		weekday[0] = "dim.";
-		weekday[1] = "lun.";
-		weekday[2] = "mar.";
-		weekday[3] = "mer.";
-		weekday[4] = "jeu.";
-		weekday[5] = "ven.";
-		weekday[6] = "sam.";
-
 		today = new Date();
 		today.setHours(4);
 		today.setMinutes(0);
@@ -116,9 +129,9 @@
 				'<div class="event">' +
 				'  <time datetime="' + e.isodate + '" class="dateheure">' +
 				'    <em>' + weekday[d.getDay()] + '</em>' +
-				'    <span>' + e.date[0] + '</span>' +
-				'    <strong>' + e.date[1] + ' ' + e.date[2] + '</strong>' +
-				'    <time>' + e.date[3] + ':' + e.date[4] + '</time>' +
+				'    <span>' + pad(d.getDate()) + '</span>' +
+				'    <strong>' + month[d.getMonth()] + ' ' + d.getFullYear() + '</strong>' +
+				'    <time>' + pad(d.getHours()) + ':' + pad(d.getMinutes()) + '</time>' +
 				'  </time>' +
 				'  <p class="lieu">' + e.lieu + '</p>' +
 				'  <p class="descr">' + e.texte + '</p>' +

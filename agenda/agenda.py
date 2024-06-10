@@ -53,13 +53,8 @@ def events_from_query(db, q, func=None):
             }
 
             sql_date = row[3].split(' ')
-            new_event['date'] = sql_date[0].split('/') + sql_date[1].split(':')
-            py_date = datetime(
-                int(new_event['date'][2]),
-                int(new_event['date'][1]),
-                int(new_event['date'][0]),
-                int(new_event['date'][3]),
-                int(new_event['date'][4]))
+            d = sql_date[0].split('-') + sql_date[1].split(':')
+            py_date = datetime(*map(int, d))
             new_event['isodate'] = py_date.isoformat()
 
             events.append(new_event)
@@ -68,20 +63,6 @@ def events_from_query(db, q, func=None):
         return events
     else:
         return func(c.execute(q))
-
-
-def get_month_forall(events_list):
-
-    for i in range(len(events_list)):
-        event = events_list[i]
-        py_date = date(
-            int(event['date'][2]),
-            int(event['date'][1]),
-            int(event['date'][0]))
-        events_list[i]['date'][1] = py_date.strftime('%b')
-
-    return events_list
-
 
 def ical_from_dbcursor(q):
     """
@@ -100,8 +81,8 @@ def ical_from_dbcursor(q):
         event.add('location', e[1])
 
         sql_date = e[3].split(' ')
-        d = tuple(map(int, sql_date[0].split('/') + sql_date[1].split(':')))
-        date = tz.localize(datetime(d[2], d[1], d[0], d[3], d[4]))
+        d = tuple(map(int, sql_date[0].split('-') + sql_date[1].split(':')))
+        date = tz.localize(datetime(d[0], d[1], d[2], d[3], d[4]))
         event.add('dtstart', date)
         events.append(event)
 
@@ -109,55 +90,19 @@ def ical_from_dbcursor(q):
 
 
 def create_json(db, calendar_file, icalfile=None):
-    """
-    use the database items to generate 3 variables in the json calendar.js :
-        - past_events
-        - future_events
-        - events = past_events + future_events
-
-    """
-
     # fetch events
-    past_events = events_from_query(
-        db, "select * from agenda where status=0")
-
-    future_events = events_from_query(
-        db, "select * from agenda where status=1")
-
-    # order lists
-    def keyfun(_):
-        return int(_['date'][2]+_['date'][1]+_['date'][0])
-
-    past_events = sorted(
-        past_events,
-        key=keyfun)
-
-    future_events = sorted(
-        future_events,
-        key=keyfun)
-
-    past_events = get_month_forall(past_events)
-    future_events = get_month_forall(future_events)
+    now = datetime.now().replace(microsecond=0).isoformat().replace('T', ' ')[:-3]
+    events = events_from_query(db, 'SELECT * FROM agenda WHERE status=1 AND date > "' + now + '" ORDER BY date ASC')
 
     # output
-    content = """
-
-/*** PLEASE USE SHORT MONTH NAMES ***/
-var past_events = {0};
-var future_events = {1};
-var events = past_events + future_events;
-""".format(json.dumps(past_events), json.dumps(future_events))
-
+    content = "var events = {0};".format(json.dumps(events))
     with open(calendar_file, 'w') as f:
-
         f.write(content)
 
     # ICAL Generation
     if icalfile and icalendar:
-
         cal = icalendar.Calendar()
-        sql_events = events_from_query(
-            db, "select * from agenda where status=1", ical_from_dbcursor)
+        sql_events = events_from_query(db, "SELECT * FROM agenda WHERE status=1 ORDER BY date DESC", ical_from_dbcursor)
 
         for se in sql_events:
             cal.add_component(se)
