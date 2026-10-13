@@ -11,3 +11,6 @@ content/calendar/calendar.js
 .*
 *~
 content
+
+# Base de l'agenda : écrite par les bots sur le serveur, ne pas versionner
+agenda.sqlite
