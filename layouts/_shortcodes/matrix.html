@@ -1,0 +1,4 @@
+{{- /* Lien vers le salon Matrix ({{< matrix >}} ou {{< matrix "texte" >}}),
+       configuré une seule fois dans hugo.toml (params.matrix). */ -}}
+{{- $text := .Get 0 | default "salon Matrix" -}}
+{{- with site.Params.matrix -}}<a href="{{ . }}">{{ $text }}</a>{{- else -}}{{ $text }}{{- end -}}

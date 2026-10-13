@@ -1,0 +1,14 @@
+{{- $nl := "\r\n" -}}
+BEGIN:VCALENDAR{{ $nl }}VERSION:2.0{{ $nl }}PRODID:-//HAUM//Agenda//FR{{ $nl }}X-WR-CALNAME:HAUM{{ $nl }}X-WR-TIMEZONE:Europe/Paris{{ $nl -}}
+{{- range hugo.Data.agenda -}}
+{{- $d := time.AsTime .date "Europe/Paris" -}}
+BEGIN:VEVENT{{ $nl -}}
+UID:{{ md5 (printf "%s%s" .date .titre) }}@haum.org{{ $nl -}}
+DTSTAMP:{{ now.UTC.Format "20060102T150405Z" }}{{ $nl -}}
+DTSTART:{{ $d.UTC.Format "20060102T150405Z" }}{{ $nl -}}
+SUMMARY:{{ .titre | replaceRE `([,;\\])` `\$1` }}{{ $nl -}}
+LOCATION:{{ .lieu | replaceRE `([,;\\])` `\$1` }}{{ $nl -}}
+DESCRIPTION:{{ .description | plainify | htmlUnescape | replaceRE `([,;\\])` `\$1` | replaceRE `\r?\n` `\n` }}{{ $nl -}}
+END:VEVENT{{ $nl -}}
+{{- end -}}
+END:VCALENDAR{{ $nl -}}

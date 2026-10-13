@@ -1,0 +1,6 @@
+{{ if or .Params.realisation .Params.etat }}
+<ul class="badges">
+  {{ with .Params.realisation }}<li class="badge badge-{{ .color }}"><span>Réalisation</span>{{ .label }}</li>{{ end }}
+  {{ with .Params.etat }}<li class="badge badge-{{ .color }}"><span>État</span>{{ .label }}</li>{{ end }}
+</ul>
+{{ end }}

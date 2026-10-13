@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · HAUM{{ end }}</title>
+  <meta name="description" content="{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <meta name="color-scheme" content="light dark">
+  {{ if site.Params.preview }}<meta name="robots" content="noindex, nofollow">{{ end }}
+  {{/* Avant la feuille de style : applique le thème choisi sans clignotement */}}
+  <script>try{var t=localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.dataset.theme=t}catch(e){}</script>
+  <meta property="og:title" content="{{ .Title }}">
+  <meta property="og:site_name" content="HAUM">
+  {{ with .Params.banner }}<meta property="og:image" content="{{ . | absURL }}">{{ end }}
+  <link rel="icon" href="/theme/favicon.ico">
+  {{ with .OutputFormats.Get "rss" }}<link rel="alternate" type="application/rss+xml" href="{{ .Permalink }}" title="{{ site.Title }}">{{ end }}
+  <link rel="alternate" type="application/rss+xml" href="/articles/index.xml" title="Articles du HAUM">
+  {{ $css := resources.Get "css/main.css" | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $css.RelPermalink }}" integrity="{{ $css.Data.Integrity }}">
+  {{ $js := resources.Get "js/main.js" | js.Build (dict "minify" true) | fingerprint }}
+  <script src="{{ $js.RelPermalink }}" defer></script>
+</head>
+<body>
+  <a class="skip" href="#contenu">Aller au contenu</a>
+  {{ with site.Params.preview }}<div class="preview-banner" role="note">{{ . | markdownify }}</div>{{ end }}
+  {{ partial "header.html" . }}
+  <main id="contenu">
+    {{ block "main" . }}{{ end }}
+  </main>
+  {{ partial "footer.html" . }}
+</body>
+</html>

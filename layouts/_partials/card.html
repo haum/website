@@ -1,0 +1,17 @@
+{{ $img := .Params.banner }}
+{{ if not $img }}
+  {{ with findRESubmatch `<img[^>]+src="([^"]+)"` .Content 1 }}{{ $img = index (index . 0) 1 }}{{ end }}
+{{ end }}
+<a class="card" href="{{ .RelPermalink }}">
+  <div class="card-media{{ if not $img }} card-media-empty{{ end }}">
+    {{ with $img }}<img src="{{ . }}" alt="" loading="lazy">{{ else }}<span>{{ substr ($.Title | upper) 0 1 }}</span>{{ end }}
+  </div>
+  <div class="card-body">
+    <p class="meta">
+      {{ with .Params.categories }}<span class="chip">{{ index . 0 }}</span>{{ end }}
+      {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>{{ end }}
+    </p>
+    <h3>{{ .Title }}</h3>
+    {{ with .Params.summary }}<p>{{ . | plainify | truncate 140 }}</p>{{ end }}
+  </div>
+</a>

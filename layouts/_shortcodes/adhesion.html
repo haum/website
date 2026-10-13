@@ -1,0 +1,3 @@
+{{- /* Bouton d'adhésion HelloAsso ({{< adhesion >}}), adresse dans hugo.toml (params.adhesion).
+       Remplace l'ancien widget en iframe, qui cassait à chaque nouvelle campagne annuelle. */ -}}
+<p class="cta"><a class="btn" href="{{ site.Params.adhesion }}">{{ .Get 0 | default "Adhérer au HAUM sur HelloAsso" }} {{ partial "icon.html" "arrow" }}</a></p>

@@ -1,0 +1,17 @@
+{{ range .GroupByDate "2006" }}
+<section class="year-group">
+  <h2 class="year">{{ .Key }}</h2>
+  <ol class="post-list">
+    {{ range .Pages }}
+    <li>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "02 Jan" }}</time>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <span class="post-meta">
+        {{ with .Params.categories }}<span class="chip">{{ index . 0 }}</span>{{ end }}
+        {{ with .Params.authors }}<span class="muted">{{ delimit . ", " }}</span>{{ end }}
+      </span>
+    </li>
+    {{ end }}
+  </ol>
+</section>
+{{ end }}

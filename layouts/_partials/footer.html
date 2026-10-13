@@ -1,0 +1,35 @@
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-about">
+      <img class="footer-logo" src="/theme/head.png" alt="HAUM" width="150" height="58">
+      <p>Association sarthoise de bidouilleurs, bricodeurs et bricoleurs. Ouverte à toutes et tous.</p>
+      <a class="address" href="{{ site.Params.osm }}">
+        {{ partial "icon.html" "pin" }}
+        <span>Association HAUM<br>{{ delimit site.Params.address "<br>" | safeHTML }}</span>
+      </a>
+    </div>
+    <ul class="contacts">
+      {{ range site.Params.contacts }}
+      {{ $url := cond (eq .url "@matrix") site.Params.matrix .url }}
+      {{ if $url }}
+      <li>
+        <a href="{{ $url }}"{{ with .rel }} rel="{{ . }}"{{ end }}>
+          {{ partial "icon.html" .icon }}
+          <span><strong>{{ .name }}</strong><small>{{ .label }}</small></span>
+        </a>
+      </li>
+      {{ end }}
+      {{ end }}
+    </ul>
+  </div>
+  <div class="wrap footer-bottom">
+    <span>HAUM, 2014–{{ now.Year }} · Généré avec <a href="https://gohugo.io/">Hugo</a></span>
+    <span>
+      {{ if and .File (not .IsHome) (not .Params.noedit) }}
+      <a href="{{ site.Params.editURL }}{{ .File.Path }}">{{ partial "icon.html" "edit" }} Modifier cette page</a> ·
+      {{ end }}
+      <a href="https://github.com/haum/website">Sources du site</a> ·
+      <a href="/articles/index.xml">{{ partial "icon.html" "rss" }} RSS</a>
+    </span>
+  </div>
+</footer>

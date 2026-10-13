@@ -1,0 +1,52 @@
+{{ define "main" }}
+{{ $isArticle := eq .Section "articles" }}
+<article class="wrap page">
+  <header class="page-head">
+    {{ if $isArticle }}
+      <p class="kicker">
+        <a href="/articles/">Articles</a>
+        {{ range .GetTerms "categories" }} / <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
+      </p>
+    {{ else if eq .File.Dir "pages/projets/" }}
+      <p class="kicker"><a href="/pages/les-projets.html">Projets</a></p>
+    {{ else if eq .File.Dir "pages/talks/" }}
+      <p class="kicker"><a href="/pages/talks.html">HAUMTalks</a></p>
+    {{ end }}
+    <h1>{{ .Title }}</h1>
+    {{ if $isArticle }}
+    <p class="meta">
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "icon.html" "calendar" }} {{ .Date | time.Format ":date_long" }}</time>
+      {{ with .GetTerms "authors" }}
+        <span>{{ partial "icon.html" "user" }} {{ range $i, $a := . }}{{ if $i }}, {{ end }}<a href="{{ $a.RelPermalink }}">{{ $a.LinkTitle }}</a>{{ end }}</span>
+      {{ end }}
+      <span>{{ partial "icon.html" "clock" }} {{ .ReadingTime }} min de lecture</span>
+    </p>
+    {{ end }}
+    {{ partial "badges.html" . }}
+  </header>
+
+  {{ with .Params.banner }}
+  <figure class="banner"><img src="{{ . }}" alt="" width="1280" height="640"></figure>
+  {{ end }}
+
+  <div class="prose">
+    {{ .Content }}
+  </div>
+
+  <footer class="page-foot">
+    {{ with .GetTerms "tags" }}
+    <ul class="tags">
+      {{ range . }}<li><a class="chip" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a></li>{{ end }}
+    </ul>
+    {{ end }}
+    <a class="edit-link" href="{{ site.Params.editURL }}{{ .File.Path }}">{{ partial "icon.html" "edit" }} Une coquille, un ajout&nbsp;? Modifier cette page</a>
+  </footer>
+
+  {{ if $isArticle }}
+  <nav class="prev-next" aria-label="Articles voisins">
+    {{ with .NextInSection }}<a class="prev" href="{{ .RelPermalink }}"><small>← Plus récent</small>{{ .Title }}</a>{{ else }}<span></span>{{ end }}
+    {{ with .PrevInSection }}<a class="next" href="{{ .RelPermalink }}"><small>Plus ancien →</small>{{ .Title }}</a>{{ end }}
+  </nav>
+  {{ end }}
+</article>
+{{ end }}

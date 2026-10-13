@@ -1,0 +1,6 @@
+{{- /* Liens Markdown : les liens vers d'autres sites s'ouvrent dans un nouvel onglet
+       (main.js fait de même pour les liens écrits en HTML et ceux des gabarits). */ -}}
+{{- $u := urls.Parse .Destination -}}
+{{- $ext := and (in (slice "http" "https") $u.Scheme) (not (in (slice "haum.org" "www.haum.org") $u.Host)) -}}
+<a href="{{ .Destination | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ if $ext }} target="_blank" rel="noopener"{{ end }}>{{ .Text }}{{ if $ext }}<span class="sr-only"> (nouvel onglet)</span>{{ end }}</a>
+{{- /**/ -}}

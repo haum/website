@@ -1,0 +1,23 @@
+{{/* Évènements depuis data/agenda.json. Les évènements passés sont masqués côté
+     navigateur (main.js) pour rester justes entre deux générations du site. */}}
+{{ $mois := slice "janv." "févr." "mars" "avril" "mai" "juin" "juil." "août" "sept." "oct." "nov." "déc." }}
+{{ $jours := slice "dim." "lun." "mar." "mer." "jeu." "ven." "sam." }}
+{{ $events := where (hugo.Data.agenda | default slice) "date" ">=" (now.AddDate 0 0 -1 | time.Format "2006-01-02") }}
+<ol class="events" data-limit="{{ .limit | default 0 }}">
+  {{ range $events }}
+  {{ $d := time.AsTime .date }}
+  <li class="event" data-date="{{ .date }}">
+    <time class="event-date" datetime="{{ .date }}">
+      <span class="wd">{{ index $jours (int $d.Weekday) }}</span>
+      <span class="day">{{ $d.Day }}</span>
+      <span class="month">{{ index $mois (sub (int $d.Month) 1) }} {{ $d.Year }}</span>
+    </time>
+    <div class="event-body">
+      <h3>{{ .titre }}</h3>
+      <p class="event-meta">{{ partial "icon.html" "clock" }} {{ $d.Format "15h04" }} · {{ partial "icon.html" "pin" }} {{ .lieu }}</p>
+      {{ with .description }}<p>{{ . | safeHTML }}</p>{{ end }}
+    </div>
+  </li>
+  {{ end }}
+</ol>
+<p class="events-empty muted" {{ if $events }}hidden{{ end }}>Aucun évènement programmé pour l'instant. Passez sur le <a href="https://forum.haum.org/">forum</a>{{ with site.Params.matrix }} ou sur le <a href="{{ . }}">salon Matrix</a>{{ end }} pour savoir quand le local est ouvert.</p>

@@ -1,16 +1,15 @@
-flickr_api/*
-tmp_flickr
-*.swp
-*.pyc
-cache/
-*.pid
+# Contenu : clone du dépôt website-content
+/content
 output/
-bda6f8500a34fe520421/
-pelican/
-content/calendar/calendar.js
-.*
-*~
-content
-
+public/
+resources/_gen/
+.hugo_build.lock
+.build.lock
 # Base de l'agenda : écrite par les bots sur le serveur, ne pas versionner
 agenda.sqlite
+# Généré à chaque build depuis agenda.sqlite
+data/agenda.json
+
+# Résidus de l'ancien moteur Pelican
+__pycache__/
+.pelican/

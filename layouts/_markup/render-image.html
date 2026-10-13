@@ -1,0 +1,21 @@
+{{- /* Images Markdown :
+  - « photo.jpg » : fichier rangé à côté de l'article (dossier de l'article),
+    réduit automatiquement s'il est trop grand (photos de téléphone) ;
+  - « /images/... » ou URL : utilisée telle quelle (contenu migré de Pelican).
+  Un titre (« ![alt](photo.jpg "Légende") ») devient une légende. */ -}}
+{{- $src := .Destination -}}
+{{- $w := 0 -}}{{- $h := 0 -}}
+{{- with .PageInner.Resources.Get .Destination -}}
+  {{- $img := . -}}
+  {{- if and (eq .MediaType.MainType "image") (ne .MediaType.SubType "svg") (ne .MediaType.SubType "gif") -}}
+    {{- if gt .Width 1600 -}}{{- $img = .Resize "1600x" -}}{{- end -}}
+    {{- $w = $img.Width -}}{{- $h = $img.Height -}}
+  {{- end -}}
+  {{- $src = $img.RelPermalink -}}
+{{- end -}}
+{{- $tag := printf `<img src="%s" alt="%s" loading="lazy"%s>` $src .PlainText (cond (gt $w 0) (printf ` width="%d" height="%d"` $w $h) "") -}}
+{{- if .Title -}}
+<figure>{{ $tag | safeHTML }}<figcaption>{{ .Title }}</figcaption></figure>
+{{- else -}}
+{{ $tag | safeHTML }}
+{{- end -}}

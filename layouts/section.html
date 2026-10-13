@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div class="wrap page page-wide">
+  <header class="page-head">
+    <p class="kicker">// Le journal du HAUM</p>
+    <h1>{{ .Title }}</h1>
+    {{ with .Params.summary }}<p class="lead">{{ . }}</p>{{ end }}
+    <p class="actions">{{ partial "write-button.html" (dict "class" "btn-small") }}
+      <a class="btn btn-ghost btn-small" href="/pages/comment-modifier-le-contenu-du-site-web.html">Comment ça marche&nbsp;?</a></p>
+    {{ with site.Taxonomies.categories }}
+    <ul class="tags">
+      {{ range .ByCount }}<li><a class="chip" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} <small>{{ .Count }}</small></a></li>{{ end }}
+    </ul>
+    {{ end }}
+  </header>
+  {{ partial "article-list.html" .RegularPagesRecursive }}
+</div>
+{{ end }}

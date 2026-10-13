@@ -1,0 +1,13 @@
+{{ define "main" }}
+<div class="wrap page page-wide">
+  <header class="page-head">
+    <p class="kicker"><a href="/articles/">Articles</a></p>
+    <h1>{{ .Title }}</h1>
+  </header>
+  <ul class="tags tags-cloud">
+    {{ range .Data.Terms.Alphabetical }}
+    <li><a class="chip" href="{{ .Page.RelPermalink }}">{{ .Page.LinkTitle }} <small>{{ .Count }}</small></a></li>
+    {{ end }}
+  </ul>
+</div>
+{{ end }}

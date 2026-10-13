@@ -1,0 +1,156 @@
+baseURL = "https://haum.org/"
+locale = "fr-FR"
+defaultContentLanguage = "fr"
+title = "HAUM — Hackerspace au Mans"
+timeZone = "Europe/Paris"
+
+# Conserve les URL de l'ancien site Pelican (/slug.html, /pages/slug.html)
+uglyURLs = true
+disablePathToLower = true
+enableRobotsTXT = true
+summaryLength = 40
+titleCaseStyle = "none"
+
+# content/ est le clone du dépôt website-content (comme pour Pelican) ;
+# site/ contient les quelques pages techniques propres au moteur.
+[module]
+  [module.hugoVersion]
+    min = "0.156.0"
+  [[module.mounts]]
+    source = "content"
+    target = "content"
+    files = ["! images/**", "! calendar/**", "! README*"]
+  [[module.mounts]]
+    source = "site"
+    target = "content"
+  [[module.mounts]]
+    source = "content/images"
+    target = "static/images"
+    files = ["! accueil/**"]
+  # Photos d'accueil : traitées par Hugo (réduites si trop grandes)
+  [[module.mounts]]
+    source = "content/images/accueil"
+    target = "assets/accueil"
+  [[module.mounts]]
+    source = "assets"
+    target = "assets"
+  [[module.mounts]]
+    source = "static"
+    target = "static"
+
+[permalinks.page]
+  articles = "/:slug"
+  pages = "/pages/:slug"
+
+[permalinks.section]
+  articles = "/articles"
+
+[taxonomies]
+  tag = "tags"
+  category = "categories"
+  author = "authors"
+
+[pagination]
+  pagerSize = 12
+
+[markup.goldmark.renderer]
+  # Le contenu migré contient du HTML (images dimensionnées, blocs alignés…)
+  unsafe = true
+[markup.goldmark.extensions.typographer]
+  leftDoubleQuote = "&laquo;&nbsp;"
+  rightDoubleQuote = "&nbsp;&raquo;"
+[markup.highlight]
+  noClasses = false
+  style = "monokai"
+
+[outputs]
+  home = ["html", "rss"]
+  section = ["html", "rss"]
+
+[outputFormats.calendar]
+  mediaType = "text/calendar"
+  baseName = "calendar"
+  isPlainText = true
+  protocol = "webcal://"
+
+[params]
+  description = "Le Hackerspace Au Mans (HAUM) est une association sarthoise adepte du Do-It-Yourself : électronique, informatique, fabrication, partage de savoirs."
+  editURL = "https://github.com/haum/website-content/edit/master/"
+  newArticleURL = "https://github.com/haum/website-content/new/master/articles"
+  # Texte d'un bandeau d'avertissement en haut de chaque page ; s'il est
+  # défini, les pages passent aussi en noindex. Vide par défaut.
+  preview = ""
+  spaceStatusURL = "/spacestatus"
+  # Page d'adhésion (adresse stable de l'association ; on peut y mettre
+  # la campagne de l'année, ex. ".../adhesions/nous-rejoindre-2026")
+  adhesion = "https://www.helloasso.com/associations/haum"
+  # Salon Matrix public du HAUM, ex. "https://matrix.to/#/#haum:exemple.org"
+  # (vide = lien masqué partout sur le site)
+  matrix = "https://matrix.to/#/#haum:matrix.org"
+  mastodon = { instance = "piaille.fr", account = "haum" }
+  address = ["2ème étage", "57 boulevard Demorieux", "72100 Le Mans"]
+  osm = "https://www.openstreetmap.org/?mlat=47.99352&mlon=0.18522#map=17/47.99352/0.18522"
+  taglines = [
+    "Convergence de bidouilleurs en centre ville",
+    "Rassemblement de bidouilleurs, de bricodeurs et de bricoleurs",
+    "Hackers vaillants, rien d'impossible",
+    "Toujours hacker un peu plus loin",
+    "Modifier pour faire sien",
+  ]
+
+[[menus.main]]
+  name = "C'est quoi le HAUM ?"
+  url = "/pages/cest-quoi-le-haum.html"
+  weight = 10
+[[menus.main]]
+  name = "Agenda"
+  url = "/pages/agenda.html"
+  weight = 20
+[[menus.main]]
+  name = "Projets"
+  url = "/pages/les-projets.html"
+  weight = 30
+[[menus.main]]
+  name = "Articles"
+  url = "/articles/"
+  weight = 40
+[[menus.main]]
+  name = "HAUMTalks"
+  url = "/pages/talks.html"
+  weight = 50
+[[menus.main]]
+  name = "Photos"
+  url = "https://photos.haum.org/"
+  weight = 60
+
+[[params.contacts]]
+  name = "Courriel"
+  label = "contact@haum.org"
+  url = "mailto:contact@haum.org"
+  icon = "mail"
+[[params.contacts]]
+  name = "Forum"
+  label = "forum.haum.org"
+  url = "https://forum.haum.org/"
+  icon = "forum"
+[[params.contacts]]
+  name = "Matrix"
+  label = "#haum:matrix.org"
+  url = "@matrix"
+  icon = "matrix"
+[[params.contacts]]
+  name = "Mastodon"
+  label = "@haum@piaille.fr"
+  url = "https://piaille.fr/@haum"
+  icon = "mastodon"
+  rel = "me"
+[[params.contacts]]
+  name = "GitHub"
+  label = "github.com/haum"
+  url = "https://github.com/haum"
+  icon = "github"
+[[params.contacts]]
+  name = "Photos"
+  label = "photos.haum.org"
+  url = "https://photos.haum.org/"
+  icon = "camera"
