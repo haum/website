@@ -10,7 +10,10 @@
       {{ $url := cond (eq .url "@matrix") site.Params.matrix .url }}
       {{ if $url }}
       <li>
-        {{ .name }}&nbsp;: <a href="{{ $url }}"{{ with .rel }} rel="{{ . }}"{{ end }}>{{ .label }}</a>
+        <a href="{{ $url }}"{{ with .rel }} rel="{{ . }}"{{ end }}>
+          {{ partial "icon.html" .icon }}
+          <span><strong>{{ .name }}</strong><small>{{ .label }}</small></span>
+        </a>
       </li>
       {{ end }}
       {{ end }}

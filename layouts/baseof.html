@@ -4,7 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ if .IsHome }}{{ site.Title }}{{ else }}{{ .Title }} · HAUM{{ end }}</title>
-  <meta name="description" content="{{ with .Summary }}{{ . | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}">
+  <meta name="description" content="{{ with .Summary }}{{ . | replaceRE `<span class="sr-only">[^<]*</span>` "" | plainify | truncate 160 }}{{ else }}{{ site.Params.description }}{{ end }}">
   <meta name="color-scheme" content="light dark">
   {{ if site.Params.preview }}<meta name="robots" content="noindex, nofollow">{{ end }}
   {{/* Avant la feuille de style : applique le thème choisi sans clignotement */}}

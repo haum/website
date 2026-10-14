@@ -69,7 +69,7 @@
       <img src="{{ .Params.banner }}" alt="" loading="lazy" width="1280" height="640">
       <div class="spotlight-text">
         <h3>{{ .Title }}</h3>
-        <p>{{ .Summary | plainify | truncate 180 }}</p>
+        <p>{{ .Summary | replaceRE `<span class="sr-only">[^<]*</span>` "" | plainify | truncate 180 }}</p>
         {{ partial "badges.html" . }}
       </div>
     </a>
@@ -102,7 +102,7 @@
     <p>Oui, le HAUM vit encore et réalise toujours des projets, mais il y a peu d'énergie pour communiquer sur nos activités.</p>
     <p>Si tu as l'âme d'un poète, envie d'exprimer des talents de vidéaste, rêves d'enregistrer des podcasts ou as d'autres idées pour mettre en valeur les projets de l'association, parle-nous-en&nbsp;!</p>
     <p>Ce site lui-même est <a href="https://github.com/haum/website-content">écrit en Markdown sur GitHub</a>&nbsp;: chaque page a un lien «&nbsp;Modifier cette page&nbsp;».</p>
-    <a class="btn" href="https://forum.haum.org/">Discuter sur le forum</a>
+    <a class="btn btn-light" href="https://forum.haum.org/">Discuter sur le forum</a>
   </div>
 </section>
 {{ end }}
