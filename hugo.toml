@@ -64,8 +64,15 @@ titleCaseStyle = "none"
   style = "monokai"
 
 [outputs]
-  home = ["html", "rss"]
+  home = ["html", "rss", "llms"]
   section = ["html", "rss"]
+
+# /llms.txt : plan du site lisible par les modèles de langage (llmstxt.org)
+[outputFormats.llms]
+  mediaType = "text/plain"
+  baseName = "llms"
+  isPlainText = true
+  notAlternative = true
 
 [outputFormats.calendar]
   mediaType = "text/calendar"

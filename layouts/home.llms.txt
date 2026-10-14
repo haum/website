@@ -1,0 +1,59 @@
+{{- /* /llms.txt (https://llmstxt.org) : présentation du HAUM et plan du site en Markdown */ -}}
+{{- $pages := where site.RegularPages "Section" "pages" -}}
+{{- $groupes := slice
+  (dict "titre" "Le HAUM" "dir" "pages/")
+  (dict "titre" "L'association" "dir" "pages/association/")
+  (dict "titre" "Projets" "dir" "pages/projets/")
+  (dict "titre" "HAUMTalks" "dir" "pages/talks/")
+-}}
+# {{ site.Title }}
+
+> {{ site.Params.description }}
+
+Le local se trouve {{ delimit site.Params.address ", " }}. Il ouvre lors des évènements de l'agenda et quand des membres sont présents : {{ site.Params.spaceStatusURL | absURL }} renvoie `1` s'il est ouvert, `0` s'il est fermé.
+{{- with site.Params.adhesion }} L'adhésion se fait en ligne : {{ . }}.{{ end }}
+
+Le contenu du site est rédigé en Markdown dans le dépôt public https://github.com/haum/website-content. Le site est en français.
+{{- range $groupes }}
+{{- $titre := .titre }}
+{{- with where $pages "File.Dir" .dir }}
+
+## {{ $titre }}
+{{- range sort . "Title" }}
+{{ template "lien" . }}
+{{- end }}
+{{- end }}
+{{- end }}
+
+## Agenda
+
+- [Agenda des évènements]({{ (site.GetPage "/pages/agenda").Permalink }}) : ce que le HAUM organise ou auxquels il participe
+- [Calendrier iCal]({{ "calendar/calendar.ics" | absURL }}) : les mêmes évènements, au format ICS
+{{- range where (hugo.Data.agenda | default slice) "date" ">=" (now | time.Format "2006-01-02") }}
+- {{ (time.AsTime .date).Format "02/01/2006 15h04" }} : {{ .titre }} ({{ .lieu }})
+{{- end }}
+
+## Articles
+{{ with site.GetPage "/articles" }}
+- [Tous les articles]({{ .Permalink }}){{ with .OutputFormats.Get "rss" }} ([flux RSS]({{ .Permalink }})){{ end }}
+{{- end }}
+{{- range first 10 (where site.RegularPages "Section" "articles") }}
+{{ template "lien" . }}
+{{- end }}
+
+## Contacts
+{{ range site.Params.contacts }}
+- {{ .name }} : {{ if eq .url "@matrix" }}{{ site.Params.matrix }}{{ else }}{{ .url }}{{ end }}
+{{- end }}
+
+## Optional
+{{ range sort (where $pages "File.Dir" "not in" (apply $groupes "index" "." "dir")) "Title" }}
+{{ template "lien" . }}
+{{- end }}
+{{ "" }}
+{{- /* Ligne de liste Markdown : - [Titre](url) : résumé (date) */ -}}
+{{- define "lien" -}}
+{{- $resume := .Params.summary | default .Description -}}
+{{- if and (not $resume) (eq .Section "articles") }}{{ $resume = .Summary | replaceRE `<span class="sr-only">[^<]*</span>` "" | plainify | htmlUnescape | replaceRE `\s+` " " | truncate 160 }}{{ end -}}
+- [{{ .Title }}]({{ .Permalink }}){{ with $resume }} : {{ . | plainify | htmlUnescape | strings.TrimSpace }}{{ end }}{{ with .Date }}{{ if not .IsZero }} ({{ .Format "2006-01-02" }}){{ end }}{{ end -}}
+{{- end -}}

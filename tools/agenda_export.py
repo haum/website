@@ -8,6 +8,7 @@ Usage : python tools/agenda_export.py ../website/agenda.sqlite data/agenda.json
 """
 
 import json
+import os
 import sqlite3
 import sys
 
@@ -20,6 +21,7 @@ def main(db_path, out_path):
     events = [{'titre': t, 'lieu': l, 'description': (d or '').strip(),
                'date': date.replace(' ', 'T') + ':00'}
               for t, l, d, date in rows]
+    os.makedirs(os.path.dirname(out_path) or '.', exist_ok=True)
     with open(out_path, 'w', encoding='utf-8') as f:
         json.dump(events, f, ensure_ascii=False, indent=2)
     print(f'{len(events)} évènements exportés')
