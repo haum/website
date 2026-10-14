@@ -125,7 +125,7 @@ function toots() {
   const api = `https://${instance}/api/v1`;
   fetch(`${api}/accounts/lookup?acct=${account}`)
     .then((r) => r.json())
-    .then((acc) => fetch(`${api}/accounts/${acc.id}/statuses?limit=4&exclude_replies=true`))
+    .then((acc) => fetch(`${api}/accounts/${acc.id}/statuses?limit=8&exclude_replies=true`))
     .then((r) => r.json())
     .then((statuses) => {
       box.replaceChildren(...statuses.map((s) => {

@@ -281,6 +281,13 @@ a.chip:hover { background: var(--accent-soft); color: var(--accent); }
 
 /* Toots */
 .toots { display: grid; gap: 12px; }
+/* Fil de l'accueil : hauteur limitée, défilement interne */
+.panel-fedi .toots {
+  max-height: 420px; overflow-y: auto; overscroll-behavior: contain;
+  padding: 0 6px 32px 0; scrollbar-width: thin; scrollbar-color: var(--line) transparent;
+  mask-image: linear-gradient(to bottom, #000 calc(100% - 32px), transparent);
+}
+.panel-fedi .toots:focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
 .toot { padding: 14px 16px; border-radius: 12px; background: var(--bg); border: 1px solid var(--line); font-size: .95rem; }
 .toot p { margin: 0 0 .5em; }
 .toot time { font: .75rem var(--mono); color: var(--muted); }

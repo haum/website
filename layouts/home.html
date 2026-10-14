@@ -42,7 +42,7 @@
       <h2>Sur le fédivers</h2>
       <a href="https://{{ site.Params.mastodon.instance }}/@{{ site.Params.mastodon.account }}" rel="me">@{{ site.Params.mastodon.account }}@{{ site.Params.mastodon.instance }}</a>
     </header>
-    <div class="toots" data-instance="{{ site.Params.mastodon.instance }}" data-account="{{ site.Params.mastodon.account }}">
+    <div class="toots" tabindex="0" role="region" aria-label="Derniers messages sur le fédivers" data-instance="{{ site.Params.mastodon.instance }}" data-account="{{ site.Params.mastodon.account }}">
       <p class="muted">Chargement des derniers messages…</p>
     </div>
   </div>
