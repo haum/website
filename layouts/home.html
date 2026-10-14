@@ -36,6 +36,17 @@
 </section>
 
 <section class="wrap home-grid">
+{{/* Le fil Mastodon est la partie la plus vivante du site : en premier */}}
+  <div class="panel panel-fedi">
+    <header class="panel-head">
+      <h2>Sur le fédivers</h2>
+      <a href="https://{{ site.Params.mastodon.instance }}/@{{ site.Params.mastodon.account }}" rel="me">@{{ site.Params.mastodon.account }}@{{ site.Params.mastodon.instance }}</a>
+    </header>
+    <div class="toots" data-instance="{{ site.Params.mastodon.instance }}" data-account="{{ site.Params.mastodon.account }}">
+      <p class="muted">Chargement des derniers messages…</p>
+    </div>
+  </div>
+
   <div class="panel panel-agenda">
     <header class="panel-head">
       <h2>Prochains rendez-vous</h2>
@@ -43,14 +54,6 @@
     </header>
     {{ partial "events.html" (dict "limit" 4) }}
     <p class="small"><a href="/calendar/calendar.ics">{{ partial "icon.html" "calendar" }} S'abonner au calendrier (iCal)</a></p>
-  </div>
-
-  <div class="panel panel-visit">
-    <h2>Passer au local</h2>
-    <p>La meilleure façon de nous découvrir est de venir discuter avec nous lors des ouvertures du local ou aux évènements auxquels nous participons.</p>
-    <p>Lors des séances hebdomadaires, un membre passe souvent par l'entrée du <strong>boulevard Demorieux entre 21h et 22h</strong>&nbsp;; vous pouvez aussi sonner (voir l'affichette sur la façade).</p>
-    <p>Découvrir nos activités, partager ce que vous savez, trouver des conseils pour vos projets ou apprendre auprès des autres membres&nbsp;: vous êtes les bienvenu·es&nbsp;!</p>
-    <a class="address" href="{{ site.Params.osm }}">{{ partial "icon.html" "pin" }}<span>{{ delimit site.Params.address ", " }}</span></a>
   </div>
 </section>
 
@@ -88,14 +91,12 @@
 </section>
 
 <section class="wrap home-grid section">
-  <div class="panel">
-    <header class="panel-head">
-      <h2>Sur le fédivers</h2>
-      <a href="https://{{ site.Params.mastodon.instance }}/@{{ site.Params.mastodon.account }}" rel="me">@{{ site.Params.mastodon.account }}@{{ site.Params.mastodon.instance }}</a>
-    </header>
-    <div class="toots" data-instance="{{ site.Params.mastodon.instance }}" data-account="{{ site.Params.mastodon.account }}">
-      <p class="muted">Chargement des derniers messages…</p>
-    </div>
+  <div class="panel panel-visit">
+    <h2>Passer au local</h2>
+    <p>La meilleure façon de nous découvrir est de venir discuter avec nous lors des ouvertures du local ou aux évènements auxquels nous participons.</p>
+    <p>Lors des séances hebdomadaires, un membre passe souvent par l'entrée du <strong>boulevard Demorieux entre 21h et 22h</strong>&nbsp;; vous pouvez aussi sonner (voir l'affichette sur la façade).</p>
+    <p>Découvrir nos activités, partager ce que vous savez, trouver des conseils pour vos projets ou apprendre auprès des autres membres&nbsp;: vous êtes les bienvenu·es&nbsp;!</p>
+    <a class="address" href="{{ site.Params.osm }}">{{ partial "icon.html" "pin" }}<span>{{ delimit site.Params.address ", " }}</span></a>
   </div>
   <div class="panel panel-accent">
     <h2>Appel à contributeurs</h2>
