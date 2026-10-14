@@ -15,11 +15,8 @@
     <h1>{{ .Title }}</h1>
     {{ if $isArticle }}
     <p class="meta">
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ partial "icon.html" "calendar" }} {{ .Date | time.Format ":date_long" }}</time>
-      {{ with .GetTerms "authors" }}
-        <span>{{ partial "icon.html" "user" }} {{ range $i, $a := . }}{{ if $i }}, {{ end }}<a href="{{ $a.RelPermalink }}">{{ $a.LinkTitle }}</a>{{ end }}</span>
-      {{ end }}
-      <span>{{ partial "icon.html" "clock" }} {{ .ReadingTime }} min de lecture</span>
+      Publié le <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
+      {{- with .GetTerms "authors" }} par {{ range $i, $a := . }}{{ if $i }}, {{ end }}<a href="{{ $a.RelPermalink }}">{{ $a.LinkTitle }}</a>{{ end }}{{ end }}
     </p>
     {{ end }}
     {{ partial "badges.html" . }}
@@ -39,7 +36,7 @@
       {{ range . }}<li><a class="chip" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a></li>{{ end }}
     </ul>
     {{ end }}
-    <a class="edit-link" href="{{ site.Params.editURL }}{{ .File.Path }}">{{ partial "icon.html" "edit" }} Une coquille, un ajout&nbsp;? Modifier cette page</a>
+    <a class="edit-link" href="{{ site.Params.editURL }}{{ .File.Path }}">Une coquille, un ajout&nbsp;? Modifier cette page</a>
   </footer>
 
   {{ if $isArticle }}

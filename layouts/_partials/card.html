@@ -8,8 +8,8 @@
   </div>
   <div class="card-body">
     <p class="meta">
-      {{ with .Params.categories }}<span class="chip">{{ index . 0 }}</span>{{ end }}
-      {{ if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>{{ end }}
+      {{- if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>{{ end }}
+      {{- with .Params.categories }} · {{ index . 0 }}{{ end -}}
     </p>
     <h3>{{ .Title }}</h3>
     {{ with .Params.summary }}<p>{{ . | plainify | truncate 140 }}</p>{{ end }}

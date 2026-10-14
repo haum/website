@@ -6,8 +6,8 @@
       <p class="tagline" data-taglines="{{ site.Params.taglines | jsonify }}"><span class="tagline-text">{{ index site.Params.taglines 0 }}</span></p>
       {{ .Content }}
       <div class="actions">
-        <a class="btn" href="/pages/nous-rejoindre.html">Venir nous voir {{ partial "icon.html" "arrow" }}</a>
-        <a class="btn btn-ghost" href="/pages/agenda.html">{{ partial "icon.html" "calendar" }} L'agenda</a>
+        <a class="btn" href="/pages/nous-rejoindre.html">Venir nous voir</a>
+        <a class="btn btn-ghost" href="/pages/agenda.html">L'agenda</a>
       </div>
     </div>
     {{/* Une photo au hasard parmi content/images/accueil/ ; la légende vient
@@ -52,7 +52,7 @@
       <a href="/pages/agenda.html">Tout l'agenda</a>
     </header>
     {{ partial "events.html" (dict "limit" 4) }}
-    <p class="small"><a href="/calendar/calendar.ics">{{ partial "icon.html" "calendar" }} S'abonner au calendrier (iCal)</a></p>
+    <p class="small"><a href="/calendar/calendar.ics">S'abonner au calendrier (iCal)</a></p>
   </div>
 </section>
 
@@ -95,14 +95,14 @@
     <p>La meilleure façon de nous découvrir est de venir discuter avec nous lors des ouvertures du local ou aux évènements auxquels nous participons.</p>
     <p>Lors des séances hebdomadaires, un membre passe souvent par l'entrée du <strong>boulevard Demorieux entre 21h et 22h</strong>&nbsp;; vous pouvez aussi sonner (voir l'affichette sur la façade).</p>
     <p>Découvrir nos activités, partager ce que vous savez, trouver des conseils pour vos projets ou apprendre auprès des autres membres&nbsp;: vous êtes les bienvenu·es&nbsp;!</p>
-    <a class="address" href="{{ site.Params.osm }}">{{ partial "icon.html" "pin" }}<span>{{ delimit site.Params.address ", " }}</span></a>
+    <p><a href="{{ site.Params.osm }}">{{ delimit site.Params.address ", " }}</a></p>
   </div>
   <div class="panel panel-accent">
     <h2>Appel à contributeurs</h2>
     <p>Oui, le HAUM vit encore et réalise toujours des projets, mais il y a peu d'énergie pour communiquer sur nos activités.</p>
     <p>Si tu as l'âme d'un poète, envie d'exprimer des talents de vidéaste, rêves d'enregistrer des podcasts ou as d'autres idées pour mettre en valeur les projets de l'association, parle-nous-en&nbsp;!</p>
     <p>Ce site lui-même est <a href="https://github.com/haum/website-content">écrit en Markdown sur GitHub</a>&nbsp;: chaque page a un lien «&nbsp;Modifier cette page&nbsp;».</p>
-    <a class="btn btn-light" href="https://forum.haum.org/">Discuter sur le forum</a>
+    <a class="btn" href="https://forum.haum.org/">Discuter sur le forum</a>
   </div>
 </section>
 {{ end }}

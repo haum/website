@@ -8,13 +8,12 @@
   {{ $d := time.AsTime .date }}
   <li class="event" data-date="{{ .date }}">
     <time class="event-date" datetime="{{ .date }}">
-      <span class="wd">{{ index $jours (int $d.Weekday) }}</span>
       <span class="day">{{ $d.Day }}</span>
-      <span class="month">{{ index $mois (sub (int $d.Month) 1) }} {{ $d.Year }}</span>
+      <span class="month">{{ index $mois (sub (int $d.Month) 1) }}</span>
     </time>
     <div class="event-body">
       <h3>{{ .titre }}</h3>
-      <p class="event-meta">{{ partial "icon.html" "clock" }} {{ $d.Format "15h04" }} · {{ partial "icon.html" "pin" }} {{ .lieu }}</p>
+      <p class="event-meta">{{ index $jours (int $d.Weekday) }} {{ $d.Day }} {{ index $mois (sub (int $d.Month) 1) }} {{ $d.Year }}, {{ $d.Format "15h04" }} · {{ .lieu }}</p>
       {{ with .description }}<p>{{ . | safeHTML }}</p>{{ end }}
     </div>
   </li>
