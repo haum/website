@@ -2,9 +2,8 @@
 <section class="hero">
   <div class="wrap hero-grid">
     <div class="hero-text">
-      <p class="kicker">// Hackerspace · Le Mans · Do It Yourself</p>
-      <h1>Bidouiller, comprendre, <em>partager</em>.</h1>
-      <p class="tagline" data-taglines="{{ site.Params.taglines | jsonify }}"><span class="prompt">&gt;</span> <span class="tagline-text">{{ index site.Params.taglines 0 }}</span><span class="cursor" aria-hidden="true">_</span></p>
+      <h1>Hackerspace au Mans</h1>
+      <p class="tagline" data-taglines="{{ site.Params.taglines | jsonify }}"><span class="tagline-text">{{ index site.Params.taglines 0 }}</span></p>
       {{ .Content }}
       <div class="actions">
         <a class="btn" href="/pages/nous-rejoindre.html">Venir nous voir {{ partial "icon.html" "arrow" }}</a>
@@ -50,7 +49,7 @@
   <div class="panel panel-agenda">
     <header class="panel-head">
       <h2>Prochains rendez-vous</h2>
-      <a href="/pages/agenda.html">Tout l'agenda {{ partial "icon.html" "arrow" }}</a>
+      <a href="/pages/agenda.html">Tout l'agenda</a>
     </header>
     {{ partial "events.html" (dict "limit" 4) }}
     <p class="small"><a href="/calendar/calendar.ics">{{ partial "icon.html" "calendar" }} S'abonner au calendrier (iCal)</a></p>
@@ -62,7 +61,7 @@
 <section class="wrap section">
   <header class="section-head">
     <h2>Zoom sur un projet</h2>
-    <a href="/pages/les-projets.html">Les {{ len $projets }} projets {{ partial "icon.html" "arrow" }}</a>
+    <a href="/pages/les-projets.html">Les {{ len $projets }} projets</a>
   </header>
   <div class="spotlight" data-random>
     {{ range $avecBanniere }}
@@ -81,7 +80,7 @@
 <section class="wrap section">
   <header class="section-head">
     <h2>Derniers articles</h2>
-    <a href="/articles/">Tous les articles {{ partial "icon.html" "arrow" }}</a>
+    <a href="/articles/">Tous les articles</a>
   </header>
   <div class="cards">
     {{ range first 6 (where site.RegularPages "Section" "articles") }}
@@ -103,7 +102,7 @@
     <p>Oui, le HAUM vit encore et réalise toujours des projets, mais il y a peu d'énergie pour communiquer sur nos activités.</p>
     <p>Si tu as l'âme d'un poète, envie d'exprimer des talents de vidéaste, rêves d'enregistrer des podcasts ou as d'autres idées pour mettre en valeur les projets de l'association, parle-nous-en&nbsp;!</p>
     <p>Ce site lui-même est <a href="https://github.com/haum/website-content">écrit en Markdown sur GitHub</a>&nbsp;: chaque page a un lien «&nbsp;Modifier cette page&nbsp;».</p>
-    <a class="btn btn-light" href="https://forum.haum.org/">Discuter sur le forum {{ partial "icon.html" "arrow" }}</a>
+    <a class="btn btn-light" href="https://forum.haum.org/">Discuter sur le forum</a>
   </div>
 </section>
 {{ end }}

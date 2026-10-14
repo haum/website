@@ -1,7 +1,7 @@
 baseURL = "https://haum.org/"
 locale = "fr-FR"
 defaultContentLanguage = "fr"
-title = "HAUM — Hackerspace au Mans"
+title = "HAUM, Hackerspace au Mans"
 timeZone = "Europe/Paris"
 
 # Conserve les URL de l'ancien site Pelican (/slug.html, /pages/slug.html)

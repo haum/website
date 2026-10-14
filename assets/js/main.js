@@ -92,13 +92,8 @@ function tagline() {
   if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   setInterval(() => {
     i = (i + 1) % lines.length;
-    const target = lines[i];
-    let n = 0;
-    const type = setInterval(() => {
-      text.textContent = target.slice(0, ++n);
-      if (n >= target.length) clearInterval(type);
-    }, 28);
-  }, 6000);
+    text.textContent = lines[i];
+  }, 8000);
 }
 
 // Bouton « Proposer un article » : date du jour dans le modèle
