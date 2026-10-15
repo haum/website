@@ -241,6 +241,14 @@ a.chip:hover { background: var(--accent-soft); color: var(--accent); }
 .section-head a, .panel-head a { font-weight: 600; text-decoration: none; font-size: .95rem; }
 
 .home-grid { display: grid; grid-template-columns: 1.35fr 1fr; gap: 24px; align-items: start; }
+/* Fil et agenda : deux colonnes égales, deux cadres de même hauteur. Le fil
+   défile dans l'espace disponible ; le lien de l'agenda reste en bas. */
+@media (min-width: 861px) {
+  .home-grid:has(.panel-fedi) { grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: stretch; }
+}
+.panel-fedi, .panel-agenda { display: flex; flex-direction: column; }
+.panel-fedi > .more, .panel-agenda > .more { align-self: flex-start; }
+.panel-agenda > .more { margin-top: auto; padding-top: 12px; }
 .panel {
   background: var(--surface); border: 1px solid var(--line);
   border-radius: var(--radius); padding: clamp(20px, 3vw, 28px);
@@ -290,7 +298,7 @@ a.chip:hover { background: var(--accent-soft); color: var(--accent); }
 .toots { display: grid; }
 /* Fil de l'accueil : hauteur limitée, défilement interne */
 .panel-fedi .toots {
-  max-height: 420px; overflow-y: auto; overscroll-behavior: contain;
+  height: 420px; flex-grow: 1; overflow-y: auto; overscroll-behavior: contain;
   padding: 0 6px 32px 0; scrollbar-width: thin; scrollbar-color: var(--line) transparent;
   mask-image: linear-gradient(to bottom, #000 calc(100% - 32px), transparent);
 }
