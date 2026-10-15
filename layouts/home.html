@@ -3,12 +3,11 @@
   <div class="wrap hero-grid">
     <div class="hero-text">
       <h1>Hackerspace au Mans</h1>
-      <p class="tagline" data-taglines="{{ site.Params.taglines | jsonify }}"><span class="tagline-text">{{ index site.Params.taglines 0 }}</span></p>
       {{ .Content }}
-      <div class="actions">
+      <p class="actions">
         <a class="btn" href="/pages/nous-rejoindre.html">Venir nous voir</a>
-        <a class="btn btn-ghost" href="/pages/agenda.html">L'agenda</a>
-      </div>
+        <a class="more" href="/pages/agenda.html">ou consulter l'agenda</a>
+      </p>
     </div>
     {{/* Une photo au hasard parmi content/images/accueil/ ; la légende vient
          du nom du fichier (« atelier-soudure.jpg » → « Atelier soudure »). */}}
@@ -36,57 +35,53 @@
 
 <section class="wrap home-grid">
 {{/* Le fil Mastodon est la partie la plus vivante du site : en premier */}}
+  {{ $masto := printf "https://%s/@%s" site.Params.mastodon.instance site.Params.mastodon.account }}
   <div class="panel panel-fedi">
-    <header class="panel-head">
-      <h2>Sur le fédivers</h2>
-      <a href="https://{{ site.Params.mastodon.instance }}/@{{ site.Params.mastodon.account }}" rel="me">@{{ site.Params.mastodon.account }}@{{ site.Params.mastodon.instance }}</a>
-    </header>
-    <div class="toots" tabindex="0" role="region" aria-label="Derniers messages sur le fédivers" data-instance="{{ site.Params.mastodon.instance }}" data-account="{{ site.Params.mastodon.account }}">
+    <h2>Nouvelles du local</h2>
+    <p class="panel-sub">Ce qui se passe au HAUM, publié sur Mastodon par <a href="{{ $masto }}" rel="me">@{{ site.Params.mastodon.account }}@{{ site.Params.mastodon.instance }}</a>.</p>
+    <div class="toots" tabindex="0" role="region" aria-label="Derniers messages publiés sur Mastodon" data-instance="{{ site.Params.mastodon.instance }}" data-account="{{ site.Params.mastodon.account }}">
       <p class="muted">Chargement des derniers messages…</p>
     </div>
+    <a class="more" href="{{ $masto }}">Tous les messages</a>
   </div>
 
   <div class="panel panel-agenda">
-    <header class="panel-head">
-      <h2>Prochains rendez-vous</h2>
-      <a href="/pages/agenda.html">Tout l'agenda</a>
-    </header>
+    <h2>Prochains rendez-vous</h2>
     {{ partial "events.html" (dict "limit" 4) }}
-    <p class="small"><a href="/calendar/calendar.ics">S'abonner au calendrier (iCal)</a></p>
+    <a class="more" href="/pages/agenda.html">Tout l'agenda</a>
+    <p class="small muted">Ou <a href="/calendar/calendar.ics">abonnez-vous au calendrier</a> dans votre agenda.</p>
   </div>
 </section>
 
 {{ $projets := where site.RegularPages "File.Dir" "pages/projets/" }}
 {{ $avecBanniere := where $projets "Params.banner" "!=" nil }}
 <section class="wrap section">
-  <header class="section-head">
-    <h2>Zoom sur un projet</h2>
-    <a href="/pages/les-projets.html">Les {{ len $projets }} projets</a>
-  </header>
+  <h2>Un projet du HAUM</h2>
   <div class="spotlight" data-random>
     {{ range $avecBanniere }}
     <a class="spotlight-item" href="{{ .RelPermalink }}" hidden>
       <img src="{{ .Params.banner }}" alt="" loading="lazy" width="1280" height="640">
       <div class="spotlight-text">
         <h3>{{ .Title }}</h3>
-        <p>{{ .Summary | replaceRE `<span class="sr-only">[^<]*</span>` "" | plainify | truncate 180 }}</p>
         {{ partial "badges.html" . }}
+        <p>{{ .Summary | replaceRE `<span class="sr-only">[^<]*</span>` "" | plainify | truncate 180 }}</p>
       </div>
     </a>
     {{ end }}
   </div>
+  <a class="more" href="/pages/les-projets.html">Les {{ len $projets }} projets</a>
 </section>
 
+{{ $articles := where site.RegularPages "Section" "articles" }}
 <section class="wrap section">
-  <header class="section-head">
-    <h2>Derniers articles</h2>
-    <a href="/articles/">Tous les articles</a>
-  </header>
-  <div class="cards">
-    {{ range first 6 (where site.RegularPages "Section" "articles") }}
-      {{ partial "card.html" . }}
+  <h2>Derniers articles</h2>
+  {{/* Le plus récent en grand, puis les cinq suivants */}}
+  <div class="cards cards-home">
+    {{ range $i, $p := first 6 $articles }}
+      {{ partial "card.html" (cond (eq $i 0) (dict "page" $p "featured" true) (dict "page" $p)) }}
     {{ end }}
   </div>
+  <a class="more" href="/articles/">Les {{ len $articles }} articles</a>
 </section>
 
 <section class="wrap home-grid section">
@@ -102,7 +97,7 @@
     <p>Oui, le HAUM vit encore et réalise toujours des projets, mais il y a peu d'énergie pour communiquer sur nos activités.</p>
     <p>Si tu as l'âme d'un poète, envie d'exprimer des talents de vidéaste, rêves d'enregistrer des podcasts ou as d'autres idées pour mettre en valeur les projets de l'association, parle-nous-en&nbsp;!</p>
     <p>Ce site lui-même est <a href="https://github.com/haum/website-content">écrit en Markdown sur GitHub</a>&nbsp;: chaque page a un lien «&nbsp;Modifier cette page&nbsp;».</p>
-    <a class="btn btn-light" href="https://forum.haum.org/">Discuter sur le forum</a>
+    <a class="btn btn-light" href="https://forum.haum.org/">En parler sur le forum</a>
   </div>
 </section>
 {{ end }}

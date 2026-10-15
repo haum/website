@@ -81,7 +81,7 @@ function agenda() {
   });
 }
 
-// Accroche aléatoire façon terminal
+// Slogans historiques du HAUM, en pied de page
 function tagline() {
   const el = document.querySelector('[data-taglines]');
   if (!el) return;
@@ -128,26 +128,26 @@ function toots() {
         const a = document.createElement('a');
         a.className = 'toot';
         a.href = src.url;
-        a.style.display = 'block';
-        a.style.color = 'inherit';
-        a.style.textDecoration = 'none';
         const body = document.createElement('div');
+        body.className = 'toot-body';
         // Contenu HTML assaini par l'instance Mastodon
         body.innerHTML = src.content;
         body.querySelectorAll('a').forEach((l) => l.replaceWith(...l.childNodes));
+        const time = document.createElement('time');
+        time.dateTime = src.created_at;
+        time.textContent = (s.reblog ? '↻ partagé · ' : '')
+          + new Date(src.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
+        body.prepend(time);
+        a.append(body);
+        // Photo en vignette à côté du texte
         const media = src.media_attachments.find((m) => m.type === 'image');
         if (media) {
           const img = document.createElement('img');
           img.src = media.preview_url;
           img.alt = media.description || '';
           img.loading = 'lazy';
-          body.append(img);
+          a.append(img);
         }
-        const time = document.createElement('time');
-        time.dateTime = src.created_at;
-        time.textContent = (s.reblog ? '↻ partagé · ' : '')
-          + new Date(src.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-        a.append(body, time);
         return a;
       }));
       externalLinks(box);

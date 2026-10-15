@@ -1,17 +1,18 @@
-{{ $img := .Params.banner }}
+{{/* Carte d'article. Paramètres : page, featured (le plus récent, affiché en grand) */}}
+{{ $p := .page }}
+{{ $img := $p.Params.banner }}
 {{ if not $img }}
-  {{ with findRESubmatch `<img[^>]+src="([^"]+)"` .Content 1 }}{{ $img = index (index . 0) 1 }}{{ end }}
+  {{ with findRESubmatch `<img[^>]+src="([^"]+)"` $p.Content 1 }}{{ $img = index (index . 0) 1 }}{{ end }}
 {{ end }}
-<a class="card" href="{{ .RelPermalink }}">
-  <div class="card-media{{ if not $img }} card-media-empty{{ end }}">
-    {{ with $img }}<img src="{{ . }}" alt="" loading="lazy">{{ else }}<span>{{ substr ($.Title | upper) 0 1 }}</span>{{ end }}
-  </div>
+<a class="card{{ if .featured }} card-featured{{ end }}" href="{{ $p.RelPermalink }}">
+  {{ with $img }}<div class="card-media"><img src="{{ . }}" alt="" loading="lazy"></div>{{ end }}
   <div class="card-body">
     <p class="meta">
-      {{- if not .Date.IsZero }}<time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>{{ end }}
-      {{- with .Params.categories }} · {{ index . 0 }}{{ end -}}
+      {{- if not $p.Date.IsZero }}<time datetime="{{ $p.Date.Format "2006-01-02" }}">{{ $p.Date | time.Format ":date_long" }}</time>{{ end }}
+      {{- with $p.Params.categories }} · {{ index . 0 }}{{ end -}}
     </p>
-    <h3>{{ .Title }}</h3>
-    {{ with .Params.summary }}<p>{{ . | plainify | truncate 140 }}</p>{{ end }}
+    <h3>{{ $p.Title }}</h3>
+    {{ with $p.Params.summary }}<p>{{ . | plainify | truncate (cond $.featured 240 140) }}</p>{{ end }}
+    {{ if .featured }}{{ with $p.GetTerms "authors" }}<p class="card-by">par {{ range $i, $a := . }}{{ if $i }}, {{ end }}{{ $a.LinkTitle }}{{ end }}</p>{{ end }}{{ end }}
   </div>
 </a>
