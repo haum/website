@@ -1,5 +1,5 @@
-{{/* Évènements depuis data/agenda.json. Les évènements passés sont masqués côté
-     navigateur (main.js) pour rester justes entre deux générations du site. */}}
+{{/* Évènements depuis data/agenda.json, en lignes de tableau. Les évènements passés
+     sont masqués côté navigateur (main.js) pour rester justes entre deux générations. */}}
 {{ $mois := slice "janv." "févr." "mars" "avril" "mai" "juin" "juil." "août" "sept." "oct." "nov." "déc." }}
 {{ $jours := slice "dim." "lun." "mar." "mer." "jeu." "ven." "sam." }}
 {{ $events := where (hugo.Data.agenda | default slice) "date" ">=" (now.AddDate 0 0 -1 | time.Format "2006-01-02") }}
@@ -7,13 +7,11 @@
   {{ range $events }}
   {{ $d := time.AsTime .date }}
   <li class="event" data-date="{{ .date }}">
-    <time class="event-date" datetime="{{ .date }}">
-      <span class="day">{{ $d.Day }}</span>
-      <span class="month">{{ index $mois (sub (int $d.Month) 1) }}</span>
-    </time>
+    <time class="event-date" datetime="{{ .date }}">{{ index $jours (int $d.Weekday) }} {{ $d.Format "02/01" }}<span class="event-year"> {{ $d.Year }}</span></time>
+    <span class="event-time">{{ $d.Format "15h04" }}</span>
     <div class="event-body">
       <h3>{{ .titre }}</h3>
-      <p class="event-meta">{{ index $jours (int $d.Weekday) }} {{ $d.Day }} {{ index $mois (sub (int $d.Month) 1) }} {{ $d.Year }}, {{ $d.Format "15h04" }} · {{ .lieu }}</p>
+      <p class="event-meta">{{ .lieu }}</p>
       {{ with .description }}<p>{{ . | safeHTML }}</p>{{ end }}
     </div>
   </li>

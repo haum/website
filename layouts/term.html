@@ -1,10 +1,12 @@
 {{ define "main" }}
-<div class="wrap page page-wide">
-  <header class="page-head">
-    <p class="kicker"><a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title }}</a></p>
-    <h1>{{ .Title }}</h1>
-    <p class="lead">{{ len .Pages }} article{{ if gt (len .Pages) 1 }}s{{ end }}</p>
-  </header>
+<div class="sheet">
+  <section class="entry">
+    <aside class="margin"><p class="note">↳ <a href="{{ .Parent.RelPermalink }}">{{ .Parent.Title | lower }}</a></p></aside>
+    <header class="text page-head">
+      <h1>{{ .Title }}</h1>
+      <p class="lead">{{ len .Pages }} article{{ if gt (len .Pages) 1 }}s{{ end }}</p>
+    </header>
+  </section>
   {{ partial "article-list.html" .Pages }}
 </div>
 {{ end }}

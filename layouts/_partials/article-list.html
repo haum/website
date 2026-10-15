@@ -1,14 +1,15 @@
+{{/* Liste d'articles par année : l'année dans la marge, une ligne par article */}}
 {{ range .GroupByDate "2006" }}
-<section class="year-group">
-  <h2 class="year">{{ .Key }}</h2>
-  <ol class="post-list">
+<section class="entry year-group">
+  <aside class="margin"><h2 class="year">{{ .Key }}</h2></aside>
+  <ol class="text post-list">
     {{ range .Pages }}
     <li>
-      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format "02 Jan" }}</time>
+      <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01" }}</time>
       <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       <span class="post-meta">
-        {{ with .Params.categories }}<span class="chip">{{ index . 0 }}</span>{{ end }}
-        {{ with .Params.authors }}<span class="muted">{{ delimit . ", " }}</span>{{ end }}
+        {{- with .Params.categories }}{{ index . 0 }}{{ end }}
+        {{- with .Params.authors }} · {{ delimit . ", " }}{{ end -}}
       </span>
     </li>
     {{ end }}

@@ -1,26 +1,30 @@
+{{/* En-tête façon cartouche de plan : logo, feuille en cours, état du local */}}
 <header class="site-header">
-  <div class="wrap header-inner">
-    <a class="logo" href="/" aria-label="HAUM, accueil">
-      <img src="/theme/head.png" alt="HAUM, Hackerspace AU Mans" width="300" height="115">
-    </a>
-    <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
-    <label for="nav-toggle" class="nav-burger" aria-label="Menu">{{ partial "icon.html" "menu" }}</label>
-    <nav class="main-nav" aria-label="Navigation principale">
-      <ul>
-        {{ $current := . }}
-        {{ range site.Menus.main }}
-          <li><a href="{{ .URL }}"{{ if eq .URL $current.RelPermalink }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
-        {{ end }}
-      </ul>
-      <a class="btn btn-small" href="/pages/nous-rejoindre.html">Nous rejoindre</a>
-    </nav>
-    <button type="button" class="theme-toggle" aria-label="Thème : automatique" title="Thème : automatique">
-      <span data-icon="auto">{{ partial "icon.html" "contrast" }}</span>
-      <span data-icon="light">{{ partial "icon.html" "sun" }}</span>
-      <span data-icon="dark">{{ partial "icon.html" "moon" }}</span>
-    </button>
-    <a class="space-status" data-status="unknown" href="/pages/statut.html" data-url="{{ site.Params.spaceStatusURL }}">
-      <span class="dot" aria-hidden="true"></span><span class="label">Local&nbsp;: ?</span>
-    </a>
+  <div class="sheet">
+    <div class="cartouche">
+      <a class="c-logo" href="/" aria-label="HAUM, accueil">
+        <img src="/theme/head.png" alt="HAUM, Hackerspace AU Mans" width="300" height="115">
+      </a>
+      <p class="c-cell c-sheet"><span class="c-label">feuille</span><span class="c-value">{{ if .IsHome }}accueil{{ else }}{{ .LinkTitle | lower }}{{ end }}</span></p>
+      <a class="c-cell space-status" data-status="unknown" href="/pages/statut.html" data-url="{{ site.Params.spaceStatusURL }}">
+        <span class="c-label">local</span><span class="c-value"><span class="dot" aria-hidden="true"></span><span class="label">?</span></span>
+      </a>
+      <button type="button" class="c-cell theme-toggle" aria-label="Thème : automatique" title="Thème : automatique">
+        <span data-icon="auto">{{ partial "icon.html" "contrast" }}</span>
+        <span data-icon="light">{{ partial "icon.html" "sun" }}</span>
+        <span data-icon="dark">{{ partial "icon.html" "moon" }}</span>
+      </button>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-hidden="true">
+      <label for="nav-toggle" class="c-cell nav-burger" aria-label="Menu">{{ partial "icon.html" "menu" }}</label>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <ul>
+          {{ $current := . }}
+          {{ range site.Menus.main }}
+            <li><a href="{{ .URL }}"{{ if eq .URL $current.RelPermalink }} aria-current="page"{{ end }}>{{ .Name }}</a></li>
+          {{ end }}
+          <li class="nav-join"><a href="/pages/nous-rejoindre.html">Nous rejoindre</a></li>
+        </ul>
+      </nav>
+    </div>
   </div>
 </header>

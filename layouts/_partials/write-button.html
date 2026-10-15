@@ -3,5 +3,5 @@
 {{ $tpl := printf "---\ntitle: Titre de mon article\nslug: mon-article\ndate: %s\nauthors: [Ton pseudo]\ncategories: [news]\ntags: []\nsummary: Une phrase qui donne envie de lire la suite.\n---\n\nTon texte ici, en Markdown.\n\nPour les photos : enregistre ce fichier, puis « Add file → Upload files » dans le même dossier,\net insère-les avec ![Description](photo.jpg \"Légende facultative\")\n" (printf "%sT20:00:00" (now.Format "2006-01-02")) }}
 <a class="btn {{ .class }}" data-new-article
    href="{{ site.Params.newArticleURL }}?filename={{ "mon-article/index.md" | urlquery }}&value={{ $tpl | urlquery }}">
-  {{ partial "icon.html" "edit" }} Proposer un article
+  Proposer un article
 </a>

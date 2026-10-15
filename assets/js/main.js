@@ -27,7 +27,7 @@ function spaceStatus() {
     .then((t) => {
       const open = t.trim() === '1';
       el.dataset.status = open ? 'open' : 'closed';
-      label.textContent = open ? 'Local ouvert' : 'Local fermé';
+      label.textContent = open ? 'ouvert' : 'fermé';
       // Version détaillée de la page « Le local est-il ouvert ? »
       document.querySelectorAll('.local-status').forEach((box) => {
         box.dataset.status = el.dataset.status;
@@ -36,7 +36,7 @@ function spaceStatus() {
           : 'Le local est fermé pour le moment.';
       });
     })
-    .catch(() => { label.textContent = 'Local'; });
+    .catch(() => { label.textContent = '?'; });
 }
 
 // Bouton de thème : automatique (système) → clair → sombre
@@ -81,7 +81,7 @@ function agenda() {
   });
 }
 
-// Accroche aléatoire façon terminal
+// Slogans historiques, en note dans la marge de l'accueil
 function tagline() {
   const el = document.querySelector('[data-taglines]');
   if (!el) return;
@@ -104,6 +104,12 @@ function newArticle() {
   });
 }
 
+// Date du jour dans la marge de l'accueil (le site n'est pas régénéré chaque jour)
+function today() {
+  const el = document.querySelector('[data-today]');
+  if (el) el.textContent = new Date().toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }).replaceAll('/', '.');
+}
+
 // Projet vedette aléatoire
 function spotlight() {
   document.querySelectorAll('[data-random]').forEach((box) => {
@@ -120,7 +126,7 @@ function toots() {
   const api = `https://${instance}/api/v1`;
   fetch(`${api}/accounts/lookup?acct=${account}`)
     .then((r) => r.json())
-    .then((acc) => fetch(`${api}/accounts/${acc.id}/statuses?limit=8&exclude_replies=true`))
+    .then((acc) => fetch(`${api}/accounts/${acc.id}/statuses?limit=6&exclude_replies=true`))
     .then((r) => r.json())
     .then((statuses) => {
       box.replaceChildren(...statuses.map((s) => {
@@ -128,26 +134,24 @@ function toots() {
         const a = document.createElement('a');
         a.className = 'toot';
         a.href = src.url;
-        a.style.display = 'block';
-        a.style.color = 'inherit';
-        a.style.textDecoration = 'none';
         const body = document.createElement('div');
+        body.className = 'toot-body';
         // Contenu HTML assaini par l'instance Mastodon
         body.innerHTML = src.content;
         body.querySelectorAll('a').forEach((l) => l.replaceWith(...l.childNodes));
+        const time = document.createElement('time');
+        time.dateTime = src.created_at;
+        time.textContent = new Date(src.created_at).toLocaleDateString('fr-FR', { day: '2-digit', month: '2-digit', year: 'numeric' }).replaceAll('/', '.')
+          + (s.reblog ? ' ↻' : '');
+        a.append(time, body);
         const media = src.media_attachments.find((m) => m.type === 'image');
         if (media) {
           const img = document.createElement('img');
           img.src = media.preview_url;
           img.alt = media.description || '';
           img.loading = 'lazy';
-          body.append(img);
+          a.append(img);
         }
-        const time = document.createElement('time');
-        time.dateTime = src.created_at;
-        time.textContent = (s.reblog ? '↻ partagé · ' : '')
-          + new Date(src.created_at).toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' });
-        a.append(body, time);
         return a;
       }));
       externalLinks(box);
@@ -163,6 +167,7 @@ document.addEventListener('DOMContentLoaded', () => {
   themeToggle();
   agenda();
   tagline();
+  today();
   spotlight();
   newArticle();
   toots();

@@ -1,49 +1,50 @@
 {{ define "main" }}
 {{ $isArticle := eq .Section "articles" }}
-<article class="wrap page">
-  <header class="page-head">
+{{/* Page de cahier : la marge porte la date, les auteurs, les mots-clés */}}
+<div class="sheet">
+<article class="entry page">
+  <aside class="margin">
     {{ if $isArticle }}
-      <p class="kicker">
-        <a href="/articles/">Articles</a>
-        {{ range .GetTerms "categories" }} / <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a>{{ end }}
-      </p>
+      <p class="note-date"><time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "02.01.2006" }}</time></p>
+      {{ with .GetTerms "authors" }}<p class="note">par {{ range $i, $a := . }}{{ if $i }}, {{ end }}<a href="{{ $a.RelPermalink }}">{{ $a.LinkTitle }}</a>{{ end }}</p>{{ end }}
+      {{ with .GetTerms "categories" }}<p class="note">rangé dans {{ range $i, $c := . }}{{ if $i }}, {{ end }}<a href="{{ $c.RelPermalink }}">{{ $c.LinkTitle }}</a>{{ end }}</p>{{ end }}
     {{ else if eq .File.Dir "pages/projets/" }}
-      <p class="kicker"><a href="/pages/les-projets.html">Projets</a></p>
+      <p class="note">↳ <a href="/pages/les-projets.html">toutes les fiches projet</a></p>
     {{ else if eq .File.Dir "pages/talks/" }}
-      <p class="kicker"><a href="/pages/talks.html">HAUMTalks</a></p>
+      <p class="note">↳ <a href="/pages/talks.html">tous les HAUMTalks</a></p>
     {{ end }}
-    <h1>{{ .Title }}</h1>
+  </aside>
+  <div class="text">
+    <header class="page-head">
+      {{ if $isArticle }}<p class="kicker"><a href="/articles/">Articles</a></p>{{ end }}
+      <h1>{{ .Title }}</h1>
+      {{ partial "badges.html" . }}
+    </header>
+
+    {{ with .Params.banner }}
+    <figure class="fig banner"><img src="{{ . }}" alt="" width="1280" height="640"></figure>
+    {{ end }}
+
+    <div class="prose">
+      {{ .Content }}
+    </div>
+
+    <footer class="page-foot">
+      {{ with .GetTerms "tags" }}
+      <ul class="tags">
+        {{ range . }}<li><a class="chip" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a></li>{{ end }}
+      </ul>
+      {{ end }}
+      <a class="edit-link" href="{{ site.Params.editURL }}{{ .File.Path }}">Une coquille, un ajout&nbsp;? Modifier cette page</a>
+    </footer>
+
     {{ if $isArticle }}
-    <p class="meta">
-      Publié le <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date | time.Format ":date_long" }}</time>
-      {{- with .GetTerms "authors" }} par {{ range $i, $a := . }}{{ if $i }}, {{ end }}<a href="{{ $a.RelPermalink }}">{{ $a.LinkTitle }}</a>{{ end }}{{ end }}
-    </p>
+    <nav class="prev-next" aria-label="Articles voisins">
+      {{ with .NextInSection }}<a class="prev" href="{{ .RelPermalink }}"><small>← plus récent</small>{{ .Title }}</a>{{ else }}<span></span>{{ end }}
+      {{ with .PrevInSection }}<a class="next" href="{{ .RelPermalink }}"><small>plus ancien →</small>{{ .Title }}</a>{{ end }}
+    </nav>
     {{ end }}
-    {{ partial "badges.html" . }}
-  </header>
-
-  {{ with .Params.banner }}
-  <figure class="banner"><img src="{{ . }}" alt="" width="1280" height="640"></figure>
-  {{ end }}
-
-  <div class="prose">
-    {{ .Content }}
   </div>
-
-  <footer class="page-foot">
-    {{ with .GetTerms "tags" }}
-    <ul class="tags">
-      {{ range . }}<li><a class="chip" href="{{ .RelPermalink }}">#{{ .LinkTitle }}</a></li>{{ end }}
-    </ul>
-    {{ end }}
-    <a class="edit-link" href="{{ site.Params.editURL }}{{ .File.Path }}">Une coquille, un ajout&nbsp;? Modifier cette page</a>
-  </footer>
-
-  {{ if $isArticle }}
-  <nav class="prev-next" aria-label="Articles voisins">
-    {{ with .NextInSection }}<a class="prev" href="{{ .RelPermalink }}"><small>← Plus récent</small>{{ .Title }}</a>{{ else }}<span></span>{{ end }}
-    {{ with .PrevInSection }}<a class="next" href="{{ .RelPermalink }}"><small>Plus ancien →</small>{{ .Title }}</a>{{ end }}
-  </nav>
-  {{ end }}
 </article>
+</div>
 {{ end }}

@@ -1,14 +1,21 @@
 {{ define "main" }}
-<section class="hero">
-  <div class="wrap hero-grid">
-    <div class="hero-text">
+{{/* Accueil en entrées de cahier : à gauche de la marge rouge, dates et annotations ;
+     à droite, le contenu. Voir .entry dans main.css. */}}
+<div class="sheet">
+
+<section class="entry entry-intro">
+  <aside class="margin">
+    <p class="note-date" data-today>{{ now.Format "02.01.2006" }}</p>
+    <p class="note" data-taglines="{{ site.Params.taglines | jsonify }}">↳ <span class="tagline-text">{{ index site.Params.taglines 0 }}</span></p>
+  </aside>
+  <div class="text intro-grid">
+    <div class="intro-text">
       <h1>Hackerspace au Mans</h1>
-      <p class="tagline" data-taglines="{{ site.Params.taglines | jsonify }}"><span class="tagline-text">{{ index site.Params.taglines 0 }}</span></p>
       {{ .Content }}
-      <div class="actions">
+      <p class="links">
         <a class="btn" href="/pages/nous-rejoindre.html">Venir nous voir</a>
         <a class="btn btn-ghost" href="/pages/agenda.html">L'agenda</a>
-      </div>
+      </p>
     </div>
     {{/* Une photo au hasard parmi content/images/accueil/ ; la légende vient
          du nom du fichier (« atelier-soudure.jpg » → « Atelier soudure »). */}}
@@ -22,87 +29,108 @@
     {{ end }}
     {{ with $photos }}
     {{ $first := index . 0 }}
-    <figure class="hero-photo" data-photos="{{ . | jsonify }}">
-      <div class="hero-photo-frame">
-        <img src="{{ $first.src }}" alt="{{ $first.alt }}" width="{{ $first.w }}" height="{{ $first.h }}">
-      </div>
-      <figcaption>{{ $first.alt }}</figcaption>
+    <figure class="fig hero-photo" data-photos="{{ . | jsonify }}">
+      <img src="{{ $first.src }}" alt="{{ $first.alt }}" width="{{ $first.w }}" height="{{ $first.h }}">
+      <figcaption><span class="fig-num">fig. 1</span> <span class="fig-text">{{ $first.alt }}</span></figcaption>
     </figure>
     {{/* Exécuté tout de suite (pas en différé) pour éviter de voir l'image changer */}}
-    <script>(function(){var f=document.currentScript.previousElementSibling,p=JSON.parse(f.dataset.photos),x=p[Math.floor(Math.random()*p.length)],i=f.querySelector("img");i.src=x.src;i.width=x.w;i.height=x.h;i.alt=x.alt;f.querySelector("figcaption").textContent=x.alt})()</script>
+    <script>(function(){var f=document.currentScript.previousElementSibling,p=JSON.parse(f.dataset.photos),x=p[Math.floor(Math.random()*p.length)],i=f.querySelector("img");i.src=x.src;i.width=x.w;i.height=x.h;i.alt=x.alt;f.querySelector(".fig-text").textContent=x.alt})()</script>
     {{ end }}
   </div>
 </section>
 
-<section class="wrap home-grid">
-{{/* Le fil Mastodon est la partie la plus vivante du site : en premier */}}
-  <div class="panel panel-fedi">
-    <header class="panel-head">
-      <h2>Sur le fédivers</h2>
-      <a href="https://{{ site.Params.mastodon.instance }}/@{{ site.Params.mastodon.account }}" rel="me">@{{ site.Params.mastodon.account }}@{{ site.Params.mastodon.instance }}</a>
-    </header>
-    <div class="toots" tabindex="0" role="region" aria-label="Derniers messages sur le fédivers" data-instance="{{ site.Params.mastodon.instance }}" data-account="{{ site.Params.mastodon.account }}">
-      <p class="muted">Chargement des derniers messages…</p>
-    </div>
-  </div>
-
-  <div class="panel panel-agenda">
-    <header class="panel-head">
-      <h2>Prochains rendez-vous</h2>
-      <a href="/pages/agenda.html">Tout l'agenda</a>
+<section class="entry">
+  <aside class="margin">
+    <p class="note">↳ <a href="/calendar/calendar.ics">s'abonner au calendrier</a></p>
+  </aside>
+  <div class="text">
+    <header class="entry-head">
+      <h2>Prochaines séances</h2>
+      <a href="/pages/agenda.html">tout l'agenda</a>
     </header>
     {{ partial "events.html" (dict "limit" 4) }}
-    <p class="small"><a href="/calendar/calendar.ics">S'abonner au calendrier (iCal)</a></p>
+  </div>
+</section>
+
+<section class="entry">
+  <aside class="margin">
+    <p class="note">↳ publié par <a href="https://{{ site.Params.mastodon.instance }}/@{{ site.Params.mastodon.account }}" rel="me">@{{ site.Params.mastodon.account }}@{{ site.Params.mastodon.instance }}</a></p>
+  </aside>
+  <div class="text">
+    <header class="entry-head">
+      <h2>Journal de bord</h2>
+      <a href="https://{{ site.Params.mastodon.instance }}/@{{ site.Params.mastodon.account }}">la suite sur le fédivers</a>
+    </header>
+    <div class="toots" data-instance="{{ site.Params.mastodon.instance }}" data-account="{{ site.Params.mastodon.account }}">
+      <p class="muted">Chargement des derniers messages…</p>
+    </div>
   </div>
 </section>
 
 {{ $projets := where site.RegularPages "File.Dir" "pages/projets/" }}
 {{ $avecBanniere := where $projets "Params.banner" "!=" nil }}
-<section class="wrap section">
-  <header class="section-head">
-    <h2>Zoom sur un projet</h2>
-    <a href="/pages/les-projets.html">Les {{ len $projets }} projets</a>
-  </header>
-  <div class="spotlight" data-random>
-    {{ range $avecBanniere }}
-    <a class="spotlight-item" href="{{ .RelPermalink }}" hidden>
-      <img src="{{ .Params.banner }}" alt="" loading="lazy" width="1280" height="640">
-      <div class="spotlight-text">
-        <h3>{{ .Title }}</h3>
-        <p>{{ .Summary | replaceRE `<span class="sr-only">[^<]*</span>` "" | plainify | truncate 180 }}</p>
-        {{ partial "badges.html" . }}
-      </div>
-    </a>
-    {{ end }}
+<section class="entry">
+  <aside class="margin">
+    <p class="note">↳ une fiche tirée au hasard parmi les {{ len $projets }}</p>
+  </aside>
+  <div class="text">
+    <header class="entry-head">
+      <h2>Fiche projet</h2>
+      <a href="/pages/les-projets.html">toutes les fiches</a>
+    </header>
+    <div class="spotlight" data-random>
+      {{ range $avecBanniere }}
+      <a class="spotlight-item" href="{{ .RelPermalink }}" hidden>
+        <div class="spotlight-text">
+          <h3>{{ .Title }}</h3>
+          {{ partial "badges.html" . }}
+          <p>{{ .Summary | replaceRE `<span class="sr-only">[^<]*</span>` "" | plainify | truncate 180 }}</p>
+        </div>
+        <img src="{{ .Params.banner }}" alt="" loading="lazy" width="1280" height="640">
+      </a>
+      {{ end }}
+    </div>
   </div>
 </section>
 
-<section class="wrap section">
-  <header class="section-head">
-    <h2>Derniers articles</h2>
-    <a href="/articles/">Tous les articles</a>
-  </header>
-  <div class="cards">
-    {{ range first 6 (where site.RegularPages "Section" "articles") }}
-      {{ partial "card.html" . }}
-    {{ end }}
+<section class="entry">
+  <aside class="margin">
+    <p class="note">↳ écrits par les membres</p>
+  </aside>
+  <div class="text">
+    <header class="entry-head">
+      <h2>Derniers articles</h2>
+      <a href="/articles/">tous les articles</a>
+    </header>
+    <div class="cards">
+      {{ range first 6 (where site.RegularPages "Section" "articles") }}
+        {{ partial "card.html" . }}
+      {{ end }}
+    </div>
   </div>
 </section>
 
-<section class="wrap home-grid section">
-  <div class="panel panel-visit">
-    <h2>Passer au local</h2>
-    <p>La meilleure façon de nous découvrir est de venir discuter avec nous lors des ouvertures du local ou aux évènements auxquels nous participons.</p>
-    <p>Lors des séances hebdomadaires, un membre passe souvent par l'entrée du <strong>boulevard Demorieux entre 21h et 22h</strong>&nbsp;; vous pouvez aussi sonner (voir l'affichette sur la façade).</p>
-    <p>Découvrir nos activités, partager ce que vous savez, trouver des conseils pour vos projets ou apprendre auprès des autres membres&nbsp;: vous êtes les bienvenu·es&nbsp;!</p>
-    <p><a href="{{ site.Params.osm }}">{{ delimit site.Params.address ", " }}</a></p>
-  </div>
-  <div class="panel panel-accent">
-    <h2>Appel à contributeurs</h2>
-    <p>Oui, le HAUM vit encore et réalise toujours des projets, mais il y a peu d'énergie pour communiquer sur nos activités.</p>
-    <p>Si tu as l'âme d'un poète, envie d'exprimer des talents de vidéaste, rêves d'enregistrer des podcasts ou as d'autres idées pour mettre en valeur les projets de l'association, parle-nous-en&nbsp;!</p>
-    <p>Ce site lui-même est <a href="https://github.com/haum/website-content">écrit en Markdown sur GitHub</a>&nbsp;: chaque page a un lien «&nbsp;Modifier cette page&nbsp;».</p>
-    <a class="btn btn-light" href="https://forum.haum.org/">Discuter sur le forum</a>
+<section class="entry">
+  <aside class="margin">
+    <p class="note">↳ <a href="{{ site.Params.osm }}">plan d'accès</a></p>
+  </aside>
+  <div class="text two-col">
+    <div>
+      <h2>Passer au local</h2>
+      <p>La meilleure façon de nous découvrir est de venir discuter avec nous lors des ouvertures du local ou aux évènements auxquels nous participons.</p>
+      <p>Lors des séances hebdomadaires, un membre passe souvent par l'entrée du <strong>boulevard Demorieux entre 21h et 22h</strong>&nbsp;; vous pouvez aussi sonner (voir l'affichette sur la façade).</p>
+      <p>Découvrir nos activités, partager ce que vous savez, trouver des conseils pour vos projets ou apprendre auprès des autres membres&nbsp;: vous êtes les bienvenu·es&nbsp;!</p>
+      <p class="address">{{ delimit site.Params.address ", " }}</p>
+    </div>
+    <div class="encadre">
+      <h2>Appel à contributeurs</h2>
+      <p>Oui, le HAUM vit encore et réalise toujours des projets, mais il y a peu d'énergie pour communiquer sur nos activités.</p>
+      <p>Si tu as l'âme d'un poète, envie d'exprimer des talents de vidéaste, rêves d'enregistrer des podcasts ou as d'autres idées pour mettre en valeur les projets de l'association, parle-nous-en&nbsp;!</p>
+      <p>Ce site lui-même est <a href="https://github.com/haum/website-content">écrit en Markdown sur GitHub</a>&nbsp;: chaque page a un lien «&nbsp;Modifier cette page&nbsp;».</p>
+      <p class="links"><a class="btn" href="https://forum.haum.org/">Discuter sur le forum</a></p>
+    </div>
   </div>
 </section>
+
+</div>
 {{ end }}

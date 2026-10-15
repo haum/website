@@ -1,10 +1,9 @@
-{{/* Grille des projets : toutes les pages de content/pages/projets/ */}}
+{{/* Fiches des projets : toutes les pages de content/pages/projets/ */}}
 <div class="cards cards-projets">
   {{ range (where site.RegularPages "File.Dir" "pages/projets/").ByTitle }}
   <a class="card" href="{{ .RelPermalink }}">
-    <div class="card-media{{ if not .Params.banner }} card-media-empty{{ end }}">
-      {{ with .Params.banner }}<img src="{{ . }}" alt="" loading="lazy" width="1280" height="640">{{ else }}<span>{{ substr (.Title | upper) 0 1 }}</span>{{ end }}
-    </div>
+    <p class="card-head"><span>fiche projet</span></p>
+    {{ with .Params.banner }}<div class="card-media"><img src="{{ . }}" alt="" loading="lazy" width="1280" height="640"></div>{{ end }}
     <div class="card-body">
       <h3>{{ .Title }}</h3>
       {{ partial "badges.html" . }}

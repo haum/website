@@ -1,6 +1,7 @@
+{{/* Champs d'une fiche projet (réalisation, état), pastille colorée selon l'avancement */}}
 {{ if or .Params.realisation .Params.etat }}
-<ul class="badges">
-  {{ with .Params.realisation }}<li class="badge badge-{{ .color }}"><span>Réalisation</span>{{ .label }}</li>{{ end }}
-  {{ with .Params.etat }}<li class="badge badge-{{ .color }}"><span>État</span>{{ .label }}</li>{{ end }}
-</ul>
+<dl class="badges">
+  {{ with .Params.realisation }}<div class="badge badge-{{ .color }}"><dt>réalisation</dt><dd>{{ .label }}</dd></div>{{ end }}
+  {{ with .Params.etat }}<div class="badge badge-{{ .color }}"><dt>état</dt><dd>{{ .label }}</dd></div>{{ end }}
+</dl>
 {{ end }}
