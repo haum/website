@@ -81,19 +81,68 @@ function agenda() {
   });
 }
 
-// Slogans historiques du HAUM, en pied de page
+// Slogans historiques du HAUM, sous le titre de l'accueil : un au hasard à
+// chaque chargement, puis un nouveau toutes les 7 s. Chaque caractère défile
+// au hasard avant de se fixer, de gauche à droite, comme dans un terminal.
 function tagline() {
   const el = document.querySelector('[data-taglines]');
   if (!el) return;
   const lines = JSON.parse(el.dataset.taglines);
   const text = el.querySelector('.tagline-text');
+  const sr = el.querySelector('.sr-only');
+  const glyphs = '01<>/\\|{}[]#$%&*+=?!~^_';
+  const esc = (c) => ({ '<': '&lt;', '>': '&gt;', '&': '&amp;' }[c] || c);
+  const show = (line) => { text.textContent = line; sr.textContent = line; };
+
+  // Pas le même slogan qu'au chargement précédent
   let i = Math.floor(Math.random() * lines.length);
-  text.textContent = lines[i];
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  try {
+    const last = parseInt(localStorage.getItem('tagline'), 10);
+    if (i === last && lines.length > 1) i = (i + 1) % lines.length;
+    localStorage.setItem('tagline', i);
+  } catch (e) { /* navigation privée */ }
+
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    show(lines[i]);
+    return;
+  }
+
+  let frame;
+  const decode = (from, to) => {
+    cancelAnimationFrame(frame);
+    sr.textContent = to;
+    const len = Math.max(from.length, to.length);
+    const start = performance.now();
+    // Instant où chaque caractère se fixe : de gauche à droite, avec du jeu
+    const at = Array.from({ length: len }, (_, k) => 150 + k * 28 + Math.random() * 400);
+    let last = 0;
+    const step = (now) => {
+      const t = now - start;
+      if (now - last < 45) { frame = requestAnimationFrame(step); return; }
+      last = now;
+      let html = '';
+      let done = true;
+      for (let k = 0; k < len; k++) {
+        if (t >= at[k]) { html += esc(to[k] || ''); continue; }
+        done = false;
+        // Les espaces restent des espaces : on devine déjà les mots
+        if (to[k] === ' ' || (!to[k] && !from[k])) html += ' ';
+        else html += `<span class="scramble">${esc(glyphs[Math.floor(Math.random() * glyphs.length)])}</span>`;
+      }
+      text.innerHTML = html;
+      if (!done) frame = requestAnimationFrame(step);
+      else text.textContent = to;
+    };
+    frame = requestAnimationFrame(step);
+  };
+
+  decode('', lines[i]);
   setInterval(() => {
-    i = (i + 1) % lines.length;
-    text.textContent = lines[i];
-  }, 8000);
+    if (document.hidden) return;
+    const from = lines[i];
+    i = (i + 1 + Math.floor(Math.random() * (lines.length - 1))) % lines.length;
+    decode(from, lines[i]);
+  }, 7000);
 }
 
 // Bouton « Proposer un article » : date du jour dans le modèle

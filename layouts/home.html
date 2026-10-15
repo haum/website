@@ -3,6 +3,13 @@
   <div class="wrap hero-grid">
     <div class="hero-text">
       <h1>Hackerspace au Mans</h1>
+      {{/* Slogans historiques : un au hasard, puis un nouveau toutes les
+           quelques secondes, « décodé » caractère par caractère (main.js) */}}
+      <p class="tagline" data-taglines="{{ site.Params.taglines | jsonify }}">
+        <span class="tagline-prompt" aria-hidden="true">&gt;</span>
+        <span class="sr-only">{{ index site.Params.taglines 0 }}</span>
+        <span class="tagline-text" aria-hidden="true">{{ index site.Params.taglines 0 }}</span><span class="tagline-cursor" aria-hidden="true"></span>
+      </p>
       {{ .Content }}
       <p class="actions">
         <a class="btn" href="/pages/nous-rejoindre.html">Venir nous voir</a>
