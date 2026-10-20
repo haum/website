@@ -205,6 +205,24 @@ a.chip:hover { background: var(--accent-soft); color: var(--accent); }
 .space-status .dot { width: 9px; height: 9px; border-radius: 50%; background: currentColor; }
 .space-status[data-status="open"] { color: var(--ok); background: var(--ok-soft); border-color: transparent; }
 
+/* L'alien vert de l'ancien site : il sort quand le local est ouvert */
+.alien { display: none; flex: none; overflow: visible; }
+[data-status="open"] > .dot { display: none; }
+[data-status="open"] > .alien { display: block; animation: alien-pop .6s cubic-bezier(.3, 1.6, .5, 1) both; transform-origin: 50% 100%; }
+.space-status .alien { width: 2.1em; height: 2.1em; margin: -.6em -.15em -.5em -.3em; }
+.alien-pupil { animation: alien-look 7s ease-in-out .8s infinite; }
+@keyframes alien-pop { from { transform: translateY(40%) scale(.2); opacity: 0; } }
+@keyframes alien-look {
+  0%, 30%, 100% { transform: none; }
+  36%, 52% { transform: translateX(-4.5px); }
+  58%, 70% { transform: translate(-1.5px, 2px); }
+}
+.space-status[data-status="open"]:hover .alien { animation: alien-hop .5s ease-out; }
+@keyframes alien-hop { 40% { transform: translateY(-18%) rotate(-6deg); } 70% { transform: translateY(0) rotate(4deg); } }
+@media (prefers-reduced-motion: reduce) {
+  [data-status="open"] > .alien, .alien-pupil, .space-status[data-status="open"]:hover .alien { animation: none; }
+}
+
 @media (max-width: 960px) {
   .header-inner { flex-wrap: wrap; gap: 12px; min-height: 64px; }
   .logo img { height: 40px; }
@@ -537,6 +555,7 @@ pre code { background: none; padding: 0; font-size: inherit; color: inherit; }
 .prose .local-status p { margin: 0; font-size: 1.25rem; font-weight: 600; }
 .prose .local-status[data-status="open"] { background: var(--ok-soft); border-color: transparent; color: var(--ok); }
 .prose .local-status[data-status="closed"] { color: var(--ink-2); }
+.prose .local-status .alien { width: 88px; height: 88px; margin: -8px 0; }
 
 /* Bandeau d'avertissement (params.preview) */
 .preview-banner {
