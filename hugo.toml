@@ -122,10 +122,6 @@ titleCaseStyle = "none"
   url = "/articles/"
   weight = 40
 [[menus.main]]
-  name = "HAUMTalks"
-  url = "/pages/talks.html"
-  weight = 50
-[[menus.main]]
   name = "Photos"
   url = "https://photos.haum.org/"
   weight = 60

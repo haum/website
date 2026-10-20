@@ -17,8 +17,8 @@
         <a class="more" href="/pages/agenda.html">ou consulter l'agenda</a>
       </p>
     </div>
-    {{/* Une photo au hasard parmi content/images/accueil/ ; la légende vient
-         du nom du fichier (« atelier-soudure.jpg » → « Atelier soudure »). */}}
+    {{/* Une photo au hasard parmi content/images/accueil/ ; son texte
+         alternatif vient du nom du fichier (« atelier-soudure.jpg » → « Atelier soudure »). */}}
     {{ $photos := slice }}
     {{ range resources.Match "accueil/*" }}
       {{ if eq .MediaType.MainType "image" }}
@@ -33,10 +33,9 @@
       <div class="hero-photo-frame">
         <img src="{{ $first.src }}" alt="{{ $first.alt }}" width="{{ $first.w }}" height="{{ $first.h }}">
       </div>
-      <figcaption>{{ $first.alt }}</figcaption>
     </figure>
     {{/* Exécuté tout de suite (pas en différé) pour éviter de voir l'image changer */}}
-    <script>(function(){var f=document.currentScript.previousElementSibling,p=JSON.parse(f.dataset.photos),x=p[Math.floor(Math.random()*p.length)],i=f.querySelector("img");i.src=x.src;i.width=x.w;i.height=x.h;i.alt=x.alt;f.querySelector("figcaption").textContent=x.alt})()</script>
+    <script>(function(){var f=document.currentScript.previousElementSibling,p=JSON.parse(f.dataset.photos),x=p[Math.floor(Math.random()*p.length)],i=f.querySelector("img");i.src=x.src;i.width=x.w;i.height=x.h;i.alt=x.alt})()</script>
     {{ end }}
   </div>
 </section>

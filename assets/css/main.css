@@ -269,7 +269,6 @@ a.chip:hover { background: var(--accent-soft); color: var(--accent); }
   display: block; width: 100%; border-radius: var(--radius);
 }
 .hero-photo-frame { position: relative; isolation: isolate; }
-.hero-photo figcaption { font: .75rem var(--sans); color: var(--muted); margin-top: 8px; text-align: right; }
 
 .section { margin-top: clamp(48px, 7vw, 88px); }
 .section-head, .panel-head {
