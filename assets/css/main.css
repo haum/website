@@ -103,6 +103,19 @@ body {
   color: var(--ink);
   background-color: var(--bg);
   overflow-wrap: break-word;
+  position: relative;
+}
+/* Logo-disque du HAUM (dépôt haum/communication, logo/DiskHAUM_v2.svg) en
+   filigrane en haut à gauche de chaque page. Utilisé comme masque : il prend
+   la couleur du texte et suit donc le thème clair ou sombre. */
+body::before {
+  content: ""; position: absolute; z-index: -1; pointer-events: none;
+  --disk: clamp(300px, 44vw, 620px);
+  width: var(--disk); aspect-ratio: 1;
+  top: calc(var(--disk) * -.2); left: calc(var(--disk) * -.22);
+  background: var(--ink); opacity: .06;
+  -webkit-mask: url(/theme/disk-haum.svg) center / contain no-repeat;
+  mask: url(/theme/disk-haum.svg) center / contain no-repeat;
 }
 img { max-width: 100%; height: auto; }
 a { color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
