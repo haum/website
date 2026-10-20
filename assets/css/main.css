@@ -112,7 +112,8 @@ body::before {
   content: ""; position: absolute; z-index: -1; pointer-events: none;
   --disk: clamp(300px, 44vw, 620px);
   width: var(--disk); aspect-ratio: 1;
-  top: calc(var(--disk) * -.2); left: calc(var(--disk) * -.22);
+  /* Calé sur le bord gauche de la colonne de contenu (.wrap), pas de la fenêtre */
+  top: calc(var(--disk) * -.14); left: calc(max(0px, (100% - 1180px) / 2) - var(--disk) * .12);
   background: var(--ink); opacity: .06;
   -webkit-mask: url(/theme/disk-haum.svg) center / contain no-repeat;
   mask: url(/theme/disk-haum.svg) center / contain no-repeat;
