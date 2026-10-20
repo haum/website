@@ -5,6 +5,8 @@ public/
 resources/_gen/
 .hugo_build.lock
 .build.lock
+# Hugo téléchargé par make (tools/get_hugo.py)
+.bin/
 # Base de l'agenda : écrite par les bots sur le serveur, ne pas versionner
 agenda.sqlite
 # Généré à chaque build depuis agenda.sqlite

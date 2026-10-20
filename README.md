@@ -1,6 +1,6 @@
 # Site web du HAUM — version Hugo
 
-Prototype de migration de https://haum.org de Pelican vers [Hugo](https://gohugo.io/).
+Moteur du site https://haum.org, généré avec [Hugo](https://gohugo.io/) (anciennement Pelican).
 
 ```sh
 git clone git@github.com:haum/website-content.git content   # le contenu, comme avec Pelican
@@ -9,6 +9,8 @@ make publish     # génère output/ (≈ 100 ms pour 300 pages)
 ```
 
 Un seul binaire (Hugo ≥ 0.156), plus de virtualenv Python, de plugins maison ni de jQuery.
+Si Hugo n'est pas installé, `make` télécharge le binaire officiel dans `.bin/`
+(version figée et somme SHA-256 vérifiée, voir `tools/get_hugo.py`).
 
 ## Organisation
 
@@ -28,13 +30,13 @@ Rien ne change pour eux : ils écrivent toujours dans `agenda.sqlite`, puis
 `!updatesite` lance `git pull` (moteur et contenu), `make publish` et le rsync de
 `output/`. Le Makefile convertit l'agenda en `data/agenda.json` avant d'appeler Hugo.
 
-Seul prérequis : le binaire `hugo` dans l'image Docker du bot, par exemple :
+Rien à installer dans leurs conteneurs : au premier `make publish`, Hugo est
+téléchargé dans `.bin/` (il faut seulement Python 3 et un accès à GitHub).
+`make publish` crée aussi `e404.html`, la page d'erreur servie par nginx.
 
-```dockerfile
-ARG HUGO_VERSION=0.167.0
-ADD https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_linux-amd64.deb /tmp/hugo.deb
-RUN dpkg -i /tmp/hugo.deb && rm /tmp/hugo.deb
-```
+Les anciennes adresses Pelican des étiquettes, auteurs et catégories
+(`/tag/x.html`, `/author/x.html`, `/category/x.html`) mènent à leur page Hugo
+(`layouts/_partials/pelican-redirects.html`).
 
 Le salon Matrix affiché sur le site se règle dans `hugo.toml` (`params.matrix`).
 

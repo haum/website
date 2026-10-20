@@ -1,0 +1,19 @@
+{{- /* Anciennes adresses des pages d'étiquettes, d'auteurs et de catégories du
+       site Pelican (/tag/x.html, /author/x.html, /category/x.html) : une page
+       de redirection vers la page Hugo correspondante. Appelé une fois, depuis
+       l'accueil. */ -}}
+{{- $done := dict -}}
+{{- range slice (slice "tags" "tag") (slice "authors" "author") (slice "categories" "category") -}}
+  {{- $old := index . 1 -}}
+  {{- with site.GetPage (index . 0) -}}
+    {{- range .Pages -}}
+      {{- $path := printf "%s/%s.html" $old (partial "pelican-slug.html" .Title) -}}
+      {{- if not (index $done $path) -}}
+        {{- $done = merge $done (dict $path true) -}}
+        {{- $url := .Permalink -}}
+        {{- $html := printf `<!doctype html><html lang="fr"><head><title>%s</title><link rel="canonical" href="%s"><meta charset="utf-8"><meta name="robots" content="noindex"><meta http-equiv="refresh" content="0; url=%s"></head><body><p>Cette page a déménagé : <a href="%s">%s</a>.</p></body></html>` .Title $url $url $url .Title -}}
+        {{- (resources.FromString $path $html).Publish -}}
+      {{- end -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}

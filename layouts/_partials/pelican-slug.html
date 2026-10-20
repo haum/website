@@ -1,0 +1,9 @@
+{{- /* Slug à la manière de Pelican (slugify) : minuscules, sans accents ni
+       ponctuation, espaces et tirets regroupés en un tiret. */ -}}
+{{- $s := lower . -}}
+{{- range $from, $to := dict "à" "a" "â" "a" "ä" "a" "ç" "c" "é" "e" "è" "e" "ê" "e" "ë" "e" "î" "i" "ï" "i" "ô" "o" "ö" "o" "ù" "u" "û" "u" "ü" "u" "œ" "oe" -}}
+  {{- $s = replace $s $from $to -}}
+{{- end -}}
+{{- $s = replaceRE `[^\w\s-]` "" $s | replaceRE `[-\s]+` "-" -}}
+{{- $s = strings.Trim $s "-" -}}
+{{- return $s -}}
